@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Comfy</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header id="home">
+    <!-- nav -->
+    <nav class="nav">
+      <div class="nav-center">
+        <!-- nav header -->
+        <div class="nav-header">
+          <a href="index.html">
+            <img class="nav-logo" src="./images/logo-slide.png" alt="logo" />
+          </a>
+          <button type="button" class="nav-toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- end of nav header -->
+        <!-- nav links -->
+        <ul class="nav-links" id="nav-links">
+          <!-- single link -->
+          <li>
+            <a href="index.html" class="nav-link scroll-link">домой</a>
+          </li>
+          <!-- end of single link -->
+          <!-- single link -->
+          <li>
+            <a href="about.html" class="nav-link scroll-link">о нас</a>
+          </li>
+          <!-- end of single link -->
+          <!-- single link -->
+          <li>
+            <a href="products.html" class="nav-link scroll-link">продукция</a>
+          </li>
+          <!-- end of single link -->
+          <!-- single link -->
+          <li>
+            <a href="#features" class="nav-link scroll-link">контакты</a>
+          </li>
+          <!-- end of single link -->
+        </ul>
+        <!-- end of nav links -->
+            <!-- nav icons -->
+            <ul class="nav-icons">
+              <!-- single icon -->
+              <li>
+                <a href="tel:+380679720560" target="_blank" class="nav-icon"
+                  >+380679720560</a
+                >
+              </li>
+              <!-- end of single icon -->
+              <!-- single icon -->
+              <li>
+                <a
+                  href="https://api.whatsapp.com/send?phone=380679320560"
+                  target="_blank"
+                  class="nav-icon whatsapp-icon"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+              </li>
+              <!-- end of single icon -->
+            </ul>
+            <!-- end of nav icons -->
+      </div>
+    </nav>
+    <!-- end of nav -->
+    <!-- hero -->
+    <section class="section page-hero">
+      <div class="section-center">
+        <div class="section-title">
+          <h2>наша <span>продукция</span></h2>
+        </div>
+      </section>
+    <!-- end of hero -->
+    <!-- products -->
+    <section class="products">
+      <!-- filters -->
+      <div class="filters">
+        <div class="filters-container">
+          <!-- search -->
+          <form class="input-form">
+            <input type="text" class="search-input" placeholder="search..." />
+          </form>
+          <!-- categories -->
+          <h4>Продукты</h4>
+          <article class="companies">
+            <button class="company-btn">все</button>
+            <button class="company-btn">для дома</button>
+            <button class="company-btn">для сантехники</button>
+            <button class="company-btn">для кухни</button>
+            <button class="company-btn">профессионалные</button>
+          </article>
+          <!-- price -->
+          <h4>Price</h4>
+          <form class="price-form">
+            <input type="range" class="price-filter" min="0" value="50" max="100" />
+          </form>
+          <p class="price-value"></p>
+        </div>
+      </div>
+      <!-- products -->
+      <div class="products-container">
+       <!-- single product -->
+       <article class="product">
+        <div class="product-container">
+          <div class="product-img-container">
+            <img src="./images/product-1.webp" class="product-img img" alt="${name}" />
+          </div>
+         
+          <div class="product-icons">
+            <a href="product.html?id=${id}" class="product-icon">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
+        </div>
+        <footer>
+          <p class="product-name">name</p>
+          <h4 class="product-price">$9.99</h4>
+        </footer>
+      </article>
+      <!-- end of single product -->
+       <!-- single product -->
+       <article class="product">
+        <div class="product-container">
+          <div class="product-img-container">
+            <img src="./images/product-2.webp" class="product-img img" alt="${name}" />
+          </div>
+         
+          <div class="product-icons">
+            <a href="product.html?id=${id}" class="product-icon">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
+        </div>
+        <footer>
+          <p class="product-name">name</p>
+          <h4 class="product-price">$9.99</h4>
+        </footer>
+      </article>
+      <!-- end of single product -->
+       <!-- single product -->
+       <article class="product">
+        <div class="product-container">
+          <div class="product-img-container">
+            <img src="./images/product-3.webp" class="product-img img" alt="${name}" />
+          </div>
+         
+          <div class="product-icons">
+            <a href="product.html?id=${id}" class="product-icon">
+              <i class="fas fa-search"></i>
+            </a>
+           
+          </div>
+        </div>
+        <footer>
+          <p class="product-name">name</p>
+          <h4 class="product-price">$9.99</h4>
+        </footer>
+      </article>
+      <!-- end of single product -->
+       <!-- single product -->
+       <article class="product">
+        <div class="product-container">
+          <div class="product-img-container">
+            <img src="./images/product-4.webp" class="product-img img" alt="${name}" />
+          </div>
+         
+          <div class="product-icons">
+            <a href="product.html?id=${id}" class="product-icon">
+              <i class="fas fa-search"></i>
+            </a>
+           
+          </div>
+        </div>
+        <footer>
+          <p class="product-name">name</p>
+          <h4 class="product-price">$9.99</h4>
+        </footer>
+      </article>
+      <!-- end of single product -->
+       <!-- single product -->
+       <article class="product">
+        <div class="product-container">
+          <div class="product-img-container">
+            <img src="./images/product-5.webp" class="product-img img" alt="${name}" />
+          </div>
+         
+          <div class="product-icons">
+            <a href="product.html?id=${id}" class="product-icon">
+              <i class="fas fa-search"></i>
+            </a>
+           
+          </div>
+        </div>
+        <footer>
+          <p class="product-name">name</p>
+          <h4 class="product-price">$9.99</h4>
+        </footer>
+      </article>
+      <!-- end of single product -->
+       <!-- single product -->
+       <article class="product">
+        <div class="product-container">
+          <div class="product-img-container">
+            <img src="./images/product-6.webp" class="product-img img" alt="${name}" />
+          </div>
+         
+          <div class="product-icons">
+            <a href="product.html?id=${id}" class="product-icon">
+              <i class="fas fa-search"></i>
+            </a>
+           
+          </div>
+        </div>
+        <footer>
+          <p class="product-name">name</p>
+          <h4 class="product-price">$9.99</h4>
+        </footer>
+      </article>
+      <!-- end of single product -->
+       <!-- single product -->
+       <article class="product">
+        <div class="product-container">
+          <div class="product-img-container">
+            <img src="./images/product-7.webp" class="product-img img" alt="${name}" />
+          </div>
+         
+          <div class="product-icons">
+            <a href="product.html?id=${id}" class="product-icon">
+              <i class="fas fa-search"></i>
+            </a>
+           
+          </div>
+        </div>
+        <footer>
+          <p class="product-name">name</p>
+          <h4 class="product-price">$9.99</h4>
+        </footer>
+      </article>
+      <!-- end of single product -->
+       <!-- single product -->
+       <article class="product">
+        <div class="product-container">
+          <div class="product-img-container">
+            <img src="./images/product-8.webp" class="product-img img" alt="${name}" />
+          </div>
+         
+          <div class="product-icons">
+            <a href="product.html?id=${id}" class="product-icon">
+              <i class="fas fa-search"></i>
+            </a>
+           
+          </div>
+        </div>
+        <footer>
+          <p class="product-name">name</p>
+          <h4 class="product-price">$9.99</h4>
+        </footer>
+      </article>
+      <!-- end of single product -->
+       
+      </div>
+    </section>
+    
+    <!-- page loading -->
+    <!-- <div class="page-loading">
+      <h2>Loading...</h2>
+    </div> -->
+
+  </div>
+
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>

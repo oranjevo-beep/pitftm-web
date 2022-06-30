@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="home">
+      <!-- nav -->
+      <nav class="nav">
+        <div class="nav-center">
+          <!-- nav header -->
+          <div class="nav-header">
+            <a href="index.html">
+              <img class="nav-logo" src="./images/logo-slide.png" alt="logo" />
+            </a>
+            <button type="button" class="nav-toggle" id="nav-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <!-- end of nav header -->
+          <!-- nav links -->
+          <ul class="nav-links" id="nav-links">
+            <!-- single link -->
+            <li>
+              <a href="index.html" class="nav-link scroll-link">домой</a>
+            </li>
+            <!-- end of single link -->
+            <!-- single link -->
+            <li>
+              <a href="about.html" class="nav-link scroll-link">о нас</a>
+            </li>
+            <!-- end of single link -->
+            <!-- single link -->
+            <li>
+              <a href="products.html" class="nav-link scroll-link">продукция</a>
+            </li>
+            <!-- end of single link -->
+            <!-- single link -->
+            <li>
+              <a href="#features" class="nav-link scroll-link">контакты</a>
+            </li>
+            <!-- end of single link -->
+          </ul>
+          <!-- end of nav links -->
+          <!-- nav icons -->
+          <ul class="nav-icons">
+            <!-- single icon -->
+            <li>
+              <a href="tel:+380679720560" target="_blank" class="nav-icon"
+                >+380679720560</a
+              >
+            </li>
+            <!-- end of single icon -->
+            <!-- single icon -->
+            <li>
+              <a
+                href="https://api.whatsapp.com/send?phone=380679320560"
+                target="_blank"
+                class="nav-icon whatsapp-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </li>
+            <!-- end of single icon -->
+          </ul>
+          <!-- end of nav icons -->
+        </div>
+      </nav>
+      <!-- end of nav -->
+      <!-- hero -->
+      <section class="hero">
+        <div class="hero-banner">
+          <h1>бытовая химия пиф</h1>
+          <p>производитель бытовой химии в Украине</p>
+          <a href="#featured" class="btn hero-btn scroll-link"
+            >наша продукция</a
+          >
+        </div>
+      </section>
+      <!-- end of hero -->
+    </header>
+    <!-- end of header -->
+
+    <!-- featured products -->
+    <section class="section featured">
+      <div class="section-title">
+        <h2>топ <span>продаж</span></h2>
+      </div>
+      <!-- end of section title -->
+      <div class="featured-center section-center">
+        <!-- <h2 class="section-loading">loading...</h2> -->
+        <!-- single product -->
+        <article class="featured-product">
+          <div class="product-container">
+            <div class="featured-img-container">
+              <img
+                src="./images/product-1.webp"
+                class="product-img img"
+                alt=""
+              />
+            </div>
+
+            <div class="product-icons">
+              <a href="product.html?id=1" class="product-icon">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">name</p>
+            <h4 class="product-price">$9.99</h4>
+          </footer>
+        </article>
+        <!-- end of single product -->
+        <!-- single product -->
+        <article class="featured-product">
+          <div class="product-container">
+            <div class="featured-img-container">
+              <img
+                src="./images/product-2.webp"
+                class="product-img img"
+                alt=""
+              />
+            </div>
+
+            <div class="product-icons">
+              <a href="product.html?id=1" class="product-icon">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">name</p>
+            <h4 class="product-price">$9.99</h4>
+          </footer>
+        </article>
+        <!-- end of single product -->
+        <!-- single product -->
+        <article class="featured-product">
+          <div class="product-container">
+            <div class="featured-img-container">
+              <img
+                src="./images/product-3.webp"
+                class="product-img img"
+                alt=""
+              />
+            </div>
+
+            <div class="product-icons">
+              <a href="product.html?id=1" class="product-icon">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">name</p>
+            <h4 class="product-price">$9.99</h4>
+          </footer>
+        </article>
+        <!-- end of single product -->
+      </div>
+      <a href="products.html" class="btn"> все продукты </a>
+    </section>
+
+    <!-- footer -->
+    <footer class="section footer">
+      <!-- footer links -->
+      <ul class="footer-links">
+        <!-- single link -->
+        <li>
+          <a href="#home" class="footer-link scroll-link">главная</a>
+        </li>
+        <!-- end of single link -->
+        <!-- single link -->
+        <li>
+          <a href="#about" class="footer-link scroll-link">о нас</a>
+        </li>
+        <!-- end of single link -->
+        <!-- single link -->
+        <li>
+          <a href="#services" class="footer-link scroll-link">продукция</a>
+        </li>
+        <!-- end of single link -->
+        <!-- single link -->
+        <li>
+          <a href="#features" class="footer-link scroll-link">контакты</a>
+        </li>
+        <!-- end of single link -->
+      </ul>
+      <!-- end of footer links -->
+
+      <div class="footer-address">
+        <h3 class="footer-title">наши контакты</h3>
+        <address class="contacts">
+          <h4>ООО "Кодымский Райпостач"</h4>
+          <p class="address-text">
+            пер. Вознесенский № 3, г.Одесса, Украина, 65007
+          </p>
+          <p class="footer-contacts">
+            <a
+              href="https://api.whatsapp.com/send?phone=380679320560"
+              target="_blank"
+              class="whatsapp-icon"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a class="footer-link footer-phone" href="tel:+380679720560"
+              >+380865859910</a
+            ><br />
+            <a
+              class="footer-link footer-mail"
+              href="mailto:piftm.info@gmail.com"
+              >piftm.info@gmail.com</a
+            >
+          </p>
+        </address>
+      </div>
+    </footer>
+    <!-- end of footer -->
+    <script src="./index.js"></script>
+  </body>
+</html>
