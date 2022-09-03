@@ -544,7 +544,7 @@ Services
   color: var(--clr-grey-5);
 }
 .product-img-container {
-  width: 20rem;
+  width: 15rem;
 }
 .product {
   display: flex;
@@ -552,12 +552,12 @@ Services
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 768px) {
-  .products {
+@media screen and (min-width: 672px) {
+  /* .products {
     grid-template-columns: 200px 1fr;
-  }
+  } */
   .product-img-container {
-    width: 15rem;
+    width: 14rem;
   }
   .products-container {
     display: grid;
@@ -574,12 +574,12 @@ Services
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
-  .product-img-container {
-    width: 7rem;
-  }
-  .products-container .product-img {
+  /* .product-img-container {
+    width: 10rem;
+  } */
+  /* .products-container .product-img {
     height: 10rem;
-  }
+  } */
   .products-container .product-name {
     font-size: 0.85rem;
   }
