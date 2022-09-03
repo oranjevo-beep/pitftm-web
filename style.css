@@ -499,13 +499,13 @@ Services
 
 .products {
   width: 90vw;
-  display: grid;
-  grid-gap: 1rem;
+  /* display: grid; */
+  /* grid-gap: 1rem; */
   margin: 0 auto;
   max-width: var(--max-width);
-  position: relative;
+  /* position: relative; */
 }
-.filters-container {
+/* .filters-container {
   position: sticky;
   top: 1rem;
 }
@@ -523,8 +523,8 @@ Services
 }
 .search-input::placeholder {
   text-transform: capitalize;
-}
-.company-btn {
+} */
+/* .company-btn {
   display: block;
   margin: 0.25em 0;
   padding: 0.25rem;
@@ -542,9 +542,9 @@ Services
 .price-filter {
   background: var(--clr-grey-5) !important;
   color: var(--clr-grey-5);
-}
+} */
 .product-img-container {
-  width: 15rem;
+  width: 14rem;
 }
 .product {
   display: flex;
