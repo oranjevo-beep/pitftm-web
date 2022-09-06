@@ -33,4 +33,10 @@ const productDescClose = document.querySelectorAll('.product-desc-close');
 productDescClose.forEach((btn) => {
   btn.addEventListener('click', closeModal);
 });
-overlay.addEventListener('click', closeModal);
+overlay.addEventListener('click', () => {
+  document
+    .querySelectorAll('.modal')
+    .forEach((modal) => modal.classList.remove('visible'));
+  overlay.classList.add('hidden');
+  document.querySelector('.nav').classList.remove('hidden');
+});
