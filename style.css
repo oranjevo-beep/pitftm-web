@@ -403,16 +403,17 @@ product
 }
 .product-capacity {
   margin-bottom: 0.3rem;
-
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .product-name {
   margin-bottom: 0.25rem;
   text-transform: capitalize;
   font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 .product-price {
-  font-weight: 700;
+  font-weight: 600;
 }
 .product-desc-info {
   color: var(--clr-primary-5);
@@ -442,6 +443,9 @@ product
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+  .product-capacity {
+    font-size: 0.85rem;
   }
   .featured-product {
     width: 15rem;
@@ -575,6 +579,7 @@ Services
   right: 1rem;
   cursor: pointer;
   transition: var(--transition);
+  font-size: 1.2rem;
 }
 .product-desc-close:hover {
   color: var(--clr-grey-1);
@@ -585,6 +590,8 @@ Services
 .products-container {
   display: grid;
   gap: 3rem;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
 }
 .product-img {
   height: 15rem;
@@ -600,6 +607,7 @@ Services
   .products-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    font-size: 0.9rem;
   }
   .categories {
     position: sticky;
@@ -610,16 +618,10 @@ Services
   .products-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    font-size: 1rem;
   }
   .product-img-container {
     width: 10rem;
-  }
-
-  .products-container .product-name {
-    font-size: 0.85rem;
-  }
-  .products-container .product-price {
-    font-size: 0.85rem;
   }
 }
 @media screen and (min-width: 1170px) {
