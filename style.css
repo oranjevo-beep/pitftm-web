@@ -724,7 +724,9 @@ About Page
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80vw;
+  width: 90vw;
+  min-height: 10rem;
+  overflow: scroll;
   background-color: #f3f3f3;
   padding: 1rem 1rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
