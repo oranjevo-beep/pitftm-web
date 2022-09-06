@@ -750,8 +750,8 @@ About Page
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80vw;
-  letter-spacing: 1.2px;
+  width: 90vw;
+  letter-spacing: 0.3px;
   background-color: #f3f3f3;
   padding: 1rem 2rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
@@ -762,17 +762,19 @@ About Page
   font-size: 0.9rem;
   border-radius: var(--radius);
 }
-
+.modal p {
+  margin: 0;
+}
 @media screen and (min-width: 678px) {
   .modal {
     font-size: 1rem;
-    padding: 2rem 2rem;
+    padding: 1rem 2rem;
   }
 }
 @media screen and (min-width: 872px) {
   .modal {
     width: 70vw;
-    line-height: 1.7;
+    line-height: 1.6;
   }
 }
 @media screen and (min-width: 1170px) {
