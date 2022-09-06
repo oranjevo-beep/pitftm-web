@@ -392,18 +392,31 @@ product
   opacity: 1;
 }
 .product footer {
-  padding: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
   text-align: center;
+  max-width: 15rem;
+  color: var(--clr-grey-2);
+}
+.product-capacity {
+  margin-bottom: 0.3rem;
+
+  font-size: 0.9rem;
 }
 .product-name {
   margin-bottom: 0.25rem;
   text-transform: capitalize;
-  max-width: 15rem;
+  font-weight: 600;
 }
 .product-price {
-  margin-bottom: 0;
-  color: var(--clr-grey-3);
   font-weight: 700;
+}
+.product-desc-info {
+  color: var(--clr-grey-4);
+  font-size: 0.9rem;
 }
 .featured-img-container {
   max-width: 20rem;
@@ -561,11 +574,19 @@ Services
   top: 0.5rem;
   right: 1rem;
   cursor: pointer;
+  transition: var(--transition);
+}
+.product-desc-close:hover {
+  color: var(--clr-grey-1);
 }
 .product-desc-info {
   cursor: pointer;
 }
-.products-container .product-img {
+.products-container {
+  display: grid;
+  gap: 3rem;
+}
+.product-img {
   height: 15rem;
   object-fit: contain;
 }
@@ -577,7 +598,6 @@ Services
     width: 12rem;
   }
   .products-container {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
@@ -638,11 +658,17 @@ Footer
     flex-direction: row;
   }
 }
+.footer-address {
+  max-width: 35rem;
+}
 .footer-address,
 .footer-address p {
   color: var(--clr-grey-2);
 }
-
+.footer-address,
+.footer-links {
+  flex: 1 1 50%;
+}
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -724,9 +750,8 @@ About Page
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90vw;
-  min-height: 10rem;
-  overflow: scroll;
+  width: 80vw;
+
   background-color: #f3f3f3;
   padding: 1rem 1rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
@@ -742,6 +767,18 @@ About Page
   .modal {
     font-size: 1rem;
     padding: 2rem 2rem;
+  }
+}
+@media screen and (min-width: 872px) {
+  .modal {
+    width: 70vw;
+    line-height: 1.7;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .modal {
+    width: 50vw;
+    line-height: 1.7;
   }
 }
 .overlay {
