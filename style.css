@@ -786,10 +786,10 @@ About Page
   margin: 0;
 }
 
-@media screen and (min-width: 872px) {
+@media screen and (min-width: 992px) {
   .modal {
     width: 60vw;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 }
 @media screen and (min-width: 1170px) {
