@@ -784,18 +784,24 @@ About Page
   transition: all 0.5s;
   visibility: hidden;
   opacity: 0;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   border-radius: var(--radius);
-  line-height: 1.3;
+  line-height: 1.4;
 }
 .modal p {
   margin: 0;
 }
 
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 70vw;
+    font-size: 0.9rem;
+  }
+}
 @media screen and (min-width: 992px) {
   .modal {
     width: 60vw;
-    line-height: 1.4;
+    line-height: 1.5;
     font-size: 1rem;
   }
 }
