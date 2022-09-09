@@ -1,82 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>О Нас | ПІФ</title>
-  <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-  <link rel="manifest" href="./favicon/site.webmanifest">
-  <!-- font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./style.css" />
-  <title>Document</title>
-</head>
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>О Нас | ПІФ</title>
+  </head>
 
-<body>
-  <!-- header -->
-  <header id="home">
-    <!-- nav -->
-    <nav class="nav">
-      <div class="nav-center">
-        <!-- nav header -->
-        <div class="nav-header">
-          <a href="index.html">
-            <img class="nav-logo" src="./images/logo-slide.png" alt="logo" />
-          </a>
-          <button type="button" class="nav-toggle" id="nav-toggle">
-            <i class="fas fa-bars"></i>
-          </button>
+  <body>
+    <!-- header -->
+    <header>
+      <!-- nav -->
+      <nav class="nav">
+        <div class="nav-center">
+          <!-- nav header -->
+          <div class="nav-header">
+            <a href="index.html">
+              <img class="nav-logo" src="./images/logo-slide.png" alt="logo" />
+            </a>
+            <button type="button" class="nav-toggle" id="nav-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <!-- end of nav header -->
+          <!-- nav links -->
+          <!-- nav links -->
+          <ul class="nav-links" id="nav-links">
+            <!-- single link -->
+            <li>
+              <a href="index.html" class="nav-link scroll-link">головна</a>
+            </li>
+            <!-- end of single link -->
+            <!-- single link -->
+            <li>
+              <a href="about.html" class="nav-link scroll-link">о нас</a>
+            </li>
+            <!-- end of single link -->
+            <!-- single link -->
+            <li>
+              <a href="products.html" class="nav-link scroll-link">продукція</a>
+            </li>
+            <!-- end of single link -->
+            <!-- single link -->
+            <li>
+              <a href="contacts.html" class="nav-link scroll-link">контакти</a>
+            </li>
+            <!-- end of single link -->
+          </ul>
+          <!-- end of nav links -->
+          <!-- nav icons -->
+          <ul class="nav-icons">
+            <!-- single icon -->
+            <li>
+              <a href="tel:+380679720560" target="_blank" class="nav-icon"
+                >+380679720560</a
+              >
+            </li>
+            <!-- end of single icon -->
+            <!-- single icon -->
+            <li>
+              <a
+                href="https://api.whatsapp.com/send?phone=380679320560"
+                target="_blank"
+                class="nav-icon whatsapp-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </li>
+            <!-- end of single icon -->
+          </ul>
+          <!-- end of nav icons -->
         </div>
-        <!-- end of nav header -->
-        <!-- nav links -->
-        <!-- nav links -->
-        <ul class="nav-links" id="nav-links">
-          <!-- single link -->
-          <li>
-            <a href="index.html" class="nav-link scroll-link">головна</a>
-          </li>
-          <!-- end of single link -->
-          <!-- single link -->
-          <li>
-            <a href="about.html" class="nav-link scroll-link">о нас</a>
-          </li>
-          <!-- end of single link -->
-          <!-- single link -->
-          <li>
-            <a href="products.html" class="nav-link scroll-link">продукція</a>
-          </li>
-          <!-- end of single link -->
-          <!-- single link -->
-          <li>
-            <a href="contacts.html" class="nav-link scroll-link">контакти</a>
-          </li>
-          <!-- end of single link -->
-        </ul>
-        <!-- end of nav links -->
-        <!-- nav icons -->
-        <ul class="nav-icons">
-          <!-- single icon -->
-          <li>
-            <a href="tel:+380679720560" target="_blank" class="nav-icon">+380679720560</a>
-          </li>
-          <!-- end of single icon -->
-          <!-- single icon -->
-          <li>
-            <a href="https://api.whatsapp.com/send?phone=380679320560" target="_blank" class="nav-icon whatsapp-icon"><i
-                class="fab fa-whatsapp"></i></a>
-          </li>
-          <!-- end of single icon -->
-        </ul>
-        <!-- end of nav icons -->
-      </div>
-    </nav>
-    <!-- end of nav -->
+      </nav>
+      <!-- end of nav -->
+    </header>
     <!-- about -->
     <section class="section section-center about-page">
       <div class="section-title">
@@ -84,28 +108,38 @@
       </div>
       <article class="about-text">
         <h3>Наша компанія - виробник побутової хімії в Україні з 2005 року.</h3>
-        <p>Асортимент та якість нашої продукції – це результат ретельного аналізу світових
-          тенденцій у виробництві побутової хімії та застосування спеціально розроблених
-          рецептур із використанням сировини від світових лідерів хімічної промисловості.</p>
-        <p>Поєднання доступної ціни та високої якості вигідно відрізняють продукцію нашої
-          компанії серед великої кількості українських та світових виробників.
-          Чистячі і миючі засоби під торговою маркою &quot;ПІФ&quot; виконані відповідно до сучасних
-          стандартів якості при використанні безпечних, екологічно збалансованих інгредієнтів .
-          Завдяки цьому продукцію можна використовувати для обслуговування житлових,
-          адміністративних, виробничих приміщень, дитячих закладів, лікарень, санаторно-
-          курортних комплексів тощо.</p>
+        <p>
+          Асортимент та якість нашої продукції – це результат ретельного аналізу
+          світових тенденцій у виробництві побутової хімії та застосування
+          спеціально розроблених рецептур із використанням сировини від світових
+          лідерів хімічної промисловості.
+        </p>
+        <p>
+          Поєднання доступної ціни та високої якості вигідно відрізняють
+          продукцію нашої компанії серед великої кількості українських та
+          світових виробників. Чистячі і миючі засоби під торговою маркою
+          &quot;ПІФ&quot; виконані відповідно до сучасних стандартів якості при
+          використанні безпечних, екологічно збалансованих інгредієнтів .
+          Завдяки цьому продукцію можна використовувати для обслуговування
+          житлових, адміністративних, виробничих приміщень, дитячих закладів,
+          лікарень, санаторно- курортних комплексів тощо.
+        </p>
 
-        <p>На даний момент асортимент продукції під торговою маркою &quot;ПІФ&quot; налічує понад 20
-          найменувань високоякісних та ефективних засобів побутової хімії, серед яких засоби для
-          очищення сантехніки, прочищення зливних труб і сифонів, видалення жиру, нагару, іржі,
-          засоби для миття посуду , підлоги , рідке мило.</p>
-        <p> Також ми працюємо за програмами контрактного виробництва із ТМ &quot;КОПІЙКА&quot;.
-          Ми дуже цінуємо відносини, що склалися з нашими покупцями, які довірили нам догляд
-          за їхнім будинком, і пишаємося тим, що наша продукція робить це добре.</p>
-
+        <p>
+          На даний момент асортимент продукції під торговою маркою
+          &quot;ПІФ&quot; налічує понад 20 найменувань високоякісних та
+          ефективних засобів побутової хімії, серед яких засоби для очищення
+          сантехніки, прочищення зливних труб і сифонів, видалення жиру, нагару,
+          іржі, засоби для миття посуду , підлоги , рідке мило.
+        </p>
+        <p>
+          Також ми працюємо за програмами контрактного виробництва із ТМ
+          &quot;КОПІЙКА&quot;. Ми дуже цінуємо відносини, що склалися з нашими
+          покупцями, які довірили нам догляд за їхнім будинком, і пишаємося тим,
+          що наша продукція робить це добре.
+        </p>
       </article>
     </section>
     <script type="module" src="./index.js"></script>
-</body>
-
+  </body>
 </html>
