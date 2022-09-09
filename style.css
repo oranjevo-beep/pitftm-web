@@ -58,12 +58,15 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 100%;
+}
 body {
   font-family: var(--ff-primary);
   background: var(--clr-white);
   color: var(--clr-grey-5);
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 0.875rem;
 }
 ul {
   list-style-type: none;
@@ -116,7 +119,7 @@ p {
     font-size: 1rem;
   }
   body {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   h1,
   h2,
@@ -495,9 +498,7 @@ About
   .about-img-container {
     position: relative;
   }
-  .about-img {
-    /* position: relative; */
-  }
+
   .about-img-container::before {
     position: absolute;
     z-index: -1;
@@ -777,8 +778,9 @@ About Page
   transition: all 0.5s;
   visibility: hidden;
   opacity: 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   border-radius: var(--radius);
+  line-height: 1.2;
 }
 .modal p {
   margin: 0;
