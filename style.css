@@ -58,9 +58,10 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
-/* html {
+html {
   font-size: 100%;
-} */
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+}
 body {
   font-family: var(--ff-primary);
   background: var(--clr-white);
@@ -789,7 +790,8 @@ About Page
 @media screen and (min-width: 992px) {
   .modal {
     width: 60vw;
-    line-height: 1.5;
+    line-height: 1.4;
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 1170px) {
