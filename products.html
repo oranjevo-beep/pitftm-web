@@ -1,308 +1,380 @@
 <!DOCTYPE html>
 <html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Продукція | ПІФ</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-  <link rel="manifest" href="./favicon/site.webmanifest">
-  <!-- font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./style.css" />
-  <title>Продукція | ПІФ</title>
-</head>
-
-<body>
-
-  <!-- header -->
-  <header>
-    <!-- nav -->
-    <nav class="nav">
-      <div class="nav-center">
-        <!-- nav header -->
-        <div class="nav-header">
-          <a href="index.html">
-            <img class="nav-logo" src="./images/logo-slide.png" alt="logo" />
-          </a>
-          <button type="button" class="nav-toggle" id="nav-toggle">
-            <i class="fas fa-bars"></i>
-          </button>
+  <body>
+    <!-- header -->
+    <header>
+      <!-- nav -->
+      <nav class="nav">
+        <div class="nav-center">
+          <!-- nav header -->
+          <div class="nav-header">
+            <a href="index.html">
+              <img class="nav-logo" src="./images/logo-slide.png" alt="logo" />
+            </a>
+            <button type="button" class="nav-toggle" id="nav-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <!-- end of nav header -->
+          <!-- nav links -->
+          <ul class="nav-links" id="nav-links">
+            <!-- single link -->
+            <li>
+              <a href="index.html" class="nav-link scroll-link">головна</a>
+            </li>
+            <!-- end of single link -->
+            <!-- single link -->
+            <li>
+              <a href="about.html" class="nav-link scroll-link">о нас</a>
+            </li>
+            <!-- end of single link -->
+            <!-- single link -->
+            <li>
+              <a href="products.html" class="nav-link scroll-link">продукція</a>
+            </li>
+            <!-- end of single link -->
+            <!-- single link -->
+            <li>
+              <a href="contacts.html" class="nav-link scroll-link">контакти</a>
+            </li>
+            <!-- end of single link -->
+          </ul>
+          <!-- end of nav links -->
+          <!-- nav icons -->
+          <ul class="nav-icons">
+            <!-- single icon -->
+            <li>
+              <a href="tel:+380679720560" target="_blank" class="nav-icon"
+                >+380679720560</a
+              >
+            </li>
+            <!-- end of single icon -->
+            <!-- single icon -->
+            <li>
+              <a
+                href="https://api.whatsapp.com/send?phone=380679320560"
+                target="_blank"
+                class="nav-icon whatsapp-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </li>
+            <!-- end of single icon -->
+          </ul>
+          <!-- end of nav icons -->
         </div>
-        <!-- end of nav header -->
-        <!-- nav links -->
-        <ul class="nav-links" id="nav-links">
-          <!-- single link -->
-          <li>
-            <a href="index.html" class="nav-link scroll-link">головна</a>
-          </li>
-          <!-- end of single link -->
-          <!-- single link -->
-          <li>
-            <a href="about.html" class="nav-link scroll-link">о нас</a>
-          </li>
-          <!-- end of single link -->
-          <!-- single link -->
-          <li>
-            <a href="products.html" class="nav-link scroll-link">продукція</a>
-          </li>
-          <!-- end of single link -->
-          <!-- single link -->
-          <li>
-            <a href="contacts.html" class="nav-link scroll-link">контакти</a>
-          </li>
-          <!-- end of single link -->
-        </ul>
-        <!-- end of nav links -->
-        <!-- nav icons -->
-        <ul class="nav-icons">
-          <!-- single icon -->
-          <li>
-            <a href="tel:+380679720560" target="_blank" class="nav-icon">+380679720560</a>
-          </li>
-          <!-- end of single icon -->
-          <!-- single icon -->
-          <li>
-            <a href="https://api.whatsapp.com/send?phone=380679320560" target="_blank" class="nav-icon whatsapp-icon"><i
-                class="fab fa-whatsapp"></i></a>
-          </li>
-          <!-- end of single icon -->
-        </ul>
-        <!-- end of nav icons -->
+      </nav>
+    </header>
+    <!-- end of nav -->
+    <!-- hero -->
+    <section class="section page-hero">
+      <div class="section-center">
+        <div class="section-title">
+          <h2>наша <span>продукція</span></h2>
+        </div>
       </div>
-    </nav>
-  </header>
-  <!-- end of nav -->
-  <!-- hero -->
-  <section class="section page-hero">
-    <div class="section-center">
-      <div class="section-title">
-        <h2>наша <span>продукція</span></h2>
-      </div>
-      </div>
-  </section>
-  <!-- end of hero -->
-  <!-- products -->
-  <main class="products">
+    </section>
+    <!-- end of hero -->
     <!-- products -->
-    <div class="products-container">
-
-
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-2.webp" class="product-img img" alt="${name}" />
+    <main class="products">
+      <!-- products container -->
+      <div class="products-container">
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-2.webp"
+                class="product-img img"
+                alt="Засіб для миття та очищення ванних кімнат, душових кабінок,
+                кранів"
+              />
+            </div>
           </div>
-
-
-        </div>
-        <footer>
-          <p class="product-name">Засіб для миття та очищення ванних кімнат, душових кабінок, кранів.</p>
-          <p class="product-capacity">Об&#39;єм: 500мл (з розпилювачем), 5л</p>
-          <p class="product-price">Ціна: 34.00грн, 198.00грн</p>
-          <span class="product-desc-info">опис товару...</span>
-        </footer>
-        <div class="product-desc">
-          <div class="product-desc-text modal">
-            <p>
-
-              Очищає від вапняного та мильного нальоту, іржі та бруду акрилові, емальовані, керамічні, хромовані,
-              нержавіючі, пластикові, скляні поверхні та крани.
-              Склад: Вода підготовлена ​​&gt; 30%, ортофосфорна кислота, органічні кислоти від 2 до 5 %, ПАР &lt;5%,
-              віддушка, барвник &lt;0,2%.
-              Нанести засіб на забруднену поверхню, потерти щіткою і змити водою. Для видалення стійкого бруду або
-              плям іржі витримати засіб на поверхні 5-10 хв, потерти щіткою і змити водою.
-            </p>
-            <span class="product-desc-close"><i class="fa fa-times"></i></span>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-15.webp" class="product-img img" alt="${name}" />
-          </div>
-
-
-        </div>
-        <footer>
-          <p class="product-name">Засіб для видалення забруднень каналізаційних труб та сифонів</p>
-          <p class="product-capacity">Об&#39;єм: 1 л, 5л</p>
-          <p class="product-price">Ціна: 44.50 грн, 143.50 грн</p>
-          <span class="product-desc-info">опис товару...</span>
-        </footer>
-        <div class="product-desc">
-          <div class="product-desc-text modal">
-            <p>
-              Використовується для очищення каналізаційних труб, сифонів кухонних мийок та ванн, видалення жирових
-              та білкових забруднень, волосся, залишків їжі, знищення неприємного запаху.
-              Залити 200-250 мл засобу в зливний отвір раковини або ванни (для унітазу - 500 мл) і залишити на 4 години,
-              краще на ніч. Після цього промити велику кількість гарячої води. Для профілактики рекомендується
-              застосовувати не рідше ніж раз на місяць.
-              Заходи безпеки: Засіб містить їдкий луг, не рекомендується змішувати його з іншими засобами. Боїться
-              нагріву. Засіб необхідно зберігати ретельно закритим у вертикальному положенні у місцях, недоступних
-              дітям. При попаданні в очі чи на шкіру - ретельно промити водою. Обов&#39;язково використовуйте гумові
-              рукавички під час роботи з цим продуктом.
-            </p>
-            <span class="product-desc-close"><i class="fa fa-times"></i></span>
-          </div>
-
-        </div>
-      </div>
-      <!-- end of single product -->
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-3.webp" class="product-img img" alt="${name}" />
-          </div>
-
-
-        </div>
-        <footer>
-          <p class="product-name">Засіб для видалення жиру, нагару та кіптяви</p>
-          <p class="product-capacity">Об&#39;єм: 500мл</p>
-          <p class="product-price">Ціна: 26.00 грн.</p>
-          <span class="product-desc-info">опис товару...</span>
-        </footer>
-        <div class="product-desc">
-          <div class="product-desc-text modal">
-            <p>
-              Спосіб застосування: перед застосуванням вміст пляшки збовтати, нанести на поверхню на 5-10 хв. Сильно
-              забруднені місця протерти губкою. Змити водою.
-              Ідеально підходить для миття застарілих забруднень. Для очищення фритюрниць залити гарячу воду вище
-              за рівень олії, додати 100-200 мл засобу на кожен літр води, залишити на 1-2 години, після чого воду
-              злити,
-              поверхню очистити щіткою та ретельно промити проточною водою. Не застосовувати засіб для обробки
-              алюмінієвих, емальованих, скляних та лакофарбових поверхонь! Під час роботи використовувати гумові
-              рукавички.
-            </p>
-            <span class="product-desc-close"><i class="fa fa-times"></i></span>
-          </div>
-
-        </div>
-      </div>
-      <!-- end of single product -->
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-11.webp" class="product-img img" alt="${name}" />
-          </div>
-
-
-        </div>
-        <footer>
-          <p class="product-name">Засіб для видалення жиру, нагару та кіптяви</p>
-          <p class="product-capacity">Об&#39;єм: 5л</p>
-          <p class="product-price">Ціна: 186.00 грн</p>
-          <span class="product-desc-info">опис товару...</span>
-        </footer>
-        <div class="product-desc">
-          <div class="product-desc-text modal">
-            <p>
-              Спосіб застосування: перед застосуванням вміст пляшки збовтати, нанести на поверхню на 5-10 хв. Сильно
-              забруднені місця протерти губкою. Змити водою.
-              Ідеально підходить для миття застарілих забруднень. Для очищення фритюрниць залити гарячу воду вище
-              за рівень олії, додати 100-200 мл засобу на кожен літр води, залишити на 1-2 години, після чого воду
-              злити,
-              поверхню очистити щіткою та ретельно промити проточною водою. Не застосовувати засіб для обробки
-              алюмінієвих, емальованих, скляних та лакофарбових поверхонь! Під час роботи використовувати гумові
-              рукавички.
-            </p>
-            <span class="product-desc-close"><i class="fa fa-times"></i></span>
-          </div>
-
-        </div>
-      </div>
-      <!-- end of single product -->
-
-
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-16.webp" class="product-img img" alt="${name}" />
-          </div>
-        </div>
-        <footer>
-          <p class="product-name">Засіб для миття підлоги та інших поверхонь</p>
-          <p class="product-capacity">Об&#39;єм: 1л</p>
-          <p class="product-price">Ціна: 42.00 грн</p>
-          <span class="product-desc-info">опис товару...</span>
-        </footer>
-        <div class="product-desc">
-          <div class="product-desc-text modal">
-            <p>
-              Використовується для миття підлоги з лінолеуму, сильно забруднених поверхонь з мармуру (підлоги, стін,
-              фасадів будівель та ін.), наливної підлоги, керамічної плитки та інших поверхонь за допомогою
-              спеціального обладнання або ручного миття.
-              Спосіб застосування: Розчинити в 50-100 мл засобу в 5-6л води. За допомогою губки, тканини і т.п. помити
-              забруднену поверхню. У разі сильно забруднених поверхонь використовувати нерозбавлену, ретельно
-              потерти поверхню і промити водою.
-              Засіб замерзає, після розморожування зберігає свої властивості.
-              Запобігати впливу прямих сонячних променів, зберігати у сухих вентильованих приміщеннях при
-              температурі від мінус 5° до +30°
-            </p>
-            <span class="product-desc-close"><i class="fa fa-times"></i></span>
-          </div>
-        </div>
-      </div>
-      <!-- end of single product -->
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-10.webp" class="product-img img" alt="${name}" />
-          </div>
-
-          <!-- <div class="product-icons">
-              <a href="product.html?id=${id}" class="product-icon">
-                <i class="fas fa-search"></i>
-              </a>
-
-            </div> -->
-        </div>
-        <footer>
-          <p class="product-name">Засіб для миття підлоги та інших поверхонь</p>
-          <p class="product-capacity">Об&#39;єм: 5л</p>
-          <p class="product-price">Ціна: 143.50грн</p>
-          <span class="product-desc-info">опис товару...</span>
-        </footer>
-        <div class="product-desc">
-          <div class="product-desc-text modal">
-            <p>
-              Використовується для миття підлоги з лінолеуму, сильно забруднених поверхонь з мармуру (підлоги, стін,
-              фасадів будівель та ін.), наливної підлоги, керамічної плитки та інших поверхонь за допомогою
-              спеціального обладнання або ручного миття.
-              Спосіб застосування: Розчинити в 50-100 мл засобу в 5-6л води. За допомогою губки, тканини і т.п. помити
-              забруднену поверхню. У разі сильно забруднених поверхонь використовувати нерозбавлену, ретельно
-              потерти поверхню і промити водою.
-              Засіб замерзає, після розморожування зберігає свої властивості.
-              Запобігати впливу прямих сонячних променів, зберігати у сухих вентильованих приміщеннях при
-              температурі від мінус 5° до +30°
-            </p>
-            <span class="product-desc-close"><i class="fa fa-times"></i></span>
-          </div>
-        </div>
-      </div>
-      <!-- end of single product -->
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-1.webp" class="product-img img" alt="${name}" />
-          </div>
-
           <footer>
-            <p class="product-name">Гель для миття та очищення унітазів, раковин, кахельних та керамічних поверхонь</p>
+            <p class="product-name">
+              Засіб для миття та очищення ванних кімнат, душових кабінок, кранів
+            </p>
+            <p class="product-capacity">
+              Об&#39;єм: 500мл (з розпилювачем), 5л
+            </p>
+            <p class="product-price">Ціна: 34.00грн, 198.00грн</p>
+            <span class="product-desc-info">опис товару...</span>
+          </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal">
+              <p>
+                Очищає від вапняного та мильного нальоту, іржі та бруду
+                акрилові, емальовані, керамічні, хромовані, нержавіючі,
+                пластикові, скляні поверхні та крани. Склад: Вода підготовлена
+                ​​&gt; 30%, ортофосфорна кислота, органічні кислоти від 2 до 5
+                %, ПАР &lt;5%, віддушка, барвник &lt;0,2%. Нанести засіб на
+                забруднену поверхню, потерти щіткою і змити водою. Для видалення
+                стійкого бруду або плям іржі витримати засіб на поверхні 5-10
+                хв, потерти щіткою і змити водою.
+              </p>
+              <span class="product-desc-close"
+                ><i class="fa fa-times"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+        <!-- end single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-15.webp"
+                class="product-img img"
+                alt=" Засіб для видалення забруднень каналізаційних труб та сифонів."
+              />
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">
+              Засіб для видалення забруднень каналізаційних труб та сифонів
+            </p>
+            <p class="product-capacity">Об&#39;єм: 1 л, 5л</p>
+            <p class="product-price">Ціна: 44.50 грн, 143.50 грн</p>
+            <span class="product-desc-info">опис товару...</span>
+          </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal">
+              <p>
+                Використовується для очищення каналізаційних труб, сифонів
+                кухонних мийок та ванн, видалення жирових та білкових
+                забруднень, волосся, залишків їжі, знищення неприємного запаху.
+                Залити 200-250 мл засобу в зливний отвір раковини або ванни (для
+                унітазу - 500 мл) і залишити на 4 години, краще на ніч. Після
+                цього промити велику кількість гарячої води. Для профілактики
+                рекомендується застосовувати не рідше ніж раз на місяць. Заходи
+                безпеки: Засіб містить їдкий луг, не рекомендується змішувати
+                його з іншими засобами. Боїться нагріву. Засіб необхідно
+                зберігати ретельно закритим у вертикальному положенні у місцях,
+                недоступних дітям. При попаданні в очі чи на шкіру - ретельно
+                промити водою. Обов&#39;язково використовуйте гумові рукавички
+                під час роботи з цим продуктом.
+              </p>
+              <span class="product-desc-close"
+                ><i class="fa fa-times"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+        <!-- end of single product -->
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-3.webp"
+                class="product-img img"
+                alt="Засіб для видалення жиру, нагару та кіптяви"
+              />
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">
+              Засіб для видалення жиру, нагару та кіптяви
+            </p>
+            <p class="product-capacity">Об&#39;єм: 500мл</p>
+            <p class="product-price">Ціна: 26.00 грн.</p>
+            <span class="product-desc-info">опис товару...</span>
+          </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal">
+              <p>
+                Спосіб застосування: перед застосуванням вміст пляшки збовтати,
+                нанести на поверхню на 5-10 хв. Сильно забруднені місця протерти
+                губкою. Змити водою. Ідеально підходить для миття застарілих
+                забруднень. Для очищення фритюрниць залити гарячу воду вище за
+                рівень олії, додати 100-200 мл засобу на кожен літр води,
+                залишити на 1-2 години, після чого воду злити, поверхню очистити
+                щіткою та ретельно промити проточною водою. Не застосовувати
+                засіб для обробки алюмінієвих, емальованих, скляних та
+                лакофарбових поверхонь! Під час роботи використовувати гумові
+                рукавички.
+              </p>
+              <span class="product-desc-close"
+                ><i class="fa fa-times"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+        <!-- end of single product -->
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-11.webp"
+                class="product-img img"
+                alt="Засіб для видалення жиру, нагару та кіптяви"
+              />
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">
+              Засіб для видалення жиру, нагару та кіптяви
+            </p>
+            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <p class="product-price">Ціна: 186.00 грн</p>
+            <span class="product-desc-info">опис товару...</span>
+          </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal">
+              <p>
+                Спосіб застосування: перед застосуванням вміст пляшки збовтати,
+                нанести на поверхню на 5-10 хв. Сильно забруднені місця протерти
+                губкою. Змити водою. Ідеально підходить для миття застарілих
+                забруднень. Для очищення фритюрниць залити гарячу воду вище за
+                рівень олії, додати 100-200 мл засобу на кожен літр води,
+                залишити на 1-2 години, після чого воду злити, поверхню очистити
+                щіткою та ретельно промити проточною водою. Не застосовувати
+                засіб для обробки алюмінієвих, емальованих, скляних та
+                лакофарбових поверхонь! Під час роботи використовувати гумові
+                рукавички.
+              </p>
+              <span class="product-desc-close"
+                ><i class="fa fa-times"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+        <!-- end of single product -->
+
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-16.webp"
+                class="product-img img"
+                alt="Засіб для миття підлоги та інших поверхонь"
+              />
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">
+              Засіб для миття підлоги та інших поверхонь
+            </p>
+            <p class="product-capacity">Об&#39;єм: 1л</p>
+            <p class="product-price">Ціна: 42.00 грн</p>
+            <span class="product-desc-info">опис товару...</span>
+          </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal">
+              <p>
+                Використовується для миття підлоги з лінолеуму, сильно
+                забруднених поверхонь з мармуру (підлоги, стін, фасадів будівель
+                та ін.), наливної підлоги, керамічної плитки та інших поверхонь
+                за допомогою спеціального обладнання або ручного миття. Спосіб
+                застосування: Розчинити в 50-100 мл засобу в 5-6л води. За
+                допомогою губки, тканини і т.п. помити забруднену поверхню. У
+                разі сильно забруднених поверхонь використовувати нерозбавлену,
+                ретельно потерти поверхню і промити водою. Засіб замерзає, після
+                розморожування зберігає свої властивості. Запобігати впливу
+                прямих сонячних променів, зберігати у сухих вентильованих
+                приміщеннях при температурі від мінус 5° до +30°
+              </p>
+              <span class="product-desc-close"
+                ><i class="fa fa-times"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+        <!-- end of single product -->
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-10.webp"
+                class="product-img img"
+                alt="Засіб для миття підлоги та інших поверхонь"
+              />
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">
+              Засіб для миття підлоги та інших поверхонь
+            </p>
+            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <p class="product-price">Ціна: 143.50грн</p>
+            <span class="product-desc-info">опис товару...</span>
+          </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal">
+              <p>
+                Використовується для миття підлоги з лінолеуму, сильно
+                забруднених поверхонь з мармуру (підлоги, стін, фасадів будівель
+                та ін.), наливної підлоги, керамічної плитки та інших поверхонь
+                за допомогою спеціального обладнання або ручного миття. Спосіб
+                застосування: Розчинити в 50-100 мл засобу в 5-6л води. За
+                допомогою губки, тканини і т.п. помити забруднену поверхню. У
+                разі сильно забруднених поверхонь використовувати нерозбавлену,
+                ретельно потерти поверхню і промити водою. Засіб замерзає, після
+                розморожування зберігає свої властивості. Запобігати впливу
+                прямих сонячних променів, зберігати у сухих вентильованих
+                приміщеннях при температурі від мінус 5° до +30°
+              </p>
+              <span class="product-desc-close"
+                ><i class="fa fa-times"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+        <!-- end of single product -->
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-1.webp"
+                class="product-img img"
+                alt="Гель для миття та очищення унітазів, раковин, кахельних та
+                керамічних поверхонь"
+              />
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">
+              Гель для миття та очищення унітазів, раковин, кахельних та
+              керамічних поверхонь
+            </p>
             <p class="product-capacity">Об&#39;єм: 750 мл</p>
             <p class="product-price">Ціна: 35.00 грн.</p>
             <span class="product-desc-info">опис товару...</span>
@@ -310,154 +382,173 @@
           <div class="product-desc modal">
             <div class="product-desc-text">
               <p>
-                Чудово розчиняє вапняний наліт, сечовий камінь, іржу, руйнує складні забруднення. Використовується для
-                швидкого та якісного чищення унітазів,раковин, кахельних та керамічних поверхонь.
-                Спосіб застосування: Нанести на поверхню унітазу та під обідок, потерти щіткою, змити водою. У разі
-                сильних вапняних відкладень залишити на 5-15 хвилин, потерти щіткою, змити водою.
+                Чудово розчиняє вапняний наліт, сечовий камінь, іржу, руйнує
+                складні забруднення. Використовується для швидкого та якісного
+                чищення унітазів,раковин, кахельних та керамічних поверхонь.
+                Спосіб застосування: Нанести на поверхню унітазу та під обідок,
+                потерти щіткою, змити водою. У разі сильних вапняних відкладень
+                залишити на 5-15 хвилин, потерти щіткою, змити водою.
               </p>
-              <span class="product-desc-close"><i class="fa fa-times"></i></span>
+              <span class="product-desc-close"
+                ><i class="fa fa-times"></i
+              ></span>
             </div>
-
           </div>
-      
-      <!-- end of single product -->
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-7.webp" class="product-img img" alt="${name}" />
-          </div>
-
-
         </div>
-        <footer>
-          <p class="product-name">Засіб для миття скла</p>
-          <p class="product-capacity">Об&#39;єм <span>500мл (з розпилювачем)</span>,
-            <span>500мл (без розпилювача)</span>,<span> 5л</span>
-          </p>
-          <p class="product-price">Ціна: 31.80 грн, 25.80 грн, 120.60 грн </p>
-          <span class="product-desc-info">опис товару...</span>
-        </footer>
-        <div class="product-desc">
-          <div class="product-desc-text modal">
-            <p>
-              Засіб призначений для миття скла вікон і автомобілів, дзеркал, кришталю,
-              фарфору, кахлю, кераміки, зовнішніх панелей електроприладів, а також
-              хромованих поверхонь.
-              Спосіб вживання: нанести засіб на забруднену поверхню і витерти насухо.
-              Склад: вода підготовлена ​​понад 30%, ізопропіловий спирт до 10%,розчин аміаку
-              від 0.5 до 1%, ПАР, віддушка, барвник до 0.2%.
-              Зберігати при температурі від 0°С до 30°С у сухих приміщеннях. Засіб
-              замерзає, при розморожуванні зберігає свої властивості. Уникати потрапляння
-              прямих сонячних променів.
+        <!-- end of single product -->
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-7.webp"
+                class="product-img img"
+                alt="Засіб для миття скла"
+              />
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">Засіб для миття скла</p>
+            <p class="product-capacity">
+              Об&#39;єм <span>500мл (з розпилювачем)</span>,
+              <span>500мл (без розпилювача)</span>,<span> 5л</span>
             </p>
-            <span class="product-desc-close"><i class="fa fa-times"></i></span>
+            <p class="product-price">Ціна: 31.80 грн, 25.80 грн, 120.60 грн</p>
+            <span class="product-desc-info">опис товару...</span>
+          </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal">
+              <p>
+                Засіб призначений для миття скла вікон і автомобілів, дзеркал,
+                кришталю, фарфору, кахлю, кераміки, зовнішніх панелей
+                електроприладів, а також хромованих поверхонь. Спосіб вживання:
+                нанести засіб на забруднену поверхню і витерти насухо. Склад:
+                вода підготовлена ​​понад 30%, ізопропіловий спирт до 10%,розчин
+                аміаку від 0.5 до 1%, ПАР, віддушка, барвник до 0.2%. Зберігати
+                при температурі від 0°С до 30°С у сухих приміщеннях. Засіб
+                замерзає, при розморожуванні зберігає свої властивості. Уникати
+                потрапляння прямих сонячних променів.
+              </p>
+              <span class="product-desc-close"
+                ><i class="fa fa-times"></i
+              ></span>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- end of single product -->
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-4.webp" class="product-img img" alt="${name}" />
+        <!-- end of single product -->
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-4.webp"
+                class="product-img img"
+                alt="Засіб для миття посуду з запахом яблука"
+              />
+            </div>
           </div>
-
-
+          <footer>
+            <p class="product-name">Засіб для миття посуду з запахом яблука</p>
+            <p class="product-capacity">Об&#39;єм: 500мл</p>
+            <p class="product-price">Ціна: 29.00 грн</p>
+          </footer>
         </div>
-        <footer>
-          <p class="product-name">Засіб для миття посуду з запахом яблука</p>
-          <p class="product-capacity">Об&#39;єм: 500мл</p>
-          <p class="product-price">Ціна: 29.00 грн</p>
-        </footer>
-      </div>
-      <!-- end of single product -->
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-8.webp" class="product-img img" alt="${name}" />
+        <!-- end of single product -->
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-8.webp"
+                class="product-img img"
+                alt="Засіб для миття посуду з запахом лимона"
+              />
+            </div>
           </div>
-
-
+          <footer>
+            <p class="product-name">Засіб для миття посуду з запахом лимона</p>
+            <p class="product-capacity">Об&#39;єм: 500мл</p>
+            <p class="product-price">Ціна: 29.00 грн</p>
+          </footer>
         </div>
-        <footer>
-          <p class="product-name">Засіб для миття посуду з запахом лимона</p>
-          <p class="product-capacity">Об&#39;єм: 500мл</p>
-          <p class="product-price">Ціна: 29.00 грн</p>
-        </footer>
-      </div>
-      <!-- end of single product -->
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-9.webp" class="product-img img" alt="${name}" />
+        <!-- end of single product -->
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-9.webp"
+                class="product-img img"
+                alt="Засіб для миття посуду з запахом яблука"
+              />
+            </div>
           </div>
-
-
+          <footer>
+            <p class="product-name">Засіб для миття посуду з запахом яблука</p>
+            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <p class="product-price">Ціна: 135.00грн</p>
+          </footer>
         </div>
-        <footer>
-          <p class="product-name">Засіб для миття посуду з запахом яблука</p>
-          <p class="product-capacity">Об&#39;єм: 5л</p>
-          <p class="product-price">Ціна: 135.00грн</p>
-        </footer>
-      </div>
-      <!-- end of single product -->
+        <!-- end of single product -->
 
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-12.webp" class="product-img img" alt="${name}" />
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-12.webp"
+                class="product-img img"
+                alt="Засіб для миття посуду з запахом лимона"
+              />
+            </div>
           </div>
-
-
+          <footer>
+            <p class="product-name">Засіб для миття посуду з запахом лимона</p>
+            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <p class="product-price">Ціна: 135.00 грн</p>
+          </footer>
         </div>
-        <footer>
-          <p class="product-name">Засіб для миття посуду з запахом лимона</p>
-          <p class="product-capacity">Об&#39;єм: 5л</p>
-          <p class="product-price">Ціна: 135.00 грн</p>
-        </footer>
-      </div>
-      <!-- end of single product -->
+        <!-- end of single product -->
 
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-13.webp" class="product-img img" alt="${name}" />
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-13.webp"
+                class="product-img img"
+                alt="Мило рідке морська свіжість"
+              />
+            </div>
           </div>
-
-
+          <footer>
+            <p class="product-name">Мило рідке морська свіжість</p>
+            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <p class="product-price">Ціна: 158.00 грн</p>
+          </footer>
         </div>
-        <footer>
-          <p class="product-name">Мило рідке морська свіжість </p>
-          <p class="product-capacity">Об&#39;єм: 5л</p>
-          <p class="product-price">Ціна: 158.00 грн</p>
-        </footer>
-      </div>
-      <!-- end of single product -->
-      <!-- single product -->
-      <div class="product">
-        <div class="product-container">
-          <div class="product-img-container">
-            <img src="./images/product-14.webp" class="product-img img" alt="${name}" />
+        <!-- end of single product -->
+        <!-- single product -->
+        <div class="product">
+          <div class="product-container">
+            <div class="product-img-container">
+              <img
+                src="./images/product-14.webp"
+                class="product-img img"
+                alt="Мило рідке жожоба"
+              />
+            </div>
           </div>
-
-
+          <footer>
+            <p class="product-name">Мило рідке жожоба</p>
+            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <p class="product-price">Ціна: 158.00 грн</p>
+          </footer>
         </div>
-        <footer>
-          <p class="product-name">Мило рідке жожоба </p>
-          <p class="product-capacity">Об&#39;єм: 5л</p>
-          <p class="product-price">Ціна: 158.00 грн</p>
-        </footer>
+        <!-- end of single product -->
       </div>
-      <!-- end of single product -->
-</div>
     </main>
-  <div class="overlay hidden"></div>
-  <script type="module" src="./index.js"></script>
-</body>
-
+    <div class="overlay hidden"></div>
+    <script type="module" src="./index.js"></script>
+  </body>
 </html>

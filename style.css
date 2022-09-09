@@ -58,9 +58,9 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
-html {
+/* html {
   font-size: 100%;
-}
+} */
 body {
   font-family: var(--ff-primary);
   background: var(--clr-white);
