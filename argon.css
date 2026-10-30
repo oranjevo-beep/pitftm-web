@@ -1,7 +1,9 @@
 /* Argon LAYOUT + ORIGINAL ТМ ПІФ brand blues (style.css :root) — not Argon navy/#F4F7FA */
 :root {
+  /* Controls use sampled original CTA blue #339af0 (= --clr-primary-5 / --clr-cta) */
   --brand-surface: var(--clr-grey-10);
-  --brand-primary: var(--clr-primary-5);
+  --brand-primary: #339af0;
+  --brand-primary-hover: var(--clr-primary-3);
   --brand-primary-deep: var(--clr-primary-1);
   --brand-primary-mid: var(--clr-primary-2);
   --brand-primary-soft: var(--clr-primary-10);
@@ -23,7 +25,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1002;
-  background: var(--clr-primary-2);
+  background: var(--brand-primary);
   color: var(--clr-white);
   font-size: 0.82rem;
   line-height: 1.35;
@@ -129,8 +131,8 @@ body { padding-top: 6.1rem; }
   padding: 0;
 }
 .argon-hero .hero-kicker {
-  border-color: var(--clr-primary-7);
-  color: var(--brand-primary-mid);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
   background: var(--brand-white);
 }
 .argon-hero .hero-banner h1 {
@@ -147,13 +149,13 @@ body { padding-top: 6.1rem; }
   color: var(--clr-white);
 }
 .argon-hero .hero-btn:hover {
-  background: var(--brand-primary-deep);
-  border-color: var(--brand-primary-deep);
+  background: var(--brand-primary-hover);
+  border-color: var(--brand-primary-hover);
   color: var(--clr-white);
 }
 .argon-hero .hero-btn-secondary {
   background: var(--brand-white);
-  color: var(--brand-primary-mid);
+  color: var(--brand-primary);
   border-color: var(--brand-primary);
 }
 .argon-hero .hero-btn-secondary:hover {
@@ -234,10 +236,10 @@ body { padding-top: 6.1rem; }
 }
 
 .home-trust { background: var(--brand-white); }
-.home-trust-item strong { color: var(--brand-primary-mid); }
+.home-trust-item strong { color: var(--brand-primary); }
 .home-highlights { background: var(--brand-surface); }
 .home-card { border-color: var(--brand-line); }
-.home-card h3 { color: var(--brand-primary-mid); }
+.home-card h3 { color: var(--brand-primary); }
 .home-card-link { color: var(--brand-primary); }
 .home-card-link:hover { color: var(--brand-primary-deep); }
 
@@ -288,7 +290,7 @@ body { padding-top: 6.1rem; }
   padding: 0.15rem 0.55rem;
   border-radius: 999px;
   background: var(--brand-primary-soft);
-  color: var(--brand-primary-mid);
+  color: var(--brand-primary);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -317,7 +319,7 @@ body { padding-top: 6.1rem; }
   font-size: 0.75rem;
   font-weight: 600;
 }
-.product-price-main { color: var(--brand-primary-deep); }
+.product-price-main { color: var(--brand-primary); }
 .product-capacity { display: none; }
 
 .product-desc-panel { background: var(--brand-surface); border-color: var(--brand-line); }
@@ -334,7 +336,7 @@ body { padding-top: 6.1rem; }
   padding: 0.55rem 0.7rem;
   border: 0;
   background: var(--brand-white);
-  color: var(--brand-primary-deep);
+  color: var(--brand-primary);
   font-weight: 700;
   font-size: 0.86rem;
   cursor: pointer;
@@ -371,7 +373,7 @@ body { padding-top: 6.1rem; }
   background: var(--clr-grey-10);
   border-top: 1px solid var(--brand-line);
 }
-.site-footer-heading { color: var(--brand-primary-mid); }
+.site-footer-heading { color: var(--brand-primary); }
 .site-footer-links a:hover { color: var(--brand-primary); }
 .site-footer-logo {
   width: auto !important;
@@ -390,10 +392,26 @@ body { padding-top: 6.1rem; }
 .btn {
   background: var(--brand-primary);
   border-color: var(--brand-primary);
+  color: var(--clr-white);
 }
 .btn:hover {
-  background: var(--clr-primary-8);
+  background: var(--brand-primary-hover);
+  border-color: var(--brand-primary-hover);
+  color: var(--clr-white);
+}
+.btn-outline,
+.hero-btn-secondary,
+a.btn.hero-btn-secondary {
+  background: var(--brand-white);
+  color: var(--brand-primary);
+  border: 2px solid var(--brand-primary);
+}
+.btn-outline:hover,
+.hero-btn-secondary:hover,
+a.btn.hero-btn-secondary:hover {
+  background: var(--brand-primary-soft);
   color: var(--brand-primary-deep);
+  border-color: var(--brand-primary);
 }
 
 @media screen and (min-width: 768px) {

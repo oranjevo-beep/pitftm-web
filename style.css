@@ -17,8 +17,9 @@ Variables
   --clr-primary-2: #1f5c90;
   --clr-primary-3: #246ca8;
   --clr-primary-4: #2e8bd8;
-  /* primary/main color */
+  /* primary/main color — sampled from original «Перейти до продукції» CTA */
   --clr-primary-5: #339af0;
+  --clr-cta: #339af0;
   /* lighter shades of primary color */
   --clr-primary-6: #47a4f2;
   --clr-primary-7: #5caef3;
@@ -177,8 +178,9 @@ p {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .btn:hover {
-  color: var(--clr-primary-1);
-  background: var(--clr-primary-8);
+  color: var(--clr-white);
+  background: var(--clr-primary-3);
+  border-color: var(--clr-primary-3);
 }
 
 /*
