@@ -1,0 +1,4 @@
+{
+  "password": "changeme",
+  "note": "Change the password before relying on this gate. Edit this file on GitHub (main) and push. This is a light client-side check only — not strong security."
+}

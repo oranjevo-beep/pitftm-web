@@ -40,9 +40,9 @@
         <!-- nav header -->
         <div class="nav-header">
           <a href="index.html">
-            <img class="nav-logo" src="./images/logo-slide.png" alt="logo" />
+            <img class="nav-logo" src="./images/logo-slide.png" alt="ПІФ — логотип" />
           </a>
-          <button type="button" class="nav-toggle" id="nav-toggle">
+          <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="nav-links">
             <i class="fas fa-bars"></i>
           </button>
         </div>
@@ -98,14 +98,51 @@
     <!-- hero -->
     <section class="hero">
       <div class="hero-banner">
-        <h1>побутова хімія піф</h1>
-        <p>виробник побутової хімії в Україні з 2005 року</p>
-        <a href="products.html" class="btn hero-btn scroll-link"
-          >наша продукція</a
-        >
+        <p class="hero-kicker">ТМ «ПІФ»</p>
+        <h1>Побутова хімія для дому та бізнесу</h1>
+        <p>
+          Виробник якісних мийних і чистячих засобів в Україні з 2005 року.
+          Доступна ціна, перевірені рецептури, зручні фасування.
+        </p>
+        <div class="hero-actions">
+          <a href="products.html" class="btn hero-btn">Наша продукція</a>
+          <a href="about.html" class="btn hero-btn hero-btn-secondary">Про компанію</a>
+        </div>
       </div>
     </section>
     <!-- end of hero -->
+
+    <!-- highlights -->
+    <section class="section home-highlights" aria-label="Переваги">
+      <div class="section-center home-highlights-grid">
+        <article class="home-card">
+          <h3>З 2005 року</h3>
+          <p>
+            Власне виробництво в Україні та стабільна якість для дому,
+            офісів і закладів.
+          </p>
+        </article>
+        <article class="home-card">
+          <h3>Широкий асортимент</h3>
+          <p>
+            Засоби для сантехніки, посуду, підлоги, скла, а також рідке мило —
+            у зручних обсягах.
+          </p>
+        </article>
+        <article class="home-card">
+          <h3>Легко зв’язатися</h3>
+          <p>
+            Телефон, WhatsApp або e-mail — підкажемо по фасуваннях і доставці.
+          </p>
+          <a class="home-card-link" href="contacts.html">Контакти →</a>
+        </article>
+      </div>
+      <div class="section-center home-cta-band">
+        <p>Ознайомтеся з актуальним каталогом і цінами.</p>
+        <a href="products.html" class="btn">Перейти до продукції</a>
+      </div>
+    </section>
+    <!-- end of highlights -->
 
     <!-- footer -->
     <footer class="section footer">

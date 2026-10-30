@@ -1,26 +1,37 @@
 /**
  * In-browser price editor for static GitHub Pages.
- * Edits stay local (draft in localStorage); export/download products.json
- * for the owner to commit on GitHub. No backend.
+ * Password gate reads editor-config.json (client-side only).
+ * Edits stay local; export/download products.json for GitHub.
  */
 (function () {
   if (!window.PifPrices) return;
   if (!document.getElementById('price-editor')) return;
 
+  const SESSION_KEY = 'pif-editor-unlocked';
   const api = window.PifPrices;
   const panel = document.getElementById('price-editor');
   const listEl = document.getElementById('price-editor-list');
   const statusEl = document.getElementById('price-editor-status');
   const openBtn = document.getElementById('price-editor-open');
+  const unlockOpenBtn = document.getElementById('price-editor-unlock-open');
   const closeBtn = document.getElementById('price-editor-close');
   const downloadBtn = document.getElementById('price-editor-download');
   const copyBtn = document.getElementById('price-editor-copy');
   const saveDraftBtn = document.getElementById('price-editor-save-draft');
   const clearDraftBtn = document.getElementById('price-editor-clear-draft');
   const backdrop = document.getElementById('price-editor-backdrop');
+  const gate = document.getElementById('price-editor-gate');
+  const gateForm = document.getElementById('price-editor-gate-form');
+  const gateInput = document.getElementById('price-editor-password');
+  const gateError = document.getElementById('price-editor-gate-error');
+  const gateCancel = document.getElementById('price-editor-gate-cancel');
+  const logoutBtn = document.getElementById('price-editor-logout');
 
-  let working = null; // deep copy being edited
+  let working = null;
   let remoteBaseline = null;
+  let expectedPassword = null;
+  let lastEditorTrigger = null;
+  let configLoaded = null;
 
   function setStatus(msg, kind) {
     if (!statusEl) return;
@@ -30,6 +41,97 @@
 
   function deepClone(obj) {
     return JSON.parse(JSON.stringify(obj));
+  }
+
+  function isUnlocked() {
+    return sessionStorage.getItem(SESSION_KEY) === '1';
+  }
+
+  function setUnlocked(value) {
+    if (value) sessionStorage.setItem(SESSION_KEY, '1');
+    else sessionStorage.removeItem(SESSION_KEY);
+  }
+
+  function updateChrome() {
+    const unlocked = isUnlocked();
+    const toolbar = document.getElementById('price-editor-toolbar');
+    if (toolbar) toolbar.hidden = !unlocked;
+    if (openBtn) openBtn.hidden = !unlocked;
+    if (logoutBtn) logoutBtn.hidden = !unlocked;
+    // Discreet login control is for visitors only
+    if (unlockOpenBtn) unlockOpenBtn.hidden = unlocked;
+    const discreet = document.querySelector('.price-editor-discreet');
+    if (discreet) discreet.hidden = unlocked;
+    const unlockedHint = document.getElementById('price-editor-unlocked-hint');
+    if (unlockedHint) unlockedHint.hidden = !unlocked;
+  }
+
+  function loadConfig() {
+    if (configLoaded) return configLoaded;
+    configLoaded = fetch('./editor-config.json', { cache: 'no-cache' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('editor-config HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (cfg) {
+        expectedPassword = cfg && typeof cfg.password === 'string' ? cfg.password : '';
+        return cfg;
+      });
+    return configLoaded;
+  }
+
+  function getFocusable(root) {
+    return Array.from(
+      root.querySelectorAll(
+        'button:not([disabled]):not([hidden]), [href], input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter(function (el) {
+      return !el.closest('[hidden]') && (el.offsetParent !== null || el === document.activeElement);
+    });
+  }
+
+  function trapFocus(e, root) {
+    if (e.key !== 'Tab' || !root) return;
+    const focusable = getFocusable(root);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
+  function openGate() {
+    if (!gate) return;
+    lastEditorTrigger = document.activeElement;
+    gate.classList.add('is-open');
+    gate.setAttribute('aria-hidden', 'false');
+    if (backdrop) backdrop.classList.remove('hidden');
+    document.body.classList.add('price-editor-open');
+    if (gateError) gateError.textContent = '';
+    if (gateInput) {
+      gateInput.value = '';
+      window.setTimeout(function () {
+        gateInput.focus();
+      }, 0);
+    }
+  }
+
+  function closeGate(restoreFocus) {
+    if (!gate) return;
+    gate.classList.remove('is-open');
+    gate.setAttribute('aria-hidden', 'true');
+    if (backdrop && !panel.classList.contains('is-open')) {
+      backdrop.classList.add('hidden');
+      document.body.classList.remove('price-editor-open');
+    }
+    if (restoreFocus !== false && lastEditorTrigger && lastEditorTrigger.focus) {
+      lastEditorTrigger.focus();
+    }
   }
 
   function normalizePrice(value) {
@@ -78,7 +180,7 @@
         row.className = 'price-editor-row';
         const lab = document.createElement('span');
         lab.className = 'price-editor-size';
-        lab.textContent = size.label || 'Об\'єм ' + (idx + 1);
+        lab.textContent = size.label || "Об'єм " + (idx + 1);
         const input = document.createElement('input');
         input.type = 'text';
         input.inputMode = 'decimal';
@@ -117,6 +219,11 @@
   }
 
   function openEditor() {
+    if (!isUnlocked()) {
+      openGate();
+      return;
+    }
+    lastEditorTrigger = document.activeElement;
     const current = api.getProducts();
     const start = function (products, fromDraft, remote) {
       remoteBaseline = remote || products;
@@ -132,6 +239,9 @@
           : 'Редагуйте ціни, потім завантажте products.json і замініть файл у репозиторії.',
         fromDraft ? 'warn' : 'info'
       );
+      window.setTimeout(function () {
+        if (closeBtn) closeBtn.focus();
+      }, 0);
     };
 
     if (current) {
@@ -149,11 +259,16 @@
       });
   }
 
-  function closeEditor() {
+  function closeEditor(restoreFocus) {
     panel.classList.remove('is-open');
     panel.setAttribute('aria-hidden', 'true');
-    if (backdrop) backdrop.classList.add('hidden');
-    document.body.classList.remove('price-editor-open');
+    if (backdrop && !(gate && gate.classList.contains('is-open'))) {
+      backdrop.classList.add('hidden');
+      document.body.classList.remove('price-editor-open');
+    }
+    if (restoreFocus !== false && lastEditorTrigger && lastEditorTrigger.focus) {
+      lastEditorTrigger.focus();
+    }
   }
 
   function exportJsonText() {
@@ -221,9 +336,47 @@
     return ok;
   }
 
+  function tryUnlock(event) {
+    if (event) event.preventDefault();
+    loadConfig()
+      .then(function () {
+        const entered = gateInput ? gateInput.value : '';
+        if (!expectedPassword || entered !== expectedPassword) {
+          if (gateError) gateError.textContent = 'Невірний пароль. Спробуйте ще раз.';
+          if (gateInput) gateInput.focus();
+          return;
+        }
+        setUnlocked(true);
+        updateChrome();
+        closeGate(false);
+        openEditor();
+      })
+      .catch(function () {
+        if (gateError) {
+          gateError.textContent = 'Не вдалося перевірити пароль (editor-config.json).';
+        }
+      });
+  }
+
   if (openBtn) openBtn.addEventListener('click', openEditor);
-  if (closeBtn) closeBtn.addEventListener('click', closeEditor);
-  if (backdrop) backdrop.addEventListener('click', closeEditor);
+  if (unlockOpenBtn) {
+    unlockOpenBtn.addEventListener('click', function () {
+      loadConfig()
+        .then(openGate)
+        .catch(function () {
+          alert('Не вдалося завантажити editor-config.json');
+        });
+    });
+  }
+  if (gateForm) gateForm.addEventListener('submit', tryUnlock);
+  if (gateCancel) gateCancel.addEventListener('click', function () { closeGate(true); });
+  if (closeBtn) closeBtn.addEventListener('click', function () { closeEditor(true); });
+  if (backdrop) {
+    backdrop.addEventListener('click', function () {
+      if (gate && gate.classList.contains('is-open')) closeGate(true);
+      else if (panel.classList.contains('is-open')) closeEditor(true);
+    });
+  }
   if (downloadBtn) downloadBtn.addEventListener('click', downloadJson);
   if (copyBtn) copyBtn.addEventListener('click', copyJson);
   if (saveDraftBtn) {
@@ -254,8 +407,46 @@
         });
     });
   }
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', function () {
+      setUnlocked(false);
+      closeEditor(false);
+      closeGate(false);
+      updateChrome();
+      if (unlockOpenBtn) unlockOpenBtn.focus();
+    });
+  }
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && panel.classList.contains('is-open')) closeEditor();
+    if (e.key === 'Escape') {
+      if (gate && gate.classList.contains('is-open')) {
+        e.preventDefault();
+        closeGate(true);
+        return;
+      }
+      if (panel.classList.contains('is-open')) {
+        e.preventDefault();
+        closeEditor(true);
+      }
+      return;
+    }
+    if (gate && gate.classList.contains('is-open')) trapFocus(e, gate);
+    else if (panel.classList.contains('is-open')) trapFocus(e, panel);
   });
+
+  function maybeOpenFromSecret() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var hash = (window.location.hash || '').toLowerCase();
+      if (params.get('edit') === '1' || hash === '#edit' || hash === '#editor') {
+        if (isUnlocked()) openEditor();
+        else openGate();
+      }
+    } catch (e) {}
+  }
+
+  updateChrome();
+  loadConfig().catch(function () {});
+  maybeOpenFromSecret();
+  window.addEventListener('hashchange', maybeOpenFromSecret);
 })();

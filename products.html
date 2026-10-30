@@ -43,9 +43,9 @@
           <!-- nav header -->
           <div class="nav-header">
             <a href="index.html">
-              <img class="nav-logo" src="./images/logo-slide.png" alt="logo" />
+              <img class="nav-logo" src="./images/logo-slide.png" alt="ПІФ — логотип" />
             </a>
-            <button type="button" class="nav-toggle" id="nav-toggle">
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="nav-links">
               <i class="fas fa-bars"></i>
             </button>
           </div>
@@ -108,12 +108,15 @@
       </div>
     </section>
     <!-- end of hero -->
-    <!-- price editor toolbar -->
-    <div class="products-toolbar section-center">
+    <!-- owner toolbar: hidden until password unlock -->
+    <div class="products-toolbar section-center" id="price-editor-toolbar" hidden>
       <button type="button" class="btn price-editor-open-btn" id="price-editor-open">
         Редагувати ціни
       </button>
-      <p class="products-toolbar-hint">
+      <button type="button" class="btn btn-outline" id="price-editor-logout">
+        Вийти
+      </button>
+      <p class="products-toolbar-hint" id="price-editor-unlocked-hint">
         Ціни беруться з <code>products.json</code>. Редактор лише допомагає оновити файл для GitHub.
       </p>
     </div>
@@ -141,10 +144,10 @@
               Об&#39;єм: 500мл (з розпилювачем), 5л
             </p>
             <p class="product-price" data-product-id="p01"></p>
-            <span class="product-desc-info">опис товару...</span>
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
           <div class="product-desc">
-            <div class="product-desc-text modal">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
               <h5>
                 Засіб для миття та очищення ванних кімнат, душових кабінок,
                 кранів
@@ -159,9 +162,7 @@
                 стійкого бруду або плям іржі витримати засіб на поверхні 5-10
                 хв, потерти щіткою і змити водою.
               </p>
-              <span class="product-desc-close"
-                ><i class="fa fa-times"></i
-              ></span>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -182,11 +183,11 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 1 л, 5л</p>
             <p class="product-price" data-product-id="p02"></p>
-            <span class="product-desc-info">опис товару...</span>
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
           <div class="product-desc">
-            <div class="product-desc-text modal">
-              <h5>Засіб для видалення жиру, нагару та кіптяви</h5>
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
+              <h5>Засіб для видалення забруднень каналізаційних труб та сифонів</h5>
               <p>
                 Використовується для очищення каналізаційних труб, сифонів
                 кухонних мийок та ванн, видалення жирових та білкових
@@ -202,9 +203,7 @@
                 промити водою. Обов&#39;язково використовуйте гумові рукавички
                 під час роботи з цим продуктом.
               </p>
-              <span class="product-desc-close"
-                ><i class="fa fa-times"></i
-              ></span>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -226,10 +225,10 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 500мл</p>
             <p class="product-price" data-product-id="p03"></p>
-            <span class="product-desc-info">опис товару...</span>
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
           <div class="product-desc">
-            <div class="product-desc-text modal">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
               <h5>Засіб для видалення жиру, нагару та кіптяви</h5>
               <p>
                 Спосіб застосування: перед застосуванням вміст пляшки збовтати,
@@ -243,9 +242,7 @@
                 лакофарбових поверхонь! Під час роботи використовувати гумові
                 рукавички.
               </p>
-              <span class="product-desc-close"
-                ><i class="fa fa-times"></i
-              ></span>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -267,10 +264,10 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 5л</p>
             <p class="product-price" data-product-id="p04"></p>
-            <span class="product-desc-info">опис товару...</span>
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
           <div class="product-desc">
-            <div class="product-desc-text modal">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
               <h5>Засіб для видалення жиру, нагару та кіптяви</h5>
               <p>
                 Спосіб застосування: перед застосуванням вміст пляшки збовтати,
@@ -284,9 +281,7 @@
                 лакофарбових поверхонь! Під час роботи використовувати гумові
                 рукавички.
               </p>
-              <span class="product-desc-close"
-                ><i class="fa fa-times"></i
-              ></span>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -309,10 +304,10 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 1л</p>
             <p class="product-price" data-product-id="p05"></p>
-            <span class="product-desc-info">опис товару...</span>
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
           <div class="product-desc">
-            <div class="product-desc-text modal">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
               <h5>Засіб для миття підлоги та інших поверхонь</h5>
               <p>
                 Використовується для миття підлоги з лінолеуму, сильно
@@ -327,9 +322,7 @@
                 прямих сонячних променів, зберігати у сухих вентильованих
                 приміщеннях при температурі від мінус 5° до +30°
               </p>
-              <span class="product-desc-close"
-                ><i class="fa fa-times"></i
-              ></span>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -351,10 +344,10 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 5л</p>
             <p class="product-price" data-product-id="p06"></p>
-            <span class="product-desc-info">опис товару...</span>
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
           <div class="product-desc">
-            <div class="product-desc-text modal">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
               <h5>Засіб для миття підлоги та інших поверхонь</h5>
               <p>
                 Використовується для миття підлоги з лінолеуму, сильно
@@ -369,9 +362,7 @@
                 прямих сонячних променів, зберігати у сухих вентильованих
                 приміщеннях при температурі від мінус 5° до +30°
               </p>
-              <span class="product-desc-close"
-                ><i class="fa fa-times"></i
-              ></span>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -395,9 +386,9 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 750 мл</p>
             <p class="product-price" data-product-id="p07"></p>
-            <span class="product-desc-info">опис товару...</span>
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
-          <div class="product-desc modal">
+          <div class="product-desc modal" aria-hidden="true" tabindex="-1">
             <div class="product-desc-text">
               <h5>
                 Гель для миття та очищення унітазів, раковин, кахельних та
@@ -411,9 +402,7 @@
                 потерти щіткою, змити водою. У разі сильних вапняних відкладень
                 залишити на 5-15 хвилин, потерти щіткою, змити водою.
               </p>
-              <span class="product-desc-close"
-                ><i class="fa fa-times"></i
-              ></span>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -436,10 +425,10 @@
               <span>500мл (без розпилювача)</span>,<span> 5л</span>
             </p>
             <p class="product-price" data-product-id="p08"></p>
-            <span class="product-desc-info">опис товару...</span>
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
           <div class="product-desc">
-            <div class="product-desc-text modal">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
               <h5>Засіб для миття скла</h5>
               <p>
                 Засіб призначений для миття скла вікон і автомобілів, дзеркал,
@@ -452,9 +441,7 @@
                 замерзає, при розморожуванні зберігає свої властивості. Уникати
                 потрапляння прямих сонячних променів.
               </p>
-              <span class="product-desc-close"
-                ><i class="fa fa-times"></i
-              ></span>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
@@ -476,7 +463,19 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 500мл</p>
             <p class="product-price" data-product-id="p09"></p>
+            
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
+              <h5>Засіб для миття посуду з запахом яблука</h5>
+              <p>
+                Засіб для ручного миття посуду з приємним ароматом яблука. Добре піниться, ефективно видаляє жир і залишки їжі, легко змивається водою. Підходить для щоденного використання. Нанести на губку або розчинити у воді, вимити посуд і ретельно промити. Зберігати в недоступному для дітей місці.
+              </p>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        
         </div>
         <!-- end of single product -->
         <!-- single product -->
@@ -496,7 +495,19 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 500мл</p>
             <p class="product-price" data-product-id="p10"></p>
+            
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
+              <h5>Засіб для миття посуду з запахом лимона</h5>
+              <p>
+                Засіб для ручного миття посуду з ароматом лимона. Ефективно розчиняє жир, надає свіжість, підходить для тарілок, каструль і кухонного приладдя. Нанести на вологу губку або розвести у воді, вимити посуд і змити чистою водою. Уникати потрапляння в очі.
+              </p>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        
         </div>
         <!-- end of single product -->
         <!-- single product -->
@@ -516,7 +527,19 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 5л</p>
             <p class="product-price" data-product-id="p11"></p>
+            
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
+              <h5>Засіб для миття посуду з запахом яблука</h5>
+              <p>
+                Концентрований засіб для миття посуду з запахом яблука у великій тарі 5 л — зручно для закладів харчування та інтенсивного використання. Економна витрата: невелику кількість засобу розчинити у воді або нанести на губку. Після миття ретельно промити посуд водою.
+              </p>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        
         </div>
         <!-- end of single product -->
 
@@ -537,7 +560,19 @@
             </h5>
             <p class="product-capacity">Об&#39;єм: 5л</p>
             <p class="product-price" data-product-id="p12"></p>
+            
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
+              <h5>Засіб для миття посуду з запахом лимона</h5>
+              <p>
+                Концентрований засіб для миття посуду з запахом лимона у тарі 5 л. Добре справляється із жирними забрудненнями, підходить для професійного та домашнього використання. Розчинити у воді або нанести на губку, вимити посуд і промити. Зберігати щільно закритим.
+              </p>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        
         </div>
         <!-- end of single product -->
 
@@ -556,7 +591,19 @@
             <h5 class="product-name">Мило рідке морська свіжість</h5>
             <p class="product-capacity">Об&#39;єм: 5л</p>
             <p class="product-price" data-product-id="p13"></p>
+            
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
+              <h5>Мило рідке морська свіжість</h5>
+              <p>
+                Рідке мило «Морська свіжість» для миття рук. Ніжно очищує шкіру, має свіжий аромат, підходить для дозаторів і щоденного використання вдома чи на роботі. Нанести невелику кількість на вологі руки, спінити і змити водою.
+              </p>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        
         </div>
         <!-- end of single product -->
         <!-- single product -->
@@ -574,16 +621,66 @@
             <h5 class="product-name">Мило рідке жожоба</h5>
             <p class="product-capacity">Об&#39;єм: 5л</p>
             <p class="product-price" data-product-id="p14"></p>
+            
+            <button type="button" class="product-desc-info">опис товару...</button>
           </footer>
+          <div class="product-desc">
+            <div class="product-desc-text modal" aria-hidden="true" tabindex="-1">
+              <h5>Мило рідке жожоба</h5>
+              <p>
+                Рідке мило з екстрактом жожоба для догляду за руками. М’яко очищує, допомагає зменшити відчуття сухості після миття, має приємний аромат. Нанести на вологі руки, спінити і ретельно змити водою. Для зовнішнього застосування.
+              </p>
+              <button type="button" class="product-desc-close" aria-label="Закрити опис"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        
         </div>
         <!-- end of single product -->
       </div>
     </main>
 
+    <p class="price-editor-discreet">
+      <button type="button" class="price-editor-discreet-login" id="price-editor-unlock-open" aria-label="Увійти">
+        Увійти
+      </button>
+    </p>
+
+    
+    <div
+      id="price-editor-gate"
+      class="price-editor-gate"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="price-editor-gate-title"
+    >
+      <form id="price-editor-gate-form" class="price-editor-gate-card">
+        <h3 id="price-editor-gate-title">Вхід до редактора цін</h3>
+        <p class="price-editor-gate-text">
+          Введіть пароль власника.
+        </p>
+        <label class="price-editor-gate-label" for="price-editor-password">Пароль</label>
+        <input
+          id="price-editor-password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          required
+        />
+        <p id="price-editor-gate-error" class="price-editor-gate-error" role="alert"></p>
+        <div class="price-editor-gate-actions">
+          <button type="submit" class="btn">Увійти</button>
+          <button type="button" class="btn btn-outline" id="price-editor-gate-cancel">Скасувати</button>
+        </div>
+      </form>
+    </div>
+
     <div id="price-editor-backdrop" class="price-editor-backdrop hidden"></div>
     <aside
       id="price-editor"
       class="price-editor"
+      role="dialog"
+      aria-modal="true"
       aria-hidden="true"
       aria-labelledby="price-editor-heading"
     >
