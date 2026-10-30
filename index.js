@@ -7,7 +7,8 @@ let lastModalTrigger = null;
 
 if (toggleNav && navLinks) {
   toggleNav.addEventListener('click', () => {
-    navLinks.classList.toggle('show-links');
+    const open = navLinks.classList.toggle('show-links');
+    toggleNav.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 }
 

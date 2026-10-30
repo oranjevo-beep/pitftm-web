@@ -43,9 +43,9 @@
           <!-- nav header -->
           <div class="nav-header">
             <a href="index.html">
-              <img class="nav-logo" src="./images/logo-slide.png" alt="logo" />
+              <img class="nav-logo" src="./images/logo-slide.png" alt="ПІФ — логотип" />
             </a>
-            <button type="button" class="nav-toggle" id="nav-toggle">
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="nav-links">
               <i class="fas fa-bars"></i>
             </button>
           </div>
@@ -108,22 +108,15 @@
       </div>
     </section>
     <!-- end of hero -->
-    <!-- price editor toolbar -->
-    <div class="products-toolbar section-center">
-      <button type="button" class="btn btn-outline price-editor-unlock-btn" id="price-editor-unlock-open">
-        Увійти до редактора
-      </button>
-      <button type="button" class="btn price-editor-open-btn" id="price-editor-open" hidden>
+    <!-- owner toolbar: hidden until password unlock -->
+    <div class="products-toolbar section-center" id="price-editor-toolbar" hidden>
+      <button type="button" class="btn price-editor-open-btn" id="price-editor-open">
         Редагувати ціни
       </button>
-      <button type="button" class="btn btn-outline" id="price-editor-logout" hidden>
+      <button type="button" class="btn btn-outline" id="price-editor-logout">
         Вийти
       </button>
-      <p class="products-toolbar-hint" id="price-editor-lock-hint">
-        Редактор цін захищено паролем (файл <code>editor-config.json</code>).
-        Відвідувачі бачать лише опубліковані ціни з <code>products.json</code>.
-      </p>
-      <p class="products-toolbar-hint" hidden id="price-editor-unlocked-hint">
+      <p class="products-toolbar-hint" id="price-editor-unlocked-hint">
         Ціни беруться з <code>products.json</code>. Редактор лише допомагає оновити файл для GitHub.
       </p>
     </div>
@@ -646,6 +639,12 @@
       </div>
     </main>
 
+    <p class="price-editor-discreet">
+      <button type="button" class="price-editor-discreet-login" id="price-editor-unlock-open" aria-label="Увійти">
+        Увійти
+      </button>
+    </p>
+
     
     <div
       id="price-editor-gate"
@@ -658,7 +657,7 @@
       <form id="price-editor-gate-form" class="price-editor-gate-card">
         <h3 id="price-editor-gate-title">Вхід до редактора цін</h3>
         <p class="price-editor-gate-text">
-          Введіть пароль із файлу <code>editor-config.json</code>.
+          Введіть пароль власника.
         </p>
         <label class="price-editor-gate-label" for="price-editor-password">Пароль</label>
         <input

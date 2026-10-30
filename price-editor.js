@@ -54,11 +54,14 @@
 
   function updateChrome() {
     const unlocked = isUnlocked();
+    const toolbar = document.getElementById('price-editor-toolbar');
+    if (toolbar) toolbar.hidden = !unlocked;
     if (openBtn) openBtn.hidden = !unlocked;
-    if (unlockOpenBtn) unlockOpenBtn.hidden = unlocked;
     if (logoutBtn) logoutBtn.hidden = !unlocked;
-    const hint = document.getElementById('price-editor-lock-hint');
-    if (hint) hint.hidden = unlocked;
+    // Discreet login control is for visitors only
+    if (unlockOpenBtn) unlockOpenBtn.hidden = unlocked;
+    const discreet = document.querySelector('.price-editor-discreet');
+    if (discreet) discreet.hidden = unlocked;
     const unlockedHint = document.getElementById('price-editor-unlocked-hint');
     if (unlockedHint) unlockedHint.hidden = !unlocked;
   }
@@ -431,7 +434,19 @@
     else if (panel.classList.contains('is-open')) trapFocus(e, panel);
   });
 
+  function maybeOpenFromSecret() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var hash = (window.location.hash || '').toLowerCase();
+      if (params.get('edit') === '1' || hash === '#edit' || hash === '#editor') {
+        if (isUnlocked()) openEditor();
+        else openGate();
+      }
+    } catch (e) {}
+  }
+
   updateChrome();
-  // Warm config (fail-soft)
   loadConfig().catch(function () {});
+  maybeOpenFromSecret();
+  window.addEventListener('hashchange', maybeOpenFromSecret);
 })();
