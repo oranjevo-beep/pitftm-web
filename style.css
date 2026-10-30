@@ -654,8 +654,8 @@ Footer (compact site-footer)
 */
 .site-footer {
   margin-top: 2.5rem;
-  background: #eef1f4;
-  border-top: 1px solid #d5dbe3;
+  background: var(--clr-grey-10);
+  border-top: 1px solid var(--clr-grey-9);
   color: var(--clr-grey-1);
 }
 .site-footer-inner {
@@ -807,7 +807,7 @@ Footer (compact site-footer)
 
 /* Legacy footer class hooks (if any remain) */
 .footer {
-  background-color: #eef1f4;
+  background-color: var(--clr-grey-10);
 }
 .copyright {
   color: var(--clr-white);

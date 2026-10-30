@@ -1,35 +1,35 @@
-/* Argon blueprint theme for ТМ ПІФ — industrial-retail household chemistry */
+/* Argon LAYOUT + ORIGINAL ТМ ПІФ brand blues (style.css :root) — not Argon navy/#F4F7FA */
 :root {
-  --argon-surface: #f4f7fa;
-  --argon-primary: #0a4d8c;
-  --argon-primary-deep: #083a69;
-  --argon-primary-soft: #e7eef6;
-  --argon-ink: #1c2430;
-  --argon-muted: #5b6775;
-  --argon-line: #d7dee7;
-  --argon-white: #ffffff;
-  --argon-radius: 0.65rem;
+  --brand-surface: var(--clr-grey-10);
+  --brand-primary: var(--clr-primary-5);
+  --brand-primary-deep: var(--clr-primary-1);
+  --brand-primary-mid: var(--clr-primary-2);
+  --brand-primary-soft: var(--clr-primary-10);
+  --brand-ink: var(--clr-grey-1);
+  --brand-muted: var(--clr-grey-3);
+  --brand-line: var(--clr-grey-9);
+  --brand-white: var(--clr-white);
+  --brand-radius: var(--radius);
 }
 
 body {
-  background: var(--argon-surface);
-  color: var(--argon-ink);
+  background: var(--brand-surface);
+  color: var(--brand-ink);
 }
 
-/* Slim trust bar — sits above fixed nav */
 .trust-bar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1002;
-  background: var(--argon-primary);
-  color: #fff;
+  background: var(--clr-primary-2);
+  color: var(--clr-white);
   font-size: 0.82rem;
   line-height: 1.35;
 }
 .trust-bar-inner {
-  width: min(92vw, 1170px);
+  width: min(92vw, var(--max-width));
   margin: 0 auto;
   padding: 0.45rem 0;
   display: flex;
@@ -38,10 +38,7 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.trust-bar-copy {
-  margin: 0;
-  opacity: 0.96;
-}
+.trust-bar-copy { margin: 0; opacity: 0.96; }
 .trust-bar-actions {
   display: flex;
   flex-wrap: wrap;
@@ -49,44 +46,37 @@ body {
   align-items: center;
 }
 .trust-bar a {
-  color: #fff;
+  color: var(--clr-white);
   font-weight: 600;
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 .trust-bar a:hover,
 .trust-bar a:focus-visible {
-  border-bottom-color: #fff;
+  border-bottom-color: var(--clr-white);
   outline: none;
 }
 
-/* Main nav + category strip */
 .nav {
   position: fixed !important;
-  top: 2.15rem; /* below trust-bar */
+  top: 2.15rem;
   left: 0;
   right: 0;
   z-index: 1001;
-  background: var(--argon-white);
-  border-bottom: 1px solid var(--argon-line);
+  background: var(--brand-white);
+  border-bottom: 1px solid var(--brand-line);
   box-shadow: none;
 }
-body {
-  padding-top: 6.1rem; /* trust-bar + nav */
-}
-.nav-link {
-  color: var(--argon-ink);
-  font-weight: 600;
-}
-.nav-link:hover {
-  color: var(--argon-primary);
-}
+body { padding-top: 6.1rem; }
+.nav-link { color: var(--brand-ink); font-weight: 600; }
+.nav-link:hover { color: var(--brand-primary); }
+
 .category-nav {
-  background: var(--argon-white);
-  border-bottom: 1px solid var(--argon-line);
+  background: var(--brand-white);
+  border-bottom: 1px solid var(--brand-line);
 }
 .category-nav-inner {
-  width: min(92vw, 1170px);
+  width: min(92vw, var(--max-width));
   margin: 0 auto;
   padding: 0.55rem 0 0.7rem;
   display: flex;
@@ -98,27 +88,26 @@ body {
   align-items: center;
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid var(--argon-line);
-  background: var(--argon-surface);
-  color: var(--argon-ink);
+  border: 1px solid var(--brand-line);
+  background: var(--brand-surface);
+  color: var(--brand-ink);
   font-size: 0.82rem;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.2s ease;
+  transition: var(--transition);
 }
 .category-pill:hover,
 .category-pill:focus-visible,
 .category-pill.is-active {
-  background: var(--argon-primary);
-  border-color: var(--argon-primary);
-  color: #fff;
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--clr-white);
   outline: none;
 }
 
-/* Argon hero */
 .hero.argon-hero {
-  background: linear-gradient(160deg, var(--argon-surface) 0%, #e8eef5 45%, #d9e6f4 100%);
-  color: var(--argon-ink);
+  background: linear-gradient(160deg, var(--clr-grey-10) 0%, var(--clr-primary-10) 55%, var(--clr-primary-9) 100%);
+  color: var(--brand-ink);
   min-height: 0;
   display: block;
   overflow: hidden;
@@ -131,7 +120,7 @@ body {
   display: grid;
   gap: 1.75rem;
   align-items: center;
-  width: min(92vw, 1170px);
+  width: min(92vw, var(--max-width));
   margin: 0 auto;
 }
 .argon-hero .hero-banner {
@@ -140,49 +129,39 @@ body {
   padding: 0;
 }
 .argon-hero .hero-kicker {
-  border-color: rgba(10, 77, 140, 0.35);
-  color: var(--argon-primary);
-  background: var(--argon-white);
+  border-color: var(--clr-primary-7);
+  color: var(--brand-primary-mid);
+  background: var(--brand-white);
 }
 .argon-hero .hero-banner h1 {
-  color: var(--argon-primary-deep);
+  color: var(--brand-primary-deep);
   font-size: clamp(1.85rem, 4vw, 2.75rem);
 }
 .argon-hero .hero-banner p {
-  color: var(--argon-muted);
+  color: var(--brand-muted);
   opacity: 1;
 }
-.argon-hero .hero-trust-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0 0 1rem;
-  padding: 0.35rem 0.7rem;
-  border-radius: 0.4rem;
-  background: var(--argon-primary-soft);
-  color: var(--argon-primary-deep);
-  font-size: 0.86rem;
-  font-weight: 600;
-}
 .argon-hero .hero-btn {
-  background: var(--argon-primary);
-  border-color: var(--argon-primary);
-  color: #fff;
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--clr-white);
 }
 .argon-hero .hero-btn:hover {
-  background: var(--argon-primary-deep);
-  border-color: var(--argon-primary-deep);
-  color: #fff;
+  background: var(--brand-primary-deep);
+  border-color: var(--brand-primary-deep);
+  color: var(--clr-white);
 }
 .argon-hero .hero-btn-secondary {
-  background: var(--argon-white);
-  color: var(--argon-primary);
-  border-color: var(--argon-primary);
+  background: var(--brand-white);
+  color: var(--brand-primary-mid);
+  border-color: var(--brand-primary);
 }
 .argon-hero .hero-btn-secondary:hover {
-  background: var(--argon-primary-soft);
-  color: var(--argon-primary-deep);
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-deep);
 }
+
+/* White studio frame — no saturated blue panel */
 .argon-hero .hero-visual {
   display: block;
   width: 100%;
@@ -190,111 +169,126 @@ body {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 1rem;
-  background: var(--argon-white);
-  border: 1px solid var(--argon-line);
-  box-shadow: 0 12px 28px rgba(12, 40, 70, 0.1);
+  background: var(--brand-white);
+  border: 1px solid var(--brand-line);
+  box-shadow: var(--light-shadow);
   pointer-events: none;
 }
 .argon-hero .hero-visual-main {
   margin: 0;
   border-radius: 0;
   box-shadow: none;
-  background: #fff;
+  background: var(--brand-white);
   overflow: hidden;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem;
+  box-sizing: border-box;
 }
 .argon-hero .hero-feature {
-  width: 100% !important;
-  max-height: 22rem;
+  display: block;
+  width: auto !important;
+  max-width: 100%;
+  max-height: 100%;
   height: auto !important;
   object-fit: contain;
   object-position: center;
   transform: none;
   filter: none;
-  background: #fff;
+  background: transparent;
 }
 .argon-hero .hero-visual-thumbs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
   margin: 0;
-  border-top: 1px solid var(--argon-line);
+  border-top: 1px solid var(--brand-line);
+  background: var(--brand-white);
 }
 .argon-hero .hero-thumb-wrap {
   margin: 0;
   border-radius: 0;
   box-shadow: none;
-  background: #fff;
-  border-right: 1px solid var(--argon-line);
+  background: var(--brand-white);
+  border-right: 1px solid var(--brand-line);
   overflow: hidden;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem;
+  box-sizing: border-box;
 }
-.argon-hero .hero-thumb-wrap:last-child {
-  border-right: 0;
-}
+.argon-hero .hero-thumb-wrap:last-child { border-right: 0; }
 .argon-hero .hero-thumb {
-  height: 7rem !important;
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  background: #fff;
+  object-position: center;
+  background: transparent;
 }
 
-.home-trust {
-  background: var(--argon-white);
-}
-.home-trust-item strong {
-  color: var(--argon-primary);
-}
-.home-highlights {
-  background: var(--argon-surface);
-}
-.home-card {
-  border-color: var(--argon-line);
-}
-.home-card h3 {
-  color: var(--argon-primary);
-}
+.home-trust { background: var(--brand-white); }
+.home-trust-item strong { color: var(--brand-primary-mid); }
+.home-highlights { background: var(--brand-surface); }
+.home-card { border-color: var(--brand-line); }
+.home-card h3 { color: var(--brand-primary-mid); }
+.home-card-link { color: var(--brand-primary); }
+.home-card-link:hover { color: var(--brand-primary-deep); }
 
-/* Products argon cards */
 .page-hero {
-  background: var(--argon-white);
-  border-bottom: 1px solid var(--argon-line);
+  background: var(--brand-white);
+  border-bottom: 1px solid var(--brand-line);
   margin-top: 0;
-  padding: 1.25rem 0 1.25rem;
+  padding: 1.25rem 0;
 }
-.page-hero-lead {
-  color: var(--argon-muted);
-}
+.page-hero-lead { color: var(--brand-muted); }
 .products-filter-bar {
-  width: min(92vw, 1170px);
+  width: min(92vw, var(--max-width));
   margin: 1rem auto 0.25rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
 }
-.products {
-  background: var(--argon-surface);
-  padding-top: 1rem;
-}
-.products-container {
-  width: min(92vw, 1170px);
-  margin: 0 auto;
-}
+.products { background: var(--brand-surface); padding-top: 1rem; }
+.products-container { width: min(92vw, var(--max-width)); margin: 0 auto; }
 .product {
-  background: var(--argon-white);
-  border: 1px solid var(--argon-line);
-  border-radius: calc(var(--argon-radius) + 0.1rem);
-  box-shadow: 0 4px 14px rgba(16, 40, 70, 0.05);
+  background: var(--brand-white);
+  border: 1px solid var(--brand-line);
+  border-radius: calc(var(--brand-radius) + 0.1rem);
+  box-shadow: var(--light-shadow);
 }
 .product-img-container {
   aspect-ratio: 1 / 1;
-  background: #fff;
-  border: 1px solid var(--argon-line);
+  background: var(--brand-white);
+  border: 1px solid var(--brand-line);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+.product-img {
+  width: auto !important;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto !important;
+  object-fit: contain;
+  object-position: center;
 }
 .product-category-tag {
   display: inline-block;
   margin: 0.15rem 0 0.35rem;
   padding: 0.15rem 0.55rem;
   border-radius: 999px;
-  background: var(--argon-primary-soft);
-  color: var(--argon-primary);
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-mid);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -302,7 +296,7 @@ body {
 }
 .product-name {
   text-transform: none;
-  color: var(--argon-ink);
+  color: var(--brand-ink);
   font-size: 0.98rem;
   min-height: 2.6em;
 }
@@ -317,33 +311,21 @@ body {
   display: inline-flex;
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
-  border: 1px solid var(--argon-line);
-  background: var(--argon-surface);
-  color: var(--argon-muted);
+  border: 1px solid var(--brand-line);
+  background: var(--brand-surface);
+  color: var(--brand-muted);
   font-size: 0.75rem;
   font-weight: 600;
 }
-.product-price-main {
-  color: var(--argon-primary-deep);
-}
-.product-capacity {
-  display: none;
-}
+.product-price-main { color: var(--brand-primary-deep); }
+.product-capacity { display: none; }
 
-/* Accordion sections */
-.product-desc-panel {
-  background: var(--argon-surface);
-  border-color: var(--argon-line);
-}
-.desc-accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
+.product-desc-panel { background: var(--brand-surface); border-color: var(--brand-line); }
+.desc-accordion { display: flex; flex-direction: column; gap: 0.35rem; }
 .desc-acc-item {
-  border: 1px solid var(--argon-line);
+  border: 1px solid var(--brand-line);
   border-radius: 0.45rem;
-  background: #fff;
+  background: var(--brand-white);
   overflow: hidden;
 }
 .desc-acc-trigger {
@@ -351,114 +333,79 @@ body {
   text-align: left;
   padding: 0.55rem 0.7rem;
   border: 0;
-  background: #fff;
-  color: var(--argon-primary-deep);
+  background: var(--brand-white);
+  color: var(--brand-primary-deep);
   font-weight: 700;
   font-size: 0.86rem;
   cursor: pointer;
 }
-.desc-acc-trigger[aria-expanded="true"] {
-  background: var(--argon-primary-soft);
-}
+.desc-acc-trigger[aria-expanded="true"] { background: var(--brand-primary-soft); }
 .desc-acc-body {
   padding: 0 0.7rem 0.7rem;
-  color: var(--argon-muted);
+  color: var(--brand-muted);
   font-size: 0.86rem;
   line-height: 1.5;
 }
-.desc-acc-body[hidden] {
-  display: none !important;
-}
+.desc-acc-body[hidden] { display: none !important; }
 .product-desc-toggle {
-  background: var(--argon-primary-soft);
-  border-color: var(--argon-primary);
-  color: var(--argon-primary-deep);
+  background: var(--brand-primary-soft);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary-deep);
 }
 .product-desc-toggle[aria-expanded="true"] {
-  background: var(--argon-primary);
-  border-color: var(--argon-primary);
-  color: #fff;
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--clr-white);
 }
-
 .products-empty {
   grid-column: 1 / -1;
   padding: 2rem 1rem;
   text-align: center;
-  color: var(--argon-muted);
-  background: var(--argon-white);
-  border: 1px dashed var(--argon-line);
-  border-radius: var(--argon-radius);
+  color: var(--brand-muted);
+  background: var(--brand-white);
+  border: 1px dashed var(--brand-line);
+  border-radius: var(--brand-radius);
 }
 
-/* Footer argon */
 .site-footer {
-  background: #e8eef5;
-  border-top: 1px solid var(--argon-line);
+  background: var(--clr-grey-10);
+  border-top: 1px solid var(--brand-line);
 }
-.site-footer-heading {
-  color: var(--argon-primary);
-}
-.site-footer-links a:hover {
-  color: var(--argon-primary);
-}
+.site-footer-heading { color: var(--brand-primary-mid); }
+.site-footer-links a:hover { color: var(--brand-primary); }
 .site-footer-logo {
   width: auto !important;
   height: 2rem;
   max-width: 11rem;
   object-fit: contain;
 }
+/* WhatsApp green — only WA CTAs */
+.site-footer-wa { color: #25d366 !important; }
+.site-footer-wa:hover { color: #1ebe57 !important; }
+.whatsapp-fab { z-index: 990; background: #25d366; }
+.whatsapp-fab:hover, .whatsapp-fab:focus-visible { background: #1ebe57; }
+.nav-icon.whatsapp-icon, .whatsapp-icon { color: #25d366; }
+.whatsapp-icon:hover { color: #1ebe57; }
 
-.whatsapp-fab {
-  z-index: 990;
+.btn {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+.btn:hover {
+  background: var(--clr-primary-8);
+  color: var(--brand-primary-deep);
 }
 
 @media screen and (min-width: 768px) {
-  .argon-hero .hero-layout {
-    grid-template-columns: 1.1fr 0.9fr;
-  }
-  .argon-hero {
-    padding: 3rem 1rem 3.25rem;
-  }
-  .argon-hero .hero-feature {
-    max-height: 24rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .argon-hero .hero-feature {
-    max-height: 26rem;
-  }
+  .argon-hero .hero-layout { grid-template-columns: 1.1fr 0.9fr; }
+  .argon-hero { padding: 2.25rem 1rem 3rem; }
 }
 @media screen and (max-width: 767px) {
-  .trust-bar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .argon-hero {
-    padding-top: 1.75rem;
-  }
-  .argon-hero .hero-banner {
-    text-align: center;
-  }
-  .argon-hero .hero-actions {
-    justify-content: center;
-  }
-  .argon-hero .hero-visual-thumbs {
-    display: none;
-  }
-  .argon-hero .hero-feature {
-    max-height: 14rem;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .nav {
-    top: auto;
-  }
-  /* keep trust fixed; nav stays fixed under it via JS-measured fallback */
-  body {
-    padding-top: 5.5rem;
-  }
-  .trust-bar {
-    font-size: 0.78rem;
-  }
+  body { padding-top: 5.5rem; }
+  .trust-bar { font-size: 0.78rem; }
+  .argon-hero { padding-top: 1.25rem; }
+  .argon-hero .hero-banner { text-align: center; }
+  .argon-hero .hero-actions { justify-content: center; }
+  .argon-hero .hero-visual-thumbs { display: none; }
+  .argon-hero .hero-visual-main { aspect-ratio: 4 / 3; }
 }
