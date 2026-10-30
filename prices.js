@@ -83,7 +83,18 @@
       if (pills && product.sizes && product.sizes.length) {
         pills.innerHTML = product.sizes
           .map(function (s) {
-            return '<span class="volume-pill">' + escapeHtml(s.label || '') + '</span>';
+            var label = escapeHtml(s.label || '');
+            var price = escapeHtml(s.price || '');
+            return (
+              '<span class="volume-pill" title="' +
+              label +
+              ' — ' +
+              price +
+              ' грн">' +
+              label +
+              (price ? ' · <strong>' + price + '</strong> грн' : '') +
+              '</span>'
+            );
           })
           .join('');
       }
