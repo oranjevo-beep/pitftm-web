@@ -14,6 +14,46 @@
 }
 
 /* ===== Modern single site header (replaces broken trust+fixed-nav stack) ===== */
+
+/* Blue brand trust strip — WHITE / near-white text on #339af0 */
+.site-header-trust {
+  background: #339af0;
+  color: #ffffff;
+}
+.site-header-trust-inner {
+  width: min(92vw, var(--max-width));
+  margin: 0 auto;
+  padding: 0.35rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-header-trust-copy,
+.site-header-trust p,
+.site-header-trust span,
+.site-header-trust a:not([href*="whatsapp"]) {
+  margin: 0;
+  color: #ffffff !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  text-align: center;
+}
+.site-header-trust a:not([href*="whatsapp"]) {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+.site-header-trust a:not([href*="whatsapp"]):hover,
+.site-header-trust a:not([href*="whatsapp"]):focus-visible {
+  border-bottom-color: #fff;
+  outline: none;
+}
+/* Legacy .trust-bar markup: hide (replaced by site-header-trust) but if shown, white on blue */
+.trust-bar {
+  display: none !important;
+}
+
 body {
   background: var(--brand-surface);
   color: var(--brand-ink);
@@ -871,8 +911,15 @@ body {
   color: #339af0 !important;
   border-color: #339af0 !important;
 }
-.site-header-wa, .whatsapp-fab, .whatsapp-icon, .site-footer-wa {
-  /* WhatsApp green only here — do not restyle to brand blue */
+.site-header-wa, .whatsapp-fab, .whatsapp-icon, .site-footer-wa,
+.site-header-wa:hover, .whatsapp-fab:hover, .site-footer-wa:hover {
+  color: #25d366 !important;
+}
+.site-header-wa:hover, .whatsapp-fab:hover, .site-footer-wa:hover {
+  color: #1ebe57 !important;
+}
+.whatsapp-fab {
+  background: #25d366 !important;
 }
 
 
@@ -888,3 +935,34 @@ body, body.home {
   padding-bottom: 0.25rem;
 }
 .products-filter-bar .category-pill { flex: 0 0 auto; }
+
+
+/* CONTRAST LOCK — white text on #339af0 primary surfaces; never gray-on-blue */
+.btn,
+.btn:hover,
+.hero-btn:not(.hero-btn-secondary),
+.hero-btn:not(.hero-btn-secondary):hover,
+.category-pill.is-active,
+.category-pill.is-active:hover,
+.product-desc-toggle[aria-expanded="true"],
+.site-header-trust,
+.site-header-trust-copy,
+.trust-bar,
+.trust-bar-copy {
+  color: #ffffff !important;
+}
+.btn, .hero-btn:not(.hero-btn-secondary), .category-pill.is-active,
+.product-desc-toggle[aria-expanded="true"],
+.site-header-trust {
+  background-color: #339af0 !important;
+}
+/* Keep outline/secondary buttons blue text on white */
+.btn-outline,
+.hero-btn-secondary,
+a.btn.hero-btn-secondary,
+.hero-btn-secondary:hover,
+a.btn.hero-btn-secondary:hover {
+  color: #339af0 !important;
+  background: #ffffff !important;
+  border-color: #339af0 !important;
+}
