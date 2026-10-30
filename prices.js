@@ -36,6 +36,7 @@
 
   function renderPriceHtml(sizes) {
     if (!sizes || !sizes.length) return '';
+    // Volume pills already show per-size prices — keep a single clear headline price here
     if (sizes.length === 1) {
       return (
         '<span class="product-price-main">Ціна: <strong>' +
@@ -52,18 +53,10 @@
       });
     if (!nums.length) return '';
     const min = Math.min.apply(null, nums).toFixed(2);
-    const detail = sizes
-      .map(function (s) {
-        return escapeHtml(s.label || '') + ' — ' + escapeHtml(s.price) + ' грн';
-      })
-      .join(' · ');
     return (
       '<span class="product-price-main">від <strong>' +
       escapeHtml(min) +
-      '</strong> грн</span>' +
-      '<span class="product-price-detail">' +
-      detail +
-      '</span>'
+      '</strong> грн</span>'
     );
   }
 
