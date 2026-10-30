@@ -21,7 +21,7 @@
       sizes="16x16"
       href="./favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link rel="manifest" href="./site.webmanifest" />
     <!-- font-awesome -->
     <link
       rel="stylesheet"
@@ -108,6 +108,15 @@
       </div>
     </section>
     <!-- end of hero -->
+    <!-- price editor toolbar -->
+    <div class="products-toolbar section-center">
+      <button type="button" class="btn price-editor-open-btn" id="price-editor-open">
+        Редагувати ціни
+      </button>
+      <p class="products-toolbar-hint">
+        Ціни беруться з <code>products.json</code>. Редактор лише допомагає оновити файл для GitHub.
+      </p>
+    </div>
     <!-- products -->
     <main class="products">
       <!-- products container -->
@@ -570,8 +579,37 @@
         <!-- end of single product -->
       </div>
     </main>
+
+    <div id="price-editor-backdrop" class="price-editor-backdrop hidden"></div>
+    <aside
+      id="price-editor"
+      class="price-editor"
+      aria-hidden="true"
+      aria-labelledby="price-editor-heading"
+    >
+      <div class="price-editor-header">
+        <h3 id="price-editor-heading">Редагування цін</h3>
+        <button type="button" class="price-editor-close" id="price-editor-close" aria-label="Закрити">
+          &times;
+        </button>
+      </div>
+      <p class="price-editor-help">
+        Змініть ціни нижче. Потім натисніть «Завантажити products.json» і замініть файл
+        <strong>products.json</strong> у репозиторії GitHub (гілка main), потім зробіть commit/push.
+        Сайт на GitHub Pages оновиться сам. Без push зміни видно лише у вашому браузері.
+      </p>
+      <p id="price-editor-status" class="price-editor-status" role="status"></p>
+      <div id="price-editor-list" class="price-editor-list"></div>
+      <div class="price-editor-actions">
+        <button type="button" class="btn" id="price-editor-download">Завантажити products.json</button>
+        <button type="button" class="btn btn-outline" id="price-editor-copy">Копіювати JSON</button>
+        <button type="button" class="btn btn-outline" id="price-editor-save-draft">Зберегти чернетку</button>
+        <button type="button" class="btn btn-outline" id="price-editor-clear-draft">Скинути чернетку</button>
+      </div>
+    </aside>
     <div class="overlay hidden"></div>
     <script src="./prices.js"></script>
+    <script src="./price-editor.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
