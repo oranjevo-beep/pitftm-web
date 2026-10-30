@@ -1093,3 +1093,102 @@ body.price-editor-open {
     grid-template-columns: 1fr 5.5rem auto;
   }
 }
+
+/* desc info as button */
+button.product-desc-info {
+  border: none;
+  background: var(--clr-primary-10);
+  color: var(--clr-primary-5);
+  font: inherit;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+}
+button.product-desc-info:focus-visible {
+  outline: 2px solid var(--clr-primary-5);
+  outline-offset: 2px;
+}
+button.product-desc-close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  padding: 0.25rem;
+  line-height: 1;
+}
+button.product-desc-close:focus-visible {
+  outline: 2px solid var(--clr-primary-5);
+  outline-offset: 2px;
+}
+
+/* password gate */
+.price-editor-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.price-editor-gate.is-open {
+  display: flex;
+}
+.price-editor-gate-card {
+  width: min(22rem, 100%);
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--dark-shadow);
+  padding: 1.25rem 1.35rem;
+}
+.price-editor-gate-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--clr-grey-1);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.15rem;
+}
+.price-editor-gate-text {
+  color: var(--clr-grey-2);
+  font-size: 0.9rem;
+  margin-bottom: 0.85rem;
+}
+.price-editor-gate-label {
+  display: block;
+  color: var(--clr-grey-2);
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+.price-editor-gate-card input[type='password'] {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--clr-grey-8);
+  border-radius: 0.35rem;
+  font: inherit;
+  margin-bottom: 0.5rem;
+}
+.price-editor-gate-error {
+  min-height: 1.2rem;
+  color: #b42318;
+  font-size: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+.price-editor-gate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.price-editor-unlock-btn {
+  white-space: nowrap;
+}
+
+/* ensure [hidden] wins over .btn display */
+[hidden] {
+  display: none !important;
+}
