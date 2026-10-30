@@ -111,9 +111,26 @@
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
-          <img src="./images/product-3.webp" alt="" class="hero-photo hero-photo-1" />
-          <img src="./images/product-7.webp" alt="" class="hero-photo hero-photo-2" />
-          <img src="./images/product-4.webp" alt="" class="hero-photo hero-photo-3" />
+          <figure class="hero-visual-main">
+            <img
+              class="hero-feature"
+              src="./images/hero-glass-lg.webp"
+              srcset="./images/hero-glass.webp 1x, ./images/hero-glass-lg.webp 2x"
+              width="860"
+              height="1427"
+              alt=""
+              decoding="async"
+              fetchpriority="high"
+            />
+          </figure>
+          <div class="hero-visual-thumbs">
+            <figure class="hero-thumb-wrap">
+              <img class="hero-thumb" src="./images/hero-dish.webp" width="360" height="540" alt="" decoding="async" />
+            </figure>
+            <figure class="hero-thumb-wrap">
+              <img class="hero-thumb" src="./images/hero-degreaser.webp" width="360" height="540" alt="" decoding="async" />
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -183,7 +200,7 @@
       <div class="site-footer-inner">
         <div class="site-footer-brand">
           <a href="index.html" class="site-footer-logo-link">
-            <img class="site-footer-logo" src="./images/logo-slide.png" alt="ПІФ — логотип" />
+            <img class="site-footer-logo" src="./images/logo-slide.png" srcset="./images/logo-slide.png 1x, ./images/logo-slide@2x.png 2x" width="274" height="84" alt="ПІФ — логотип" />
           </a>
           <p class="site-footer-tagline">Побутова хімія з 2005 року</p>
         </div>
