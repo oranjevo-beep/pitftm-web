@@ -79,6 +79,14 @@
       const product = byId[id];
       if (!product) return;
       el.innerHTML = renderPriceHtml(product.sizes);
+      const pills = document.querySelector('.product-volume-pills[data-product-id="' + id + '"]');
+      if (pills && product.sizes && product.sizes.length) {
+        pills.innerHTML = product.sizes
+          .map(function (s) {
+            return '<span class="volume-pill">' + escapeHtml(s.label || '') + '</span>';
+          })
+          .join('');
+      }
     });
   }
 

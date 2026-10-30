@@ -31,11 +31,21 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./argon.css" />
     <title>Продукція | ПІФ</title>
   </head>
 
   <body>
     <!-- header -->
+    <div class="trust-bar">
+      <div class="trust-bar-inner">
+        <p class="trust-bar-copy">ТМ «ПІФ» — Український виробник побутової хімії з 2005 року</p>
+        <div class="trust-bar-actions">
+          <a href="tel:+380679720560">+380 67 972 05 60</a>
+          <a href="https://api.whatsapp.com/send?phone=380679720560&text=%D0%97%D0%B0%D0%BF%D0%B8%D1%82%20%D0%BE%D0%BF%D1%82%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%B0%D0%B9%D1%81%D1%83%20%D0%A2%D0%9C%20%D0%9F%D0%86%D0%A4" target="_blank" rel="noopener noreferrer">Прайс для опту (WhatsApp)</a>
+        </div>
+      </div>
+    </div>
     <header>
       <!-- nav -->
       <nav class="nav">
@@ -98,6 +108,16 @@
         </div>
       </nav>
     </header>
+    <div class="category-nav" aria-label="Категорії продукції">
+      <div class="category-nav-inner">
+          <a class="category-pill" href="?cat=prannya" data-cat="prannya">Прання</a>
+          <a class="category-pill" href="?cat=glass" data-cat="glass">Скло та дзеркала</a>
+          <a class="category-pill" href="?cat=floor" data-cat="floor">Підлога</a>
+          <a class="category-pill" href="?cat=pipes" data-cat="pipes">Труби та каналізація</a>
+          <a class="category-pill" href="?cat=dishes" data-cat="dishes">Посуд</a>
+          <a class="category-pill" href="?cat=bath" data-cat="bath">Туалет та ванна</a>
+      </div>
+    </div>
     <!-- end of nav -->
     <!-- hero -->
     <section class="section page-hero">
@@ -124,508 +144,483 @@
         Ціни беруться з <code>products.json</code>. Редактор лише допомагає оновити файл для GitHub.
       </p>
     </div>
+    <div class="products-filter-bar" role="tablist" aria-label="Фільтр за категорією">
+      <a class="category-pill is-active" href="products.html" data-cat="all">Усі</a>
+      <a class="category-pill" href="?cat=prannya" data-cat="prannya">Прання</a>
+      <a class="category-pill" href="?cat=glass" data-cat="glass">Скло та дзеркала</a>
+      <a class="category-pill" href="?cat=floor" data-cat="floor">Підлога</a>
+      <a class="category-pill" href="?cat=pipes" data-cat="pipes">Труби та каналізація</a>
+      <a class="category-pill" href="?cat=dishes" data-cat="dishes">Посуд</a>
+      <a class="category-pill" href="?cat=bath" data-cat="bath">Туалет та ванна</a>
+    </div>
     <!-- products -->
     <main class="products">
       <!-- products container -->
       <div class="products-container">
-        <!-- single product -->
-        <div class="product" data-product-id="p01">
+        <div class="product" data-product-id="p01" data-category="bath">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-2.webp"
-                class="product-img img"
-                alt="Засіб для миття та очищення ванних кімнат, душових кабінок,
-                кранів"
-              />
+              <img src="./images/product-2.webp" class="product-img img" alt="Засіб для миття та очищення ванних кімнат, душових кабінок, кранів" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для миття та очищення ванних кімнат, душових кабінок, кранів
-            </h5>
-            <p class="product-capacity">
-              Об&#39;єм: 500мл (з розпилювачем), 5л
-            </p>
+            <span class="product-category-tag">Туалет та ванна</span>
+            <h5 class="product-name">Очищувач ванної та душу</h5>
+            <div class="product-volume-pills" data-product-id="p01"><span class="volume-pill">500мл (з розпилювачем)</span><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p01"></p>
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p01" id="desc-btn-p01">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p01" id="desc-btn-p01">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p01">
             <div class="product-desc-panel" hidden>
-              <h5>
-                Засіб для миття та очищення ванних кімнат, душових кабінок,
-                кранів
-              </h5>
-              <p>
-                Очищає від вапняного та мильного нальоту, іржі та бруду
-                акрилові, емальовані, керамічні, хромовані, нержавіючі,
-                пластикові, скляні поверхні та крани. Склад: Вода підготовлена
-                ​​&gt; 30%, ортофосфорна кислота, органічні кислоти від 2 до 5
-                %, ПАР &lt;5%, віддушка, барвник &lt;0,2%. Нанести засіб на
-                забруднену поверхню, потерти щіткою і змити водою. Для видалення
-                стійкого бруду або плям іржі витримати засіб на поверхні 5-10
-                хв, потерти щіткою і змити водою.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Очищає від вапняного та мильного нальоту, іржі та бруду акрилові, емальовані, керамічні, хромовані, нержавіючі, пластикові, скляні поверхні та крани.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Дотримуйтесь інструкції на етикетці. Перед використанням збовтайте засіб за потреби.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Склад: Вода підготовлена ​​&gt; 30%, ортофосфорна кислота, органічні кислоти від 2 до 5 %, ПАР &lt;5%, віддушка, барвник &lt;0,2%. Нанести засіб на забруднену поверхню, потерти щіткою і змити водою. Для видалення стійкого бруду або плям іржі витримати засіб на поверхні 5-10 хв, потерти щіткою і змити водою.</p></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- end single product -->
-        <div class="product" data-product-id="p02">
+
+        <div class="product" data-product-id="p02" data-category="pipes">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-15.webp"
-                class="product-img img"
-                alt=" Засіб для видалення забруднень каналізаційних труб та сифонів."
-              />
+              <img src="./images/product-15.webp" class="product-img img" alt="Засіб для видалення забруднень каналізаційних труб та сифонів" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для видалення забруднень каналізаційних труб та сифонів
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 1 л, 5л</p>
+            <span class="product-category-tag">Труби та каналізація</span>
+            <h5 class="product-name">Очищувач труб і сифонів</h5>
+            <div class="product-volume-pills" data-product-id="p02"><span class="volume-pill">1 л</span><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p02"></p>
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p02" id="desc-btn-p02">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p02" id="desc-btn-p02">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p02">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для видалення забруднень каналізаційних труб та сифонів</h5>
-              <p>
-                Використовується для очищення каналізаційних труб, сифонів
-                кухонних мийок та ванн, видалення жирових та білкових
-                забруднень, волосся, залишків їжі, знищення неприємного запаху.
-                Залити 200-250 мл засобу в зливний отвір раковини або ванни (для
-                унітазу - 500 мл) і залишити на 4 години, краще на ніч. Після
-                цього промити велику кількість гарячої води. Для профілактики
-                рекомендується застосовувати не рідше ніж раз на місяць. Заходи
-                безпеки: Засіб містить їдкий луг, не рекомендується змішувати
-                його з іншими засобами. Боїться нагріву. Засіб необхідно
-                зберігати ретельно закритим у вертикальному положенні у місцях,
-                недоступних дітям. При попаданні в очі чи на шкіру - ретельно
-                промити водою. Обов&#39;язково використовуйте гумові рукавички
-                під час роботи з цим продуктом.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Використовується для очищення каналізаційних труб, сифонів кухонних мийок та ванн, видалення жирових та білкових забруднень, волосся, залишків їжі, знищення неприємного запаху. Залити 200-250 мл засобу в зливний отвір раковини або ванни (для унітазу - 500 мл) і залишити на 4 години, краще на ніч. Після цього промити велику кількість гарячої води. Для профілактики рекомендується застосовувати не рідше ніж раз на місяць.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Дотримуйтесь інструкції на етикетці. Перед використанням збовтайте засіб за потреби.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Заходи безпеки: Засіб містить їдкий луг, не рекомендується змішувати його з іншими засобами. Боїться нагріву. Засіб необхідно зберігати ретельно закритим у вертикальному положенні у місцях, недоступних дітям. При попаданні в очі чи на шкіру - ретельно промити водою. Обов'язково використовуйте гумові рукавички під час роботи з цим продуктом.</p></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- end of single product -->
-        <!-- single product -->
-        <div class="product" data-product-id="p03">
+
+        <div class="product" data-product-id="p03" data-category="dishes">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-3.webp"
-                class="product-img img"
-                alt="Засіб для видалення жиру, нагару та кіптяви"
-              />
+              <img src="./images/product-3.webp" class="product-img img" alt="Засіб для видалення жиру, нагару та кіптяви" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для видалення жиру, нагару та кіптяви
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 500мл</p>
+            <span class="product-category-tag">Посуд</span>
+            <h5 class="product-name">Антижир / антинагар 500 мл</h5>
+            <div class="product-volume-pills" data-product-id="p03"><span class="volume-pill">500мл</span></div>
             <p class="product-price" data-product-id="p03"></p>
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p03" id="desc-btn-p03">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p03" id="desc-btn-p03">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p03">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для видалення жиру, нагару та кіптяви</h5>
-              <p>
-                Спосіб застосування: перед застосуванням вміст пляшки збовтати,
-                нанести на поверхню на 5-10 хв. Сильно забруднені місця протерти
-                губкою. Змити водою. Ідеально підходить для миття застарілих
-                забруднень. Для очищення фритюрниць залити гарячу воду вище за
-                рівень олії, додати 100-200 мл засобу на кожен літр води,
-                залишити на 1-2 години, після чого воду злити, поверхню очистити
-                щіткою та ретельно промити проточною водою. Не застосовувати
-                засіб для обробки алюмінієвих, емальованих, скляних та
-                лакофарбових поверхонь! Під час роботи використовувати гумові
-                рукавички.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Спосіб застосування: перед застосуванням вміст пляшки збовтати, нанести на поверхню на 5-10 хв. Сильно забруднені місця протерти губкою. Змити водою. Ідеально підходить для миття застарілих забруднень. Для очищення фритюрниць залити гарячу </p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>перед застосуванням вміст пляшки збовтати, нанести на поверхню на 5-10 хв. Сильно забруднені місця протерти губкою. Змити водою. Ідеально підходить для миття застарілих забруднень. Для очищення фритюрниць залити гарячу воду вище за рівень олії, додати 100-200 мл засобу на кожен літр води, залишити на 1-2 години, після чого воду злити, поверхню очистити щіткою та ретельно промити проточною водою.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Не застосовувати засіб для обробки алюмінієвих, емальованих, скляних та лакофарбових поверхонь! Під час роботи використовувати гумові рукавички.</p></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- end of single product -->
-        <!-- single product -->
-        <div class="product" data-product-id="p04">
+
+        <div class="product" data-product-id="p04" data-category="dishes">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-11.webp"
-                class="product-img img"
-                alt="Засіб для видалення жиру, нагару та кіптяви"
-              />
+              <img src="./images/product-11.webp" class="product-img img" alt="Засіб для видалення жиру, нагару та кіптяви" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для видалення жиру, нагару та кіптяви
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <span class="product-category-tag">Посуд</span>
+            <h5 class="product-name">Антижир / антинагар 5 л</h5>
+            <div class="product-volume-pills" data-product-id="p04"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p04"></p>
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p04" id="desc-btn-p04">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p04" id="desc-btn-p04">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p04">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для видалення жиру, нагару та кіптяви</h5>
-              <p>
-                Спосіб застосування: перед застосуванням вміст пляшки збовтати,
-                нанести на поверхню на 5-10 хв. Сильно забруднені місця протерти
-                губкою. Змити водою. Ідеально підходить для миття застарілих
-                забруднень. Для очищення фритюрниць залити гарячу воду вище за
-                рівень олії, додати 100-200 мл засобу на кожен літр води,
-                залишити на 1-2 години, після чого воду злити, поверхню очистити
-                щіткою та ретельно промити проточною водою. Не застосовувати
-                засіб для обробки алюмінієвих, емальованих, скляних та
-                лакофарбових поверхонь! Під час роботи використовувати гумові
-                рукавички.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Спосіб застосування: перед застосуванням вміст пляшки збовтати, нанести на поверхню на 5-10 хв. Сильно забруднені місця протерти губкою. Змити водою. Ідеально підходить для миття застарілих забруднень. Для очищення фритюрниць залити гарячу </p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>перед застосуванням вміст пляшки збовтати, нанести на поверхню на 5-10 хв. Сильно забруднені місця протерти губкою. Змити водою. Ідеально підходить для миття застарілих забруднень. Для очищення фритюрниць залити гарячу воду вище за рівень олії, додати 100-200 мл засобу на кожен літр води, залишити на 1-2 години, після чого воду злити, поверхню очистити щіткою та ретельно промити проточною водою.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Не застосовувати засіб для обробки алюмінієвих, емальованих, скляних та лакофарбових поверхонь! Під час роботи використовувати гумові рукавички.</p></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- end of single product -->
 
-        <!-- single product -->
-        <div class="product" data-product-id="p05">
+        <div class="product" data-product-id="p05" data-category="floor">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-16.webp"
-                class="product-img img"
-                alt="Засіб для миття підлоги та інших поверхонь"
-              />
+              <img src="./images/product-16.webp" class="product-img img" alt="Засіб для миття підлоги та інших поверхонь" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для миття підлоги та інших поверхонь
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 1л</p>
+            <span class="product-category-tag">Підлога</span>
+            <h5 class="product-name">Мийний засіб для підлоги 1 л</h5>
+            <div class="product-volume-pills" data-product-id="p05"><span class="volume-pill">1л</span></div>
             <p class="product-price" data-product-id="p05"></p>
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p05" id="desc-btn-p05">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p05" id="desc-btn-p05">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p05">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для миття підлоги та інших поверхонь</h5>
-              <p>
-                Використовується для миття підлоги з лінолеуму, сильно
-                забруднених поверхонь з мармуру (підлоги, стін, фасадів будівель
-                та ін.), наливної підлоги, керамічної плитки та інших поверхонь
-                за допомогою спеціального обладнання або ручного миття. Спосіб
-                застосування: Розчинити в 50-100 мл засобу в 5-6л води. За
-                допомогою губки, тканини і т.п. помити забруднену поверхню. У
-                разі сильно забруднених поверхонь використовувати нерозбавлену,
-                ретельно потерти поверхню і промити водою. Засіб замерзає, після
-                розморожування зберігає свої властивості. Запобігати впливу
-                прямих сонячних променів, зберігати у сухих вентильованих
-                приміщеннях при температурі від мінус 5° до +30°
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Використовується для миття підлоги з лінолеуму, сильно забруднених поверхонь з мармуру (підлоги, стін, фасадів будівель та ін.), наливної підлоги, керамічної плитки та інших поверхонь за допомогою спеціального обладнання або ручного миття.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Розчинити в 50-100 мл засобу в 5-6л води. За допомогою губки, тканини і т.п. помити забруднену поверхню. У разі сильно забруднених поверхонь використовувати нерозбавлену, ретельно потерти поверхню і промити водою. Засіб замерзає, після розморожування зберігає свої властивості. Запобігати впливу прямих сонячних променів, зберігати у сухих вентильованих приміщеннях при температурі від мінус 5° до +30°</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Зберігати в недоступному для дітей місці. Уникати потрапляння в очі. При контакті зі шкірою або очима промити водою. Дотримуйтесь застережень на етикетці.</p></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- end of single product -->
-        <!-- single product -->
-        <div class="product" data-product-id="p06">
+
+        <div class="product" data-product-id="p06" data-category="floor">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-10.webp"
-                class="product-img img"
-                alt="Засіб для миття підлоги та інших поверхонь"
-              />
+              <img src="./images/product-10.webp" class="product-img img" alt="Засіб для миття підлоги та інших поверхонь" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для миття підлоги та інших поверхонь
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <span class="product-category-tag">Підлога</span>
+            <h5 class="product-name">Мийний засіб для підлоги 5 л</h5>
+            <div class="product-volume-pills" data-product-id="p06"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p06"></p>
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p06" id="desc-btn-p06">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p06" id="desc-btn-p06">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p06">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для миття підлоги та інших поверхонь</h5>
-              <p>
-                Використовується для миття підлоги з лінолеуму, сильно
-                забруднених поверхонь з мармуру (підлоги, стін, фасадів будівель
-                та ін.), наливної підлоги, керамічної плитки та інших поверхонь
-                за допомогою спеціального обладнання або ручного миття. Спосіб
-                застосування: Розчинити в 50-100 мл засобу в 5-6л води. За
-                допомогою губки, тканини і т.п. помити забруднену поверхню. У
-                разі сильно забруднених поверхонь використовувати нерозбавлену,
-                ретельно потерти поверхню і промити водою. Засіб замерзає, після
-                розморожування зберігає свої властивості. Запобігати впливу
-                прямих сонячних променів, зберігати у сухих вентильованих
-                приміщеннях при температурі від мінус 5° до +30°
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Використовується для миття підлоги з лінолеуму, сильно забруднених поверхонь з мармуру (підлоги, стін, фасадів будівель та ін.), наливної підлоги, керамічної плитки та інших поверхонь за допомогою спеціального обладнання або ручного миття.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Розчинити в 50-100 мл засобу в 5-6л води. За допомогою губки, тканини і т.п. помити забруднену поверхню. У разі сильно забруднених поверхонь використовувати нерозбавлену, ретельно потерти поверхню і промити водою. Засіб замерзає, після розморожування зберігає свої властивості. Запобігати впливу прямих сонячних променів, зберігати у сухих вентильованих приміщеннях при температурі від мінус 5° до +30°</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Зберігати в недоступному для дітей місці. Уникати потрапляння в очі. При контакті зі шкірою або очима промити водою. Дотримуйтесь застережень на етикетці.</p></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- end of single product -->
-        <!-- single product -->
-        <div class="product" data-product-id="p07">
+
+        <div class="product" data-product-id="p07" data-category="bath">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-1.webp"
-                class="product-img img"
-                alt="Гель для миття та очищення унітазів, раковин, кахельних та
-                керамічних поверхонь"
-              />
+              <img src="./images/product-1.webp" class="product-img img" alt="Гель для миття та очищення унітазів, раковин, кахельних та керамічних поверхонь" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Гель для миття та очищення унітазів, раковин, кахельних та
-              керамічних поверхонь
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 750 мл</p>
+            <span class="product-category-tag">Туалет та ванна</span>
+            <h5 class="product-name">Гель для унітазів і кераміки</h5>
+            <div class="product-volume-pills" data-product-id="p07"><span class="volume-pill">750 мл</span></div>
             <p class="product-price" data-product-id="p07"></p>
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p07" id="desc-btn-p07">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p07" id="desc-btn-p07">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p07">
             <div class="product-desc-panel" hidden>
-              <h5>
-                Гель для миття та очищення унітазів, раковин, кахельних та
-                керамічних поверхонь
-              </h5>
-              <p>
-                Чудово розчиняє вапняний наліт, сечовий камінь, іржу, руйнує
-                складні забруднення. Використовується для швидкого та якісного
-                чищення унітазів,раковин, кахельних та керамічних поверхонь.
-                Спосіб застосування: Нанести на поверхню унітазу та під обідок,
-                потерти щіткою, змити водою. У разі сильних вапняних відкладень
-                залишити на 5-15 хвилин, потерти щіткою, змити водою.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Чудово розчиняє вапняний наліт, сечовий камінь, іржу, руйнує складні забруднення. Використовується для швидкого та якісного чищення унітазів,раковин, кахельних та керамічних поверхонь.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Нанести на поверхню унітазу та під обідок, потерти щіткою, змити водою. У разі сильних вапняних відкладень залишити на 5-15 хвилин, потерти щіткою, змити водою.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Зберігати в недоступному для дітей місці. Уникати потрапляння в очі. При контакті зі шкірою або очима промити водою. Дотримуйтесь застережень на етикетці.</p></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- end of single product -->
-        <!-- single product -->
-        <div class="product" data-product-id="p08">
+
+        <div class="product" data-product-id="p08" data-category="glass">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-7.webp"
-                class="product-img img"
-                alt="Засіб для миття скла"
-              />
+              <img src="./images/product-7.webp" class="product-img img" alt="Засіб для миття скла" />
             </div>
           </div>
           <footer>
+            <span class="product-category-tag">Скло та дзеркала</span>
             <h5 class="product-name">Засіб для миття скла</h5>
-            <p class="product-capacity">
-              Об&#39;єм <span>500мл (з розпилювачем)</span>,
-              <span>500мл (без розпилювача)</span>,<span> 5л</span>
-            </p>
+            <div class="product-volume-pills" data-product-id="p08"><span class="volume-pill">500мл (з розпилювачем)</span><span class="volume-pill">500мл (без розпилювача)</span><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p08"></p>
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p08" id="desc-btn-p08">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p08" id="desc-btn-p08">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p08">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для миття скла</h5>
-              <p>
-                Засіб призначений для миття скла вікон і автомобілів, дзеркал,
-                кришталю, фарфору, кахлю, кераміки, зовнішніх панелей
-                електроприладів, а також хромованих поверхонь. Спосіб вживання:
-                нанести засіб на забруднену поверхню і витерти насухо. Склад:
-                вода підготовлена ​​понад 30%, ізопропіловий спирт до 10%,розчин
-                аміаку від 0.5 до 1%, ПАР, віддушка, барвник до 0.2%. Зберігати
-                при температурі від 0°С до 30°С у сухих приміщеннях. Засіб
-                замерзає, при розморожуванні зберігає свої властивості. Уникати
-                потрапляння прямих сонячних променів.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Засіб призначений для миття скла вікон і автомобілів, дзеркал, кришталю, фарфору, кахлю, кераміки, зовнішніх панелей електроприладів, а також хромованих поверхонь.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>нанести засіб на забруднену поверхню і витерти насухо.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Склад: вода підготовлена ​​понад 30%, ізопропіловий спирт до 10%,розчин аміаку від 0.5 до 1%, ПАР, віддушка, барвник до 0.2%. Зберігати при температурі від 0°С до 30°С у сухих приміщеннях. Засіб замерзає, при розморожуванні зберігає свої властивості. Уникати потрапляння прямих сонячних променів.</p></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- end of single product -->
-        <!-- single product -->
-        <div class="product" data-product-id="p09">
+
+        <div class="product" data-product-id="p09" data-category="dishes">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-4.webp"
-                class="product-img img"
-                alt="Засіб для миття посуду з запахом яблука"
-              />
+              <img src="./images/product-4.webp" class="product-img img" alt="Засіб для миття посуду з запахом яблука" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для миття посуду з запахом яблука
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 500мл</p>
+            <span class="product-category-tag">Посуд</span>
+            <h5 class="product-name">Мийний для посуду · яблуко 500 мл</h5>
+            <div class="product-volume-pills" data-product-id="p09"><span class="volume-pill">500мл</span></div>
             <p class="product-price" data-product-id="p09"></p>
-            
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p09" id="desc-btn-p09">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p09" id="desc-btn-p09">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p09">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для миття посуду з запахом яблука</h5>
-              <p>
-                Засіб для ручного миття посуду з приємним ароматом яблука. Добре піниться, ефективно видаляє жир і залишки їжі, легко змивається водою. Підходить для щоденного використання. Нанести на губку або розчинити у воді, вимити посуд і ретельно промити. Зберігати в недоступному для дітей місці.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Засіб для ручного миття посуду з приємним ароматом яблука. Добре піниться, ефективно видаляє жир і залишки їжі, легко змивається водою. Підходить для щоденного використання. Нанести на губку або розчинити у воді, вимити посуд і ретельно промити.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Дотримуйтесь інструкції на етикетці. Перед використанням збовтайте засіб за потреби.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Зберігати в недоступному для дітей місці.</p></div>
+                </div>
+              </div>
             </div>
           </div>
-        
         </div>
-        <!-- end of single product -->
-        <!-- single product -->
-        <div class="product" data-product-id="p10">
+
+        <div class="product" data-product-id="p10" data-category="dishes">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-8.webp"
-                class="product-img img"
-                alt="Засіб для миття посуду з запахом лимона"
-              />
+              <img src="./images/product-8.webp" class="product-img img" alt="Засіб для миття посуду з запахом лимона" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для миття посуду з запахом лимона
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 500мл</p>
+            <span class="product-category-tag">Посуд</span>
+            <h5 class="product-name">Мийний для посуду · лимон 500 мл</h5>
+            <div class="product-volume-pills" data-product-id="p10"><span class="volume-pill">500мл</span></div>
             <p class="product-price" data-product-id="p10"></p>
-            
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p10" id="desc-btn-p10">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p10" id="desc-btn-p10">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p10">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для миття посуду з запахом лимона</h5>
-              <p>
-                Засіб для ручного миття посуду з ароматом лимона. Ефективно розчиняє жир, надає свіжість, підходить для тарілок, каструль і кухонного приладдя. Нанести на вологу губку або розвести у воді, вимити посуд і змити чистою водою. Уникати потрапляння в очі.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Засіб для ручного миття посуду з ароматом лимона. Ефективно розчиняє жир, надає свіжість, підходить для тарілок, каструль і кухонного приладдя. Нанести на вологу губку або розвести у воді, вимити посуд і змити чистою водою. Уникати потрапляння в очі.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Дотримуйтесь інструкції на етикетці. Перед використанням збовтайте засіб за потреби.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Зберігати в недоступному для дітей місці. Уникати потрапляння в очі. При контакті зі шкірою або очима промити водою. Дотримуйтесь застережень на етикетці.</p></div>
+                </div>
+              </div>
             </div>
           </div>
-        
         </div>
-        <!-- end of single product -->
-        <!-- single product -->
-        <div class="product" data-product-id="p11">
+
+        <div class="product" data-product-id="p11" data-category="dishes">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-9.webp"
-                class="product-img img"
-                alt="Засіб для миття посуду з запахом яблука"
-              />
+              <img src="./images/product-9.webp" class="product-img img" alt="Засіб для миття посуду з запахом яблука" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для миття посуду з запахом яблука
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <span class="product-category-tag">Посуд</span>
+            <h5 class="product-name">Мийний для посуду · яблуко 5 л</h5>
+            <div class="product-volume-pills" data-product-id="p11"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p11"></p>
-            
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p11" id="desc-btn-p11">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p11" id="desc-btn-p11">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p11">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для миття посуду з запахом яблука</h5>
-              <p>
-                Концентрований засіб для миття посуду з запахом яблука у великій тарі 5 л — зручно для закладів харчування та інтенсивного використання. Економна витрата: невелику кількість засобу розчинити у воді або нанести на губку. Після миття ретельно промити посуд водою.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Концентрований засіб для миття посуду з запахом яблука у великій тарі 5 л — зручно для закладів харчування та інтенсивного використання. Економна витрата: невелику кількість засобу розчинити у воді або нанести на губку. Після миття ретельно промити посуд водою.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Дотримуйтесь інструкції на етикетці. Перед використанням збовтайте засіб за потреби.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Зберігати в недоступному для дітей місці. Уникати потрапляння в очі. При контакті зі шкірою або очима промити водою. Дотримуйтесь застережень на етикетці.</p></div>
+                </div>
+              </div>
             </div>
           </div>
-        
         </div>
-        <!-- end of single product -->
 
-        <!-- single product -->
-        <div class="product" data-product-id="p12">
+        <div class="product" data-product-id="p12" data-category="dishes">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-12.webp"
-                class="product-img img"
-                alt="Засіб для миття посуду з запахом лимона"
-              />
+              <img src="./images/product-12.webp" class="product-img img" alt="Засіб для миття посуду з запахом лимона" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">
-              Засіб для миття посуду з запахом лимона
-            </h5>
-            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <span class="product-category-tag">Посуд</span>
+            <h5 class="product-name">Мийний для посуду · лимон 5 л</h5>
+            <div class="product-volume-pills" data-product-id="p12"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p12"></p>
-            
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p12" id="desc-btn-p12">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p12" id="desc-btn-p12">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p12">
             <div class="product-desc-panel" hidden>
-              <h5>Засіб для миття посуду з запахом лимона</h5>
-              <p>
-                Концентрований засіб для миття посуду з запахом лимона у тарі 5 л. Добре справляється із жирними забрудненнями, підходить для професійного та домашнього використання. Розчинити у воді або нанести на губку, вимити посуд і промити. Зберігати щільно закритим.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Концентрований засіб для миття посуду з запахом лимона у тарі 5 л. Добре справляється із жирними забрудненнями, підходить для професійного та домашнього використання. Розчинити у воді або нанести на губку, вимити посуд і промити.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Дотримуйтесь інструкції на етикетці. Перед використанням збовтайте засіб за потреби.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Зберігати щільно закритим.</p></div>
+                </div>
+              </div>
             </div>
           </div>
-        
         </div>
-        <!-- end of single product -->
 
-        <!-- single product -->
-        <div class="product" data-product-id="p13">
+        <div class="product" data-product-id="p13" data-category="bath">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-13.webp"
-                class="product-img img"
-                alt="Мило рідке морська свіжість"
-              />
+              <img src="./images/product-13.webp" class="product-img img" alt="Мило рідке морська свіжість" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">Мило рідке морська свіжість</h5>
-            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <span class="product-category-tag">Туалет та ванна</span>
+            <h5 class="product-name">Рідке мило · морська свіжість</h5>
+            <div class="product-volume-pills" data-product-id="p13"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p13"></p>
-            
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p13" id="desc-btn-p13">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p13" id="desc-btn-p13">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p13">
             <div class="product-desc-panel" hidden>
-              <h5>Мило рідке морська свіжість</h5>
-              <p>
-                Рідке мило «Морська свіжість» для миття рук. Ніжно очищує шкіру, має свіжий аромат, підходить для дозаторів і щоденного використання вдома чи на роботі. Нанести невелику кількість на вологі руки, спінити і змити водою.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Рідке мило «Морська свіжість» для миття рук. Ніжно очищує шкіру, має свіжий аромат, підходить для дозаторів і щоденного використання вдома чи на роботі. Нанести невелику кількість на вологі руки, спінити і змити водою.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Дотримуйтесь інструкції на етикетці. Перед використанням збовтайте засіб за потреби.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Зберігати в недоступному для дітей місці. Уникати потрапляння в очі. При контакті зі шкірою або очима промити водою. Дотримуйтесь застережень на етикетці.</p></div>
+                </div>
+              </div>
             </div>
           </div>
-        
         </div>
-        <!-- end of single product -->
-        <!-- single product -->
-        <div class="product" data-product-id="p14">
+
+        <div class="product" data-product-id="p14" data-category="bath">
           <div class="product-container">
             <div class="product-img-container">
-              <img
-                src="./images/product-14.webp"
-                class="product-img img"
-                alt="Мило рідке жожоба"
-              />
+              <img src="./images/product-14.webp" class="product-img img" alt="Мило рідке жожоба" />
             </div>
           </div>
           <footer>
-            <h5 class="product-name">Мило рідке жожоба</h5>
-            <p class="product-capacity">Об&#39;єм: 5л</p>
+            <span class="product-category-tag">Туалет та ванна</span>
+            <h5 class="product-name">Рідке мило · жожоба</h5>
+            <div class="product-volume-pills" data-product-id="p14"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p14"></p>
-            
-            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p14" id="desc-btn-p14">Склад і застосування</button>
+            <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p14" id="desc-btn-p14">Опис і застосування</button>
           </footer>
           <div class="product-desc" id="desc-p14">
             <div class="product-desc-panel" hidden>
-              <h5>Мило рідке жожоба</h5>
-              <p>
-                Рідке мило з екстрактом жожоба для догляду за руками. М’яко очищує, допомагає зменшити відчуття сухості після миття, має приємний аромат. Нанести на вологі руки, спінити і ретельно змити водою. Для зовнішнього застосування.
-              </p>
+              <div class="desc-accordion">
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="true" data-acc="desc">Опис та призначення</button>
+                  <div class="desc-acc-body" data-acc-body="desc"><p>Рідке мило з екстрактом жожоба для догляду за руками. М’яко очищує, допомагає зменшити відчуття сухості після миття, має приємний аромат. Нанести на вологі руки, спінити і ретельно змити водою. Для зовнішнього застосування.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="use">Спосіб застосування</button>
+                  <div class="desc-acc-body" data-acc-body="use" hidden><p>Дотримуйтесь інструкції на етикетці. Перед використанням збовтайте засіб за потреби.</p></div>
+                </div>
+                <div class="desc-acc-item">
+                  <button type="button" class="desc-acc-trigger" aria-expanded="false" data-acc="safety">Склад та безпека</button>
+                  <div class="desc-acc-body" data-acc-body="safety" hidden><p>Зберігати в недоступному для дітей місці. Уникати потрапляння в очі. При контакті зі шкірою або очима промити водою. Дотримуйтесь застережень на етикетці.</p></div>
+                </div>
+              </div>
             </div>
           </div>
-        
         </div>
-        <!-- end of single product -->
+
+        <p class="products-empty" id="products-empty" hidden>У цій категорії поки немає позицій у каталозі. Напишіть нам щодо оптового асортименту.</p>
+
       </div>
     </main>
 

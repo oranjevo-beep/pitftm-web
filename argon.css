@@ -1,0 +1,464 @@
+/* Argon blueprint theme for ТМ ПІФ — industrial-retail household chemistry */
+:root {
+  --argon-surface: #f4f7fa;
+  --argon-primary: #0a4d8c;
+  --argon-primary-deep: #083a69;
+  --argon-primary-soft: #e7eef6;
+  --argon-ink: #1c2430;
+  --argon-muted: #5b6775;
+  --argon-line: #d7dee7;
+  --argon-white: #ffffff;
+  --argon-radius: 0.65rem;
+}
+
+body {
+  background: var(--argon-surface);
+  color: var(--argon-ink);
+}
+
+/* Slim trust bar — sits above fixed nav */
+.trust-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  background: var(--argon-primary);
+  color: #fff;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+.trust-bar-inner {
+  width: min(92vw, 1170px);
+  margin: 0 auto;
+  padding: 0.45rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.trust-bar-copy {
+  margin: 0;
+  opacity: 0.96;
+}
+.trust-bar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  align-items: center;
+}
+.trust-bar a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+.trust-bar a:hover,
+.trust-bar a:focus-visible {
+  border-bottom-color: #fff;
+  outline: none;
+}
+
+/* Main nav + category strip */
+.nav {
+  position: fixed !important;
+  top: 2.15rem; /* below trust-bar */
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background: var(--argon-white);
+  border-bottom: 1px solid var(--argon-line);
+  box-shadow: none;
+}
+body {
+  padding-top: 6.1rem; /* trust-bar + nav */
+}
+.nav-link {
+  color: var(--argon-ink);
+  font-weight: 600;
+}
+.nav-link:hover {
+  color: var(--argon-primary);
+}
+.category-nav {
+  background: var(--argon-white);
+  border-bottom: 1px solid var(--argon-line);
+}
+.category-nav-inner {
+  width: min(92vw, 1170px);
+  margin: 0 auto;
+  padding: 0.55rem 0 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--argon-line);
+  background: var(--argon-surface);
+  color: var(--argon-ink);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.category-pill:hover,
+.category-pill:focus-visible,
+.category-pill.is-active {
+  background: var(--argon-primary);
+  border-color: var(--argon-primary);
+  color: #fff;
+  outline: none;
+}
+
+/* Argon hero */
+.hero.argon-hero {
+  background: linear-gradient(160deg, var(--argon-surface) 0%, #e8eef5 45%, #d9e6f4 100%);
+  color: var(--argon-ink);
+  min-height: 0;
+  display: block;
+  overflow: hidden;
+  padding: 1.75rem 1rem 2.75rem;
+  isolation: isolate;
+  position: relative;
+  z-index: 0;
+}
+.argon-hero .hero-layout {
+  display: grid;
+  gap: 1.75rem;
+  align-items: center;
+  width: min(92vw, 1170px);
+  margin: 0 auto;
+}
+.argon-hero .hero-banner {
+  text-align: left;
+  max-width: 36rem;
+  padding: 0;
+}
+.argon-hero .hero-kicker {
+  border-color: rgba(10, 77, 140, 0.35);
+  color: var(--argon-primary);
+  background: var(--argon-white);
+}
+.argon-hero .hero-banner h1 {
+  color: var(--argon-primary-deep);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+}
+.argon-hero .hero-banner p {
+  color: var(--argon-muted);
+  opacity: 1;
+}
+.argon-hero .hero-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.4rem;
+  background: var(--argon-primary-soft);
+  color: var(--argon-primary-deep);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+.argon-hero .hero-btn {
+  background: var(--argon-primary);
+  border-color: var(--argon-primary);
+  color: #fff;
+}
+.argon-hero .hero-btn:hover {
+  background: var(--argon-primary-deep);
+  border-color: var(--argon-primary-deep);
+  color: #fff;
+}
+.argon-hero .hero-btn-secondary {
+  background: var(--argon-white);
+  color: var(--argon-primary);
+  border-color: var(--argon-primary);
+}
+.argon-hero .hero-btn-secondary:hover {
+  background: var(--argon-primary-soft);
+  color: var(--argon-primary-deep);
+}
+.argon-hero .hero-visual {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--argon-white);
+  border: 1px solid var(--argon-line);
+  box-shadow: 0 12px 28px rgba(12, 40, 70, 0.1);
+  pointer-events: none;
+}
+.argon-hero .hero-visual-main {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #fff;
+  overflow: hidden;
+}
+.argon-hero .hero-feature {
+  width: 100% !important;
+  max-height: 22rem;
+  height: auto !important;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+  filter: none;
+  background: #fff;
+}
+.argon-hero .hero-visual-thumbs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--argon-line);
+}
+.argon-hero .hero-thumb-wrap {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #fff;
+  border-right: 1px solid var(--argon-line);
+  overflow: hidden;
+}
+.argon-hero .hero-thumb-wrap:last-child {
+  border-right: 0;
+}
+.argon-hero .hero-thumb {
+  height: 7rem !important;
+  object-fit: contain;
+  background: #fff;
+}
+
+.home-trust {
+  background: var(--argon-white);
+}
+.home-trust-item strong {
+  color: var(--argon-primary);
+}
+.home-highlights {
+  background: var(--argon-surface);
+}
+.home-card {
+  border-color: var(--argon-line);
+}
+.home-card h3 {
+  color: var(--argon-primary);
+}
+
+/* Products argon cards */
+.page-hero {
+  background: var(--argon-white);
+  border-bottom: 1px solid var(--argon-line);
+  margin-top: 0;
+  padding: 1.25rem 0 1.25rem;
+}
+.page-hero-lead {
+  color: var(--argon-muted);
+}
+.products-filter-bar {
+  width: min(92vw, 1170px);
+  margin: 1rem auto 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.products {
+  background: var(--argon-surface);
+  padding-top: 1rem;
+}
+.products-container {
+  width: min(92vw, 1170px);
+  margin: 0 auto;
+}
+.product {
+  background: var(--argon-white);
+  border: 1px solid var(--argon-line);
+  border-radius: calc(var(--argon-radius) + 0.1rem);
+  box-shadow: 0 4px 14px rgba(16, 40, 70, 0.05);
+}
+.product-img-container {
+  aspect-ratio: 1 / 1;
+  background: #fff;
+  border: 1px solid var(--argon-line);
+}
+.product-category-tag {
+  display: inline-block;
+  margin: 0.15rem 0 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--argon-primary-soft);
+  color: var(--argon-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.product-name {
+  text-transform: none;
+  color: var(--argon-ink);
+  font-size: 0.98rem;
+  min-height: 2.6em;
+}
+.product-volume-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0.15rem 0 0.35rem;
+}
+.volume-pill {
+  display: inline-flex;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--argon-line);
+  background: var(--argon-surface);
+  color: var(--argon-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.product-price-main {
+  color: var(--argon-primary-deep);
+}
+.product-capacity {
+  display: none;
+}
+
+/* Accordion sections */
+.product-desc-panel {
+  background: var(--argon-surface);
+  border-color: var(--argon-line);
+}
+.desc-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.desc-acc-item {
+  border: 1px solid var(--argon-line);
+  border-radius: 0.45rem;
+  background: #fff;
+  overflow: hidden;
+}
+.desc-acc-trigger {
+  width: 100%;
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  border: 0;
+  background: #fff;
+  color: var(--argon-primary-deep);
+  font-weight: 700;
+  font-size: 0.86rem;
+  cursor: pointer;
+}
+.desc-acc-trigger[aria-expanded="true"] {
+  background: var(--argon-primary-soft);
+}
+.desc-acc-body {
+  padding: 0 0.7rem 0.7rem;
+  color: var(--argon-muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.desc-acc-body[hidden] {
+  display: none !important;
+}
+.product-desc-toggle {
+  background: var(--argon-primary-soft);
+  border-color: var(--argon-primary);
+  color: var(--argon-primary-deep);
+}
+.product-desc-toggle[aria-expanded="true"] {
+  background: var(--argon-primary);
+  border-color: var(--argon-primary);
+  color: #fff;
+}
+
+.products-empty {
+  grid-column: 1 / -1;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--argon-muted);
+  background: var(--argon-white);
+  border: 1px dashed var(--argon-line);
+  border-radius: var(--argon-radius);
+}
+
+/* Footer argon */
+.site-footer {
+  background: #e8eef5;
+  border-top: 1px solid var(--argon-line);
+}
+.site-footer-heading {
+  color: var(--argon-primary);
+}
+.site-footer-links a:hover {
+  color: var(--argon-primary);
+}
+.site-footer-logo {
+  width: auto !important;
+  height: 2rem;
+  max-width: 11rem;
+  object-fit: contain;
+}
+
+.whatsapp-fab {
+  z-index: 990;
+}
+
+@media screen and (min-width: 768px) {
+  .argon-hero .hero-layout {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+  .argon-hero {
+    padding: 3rem 1rem 3.25rem;
+  }
+  .argon-hero .hero-feature {
+    max-height: 24rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .argon-hero .hero-feature {
+    max-height: 26rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .trust-bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .argon-hero {
+    padding-top: 1.75rem;
+  }
+  .argon-hero .hero-banner {
+    text-align: center;
+  }
+  .argon-hero .hero-actions {
+    justify-content: center;
+  }
+  .argon-hero .hero-visual-thumbs {
+    display: none;
+  }
+  .argon-hero .hero-feature {
+    max-height: 14rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav {
+    top: auto;
+  }
+  /* keep trust fixed; nav stays fixed under it via JS-measured fallback */
+  body {
+    padding-top: 5.5rem;
+  }
+  .trust-bar {
+    font-size: 0.78rem;
+  }
+}
