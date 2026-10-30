@@ -9,15 +9,61 @@
 
   let productsCache = null;
 
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
   function formatPriceLine(sizes) {
     if (!sizes || !sizes.length) return '';
+    if (sizes.length === 1) {
+      return 'Ціна: ' + sizes[0].price + ' грн';
+    }
+    const nums = sizes
+      .map(function (s) {
+        return Number(s.price);
+      })
+      .filter(function (n) {
+        return isFinite(n);
+      });
+    if (!nums.length) return '';
+    const min = Math.min.apply(null, nums);
+    return 'від ' + min.toFixed(2) + ' грн';
+  }
+
+  function renderPriceHtml(sizes) {
+    if (!sizes || !sizes.length) return '';
+    if (sizes.length === 1) {
+      return (
+        '<span class="product-price-main">Ціна: <strong>' +
+        escapeHtml(sizes[0].price) +
+        '</strong> грн</span>'
+      );
+    }
+    const nums = sizes
+      .map(function (s) {
+        return Number(s.price);
+      })
+      .filter(function (n) {
+        return isFinite(n);
+      });
+    if (!nums.length) return '';
+    const min = Math.min.apply(null, nums).toFixed(2);
+    const detail = sizes
+      .map(function (s) {
+        return escapeHtml(s.label || '') + ' — ' + escapeHtml(s.price) + ' грн';
+      })
+      .join(' · ');
     return (
-      'Ціна: ' +
-      sizes
-        .map(function (s) {
-          return s.price + ' грн';
-        })
-        .join(', ')
+      '<span class="product-price-main">від <strong>' +
+      escapeHtml(min) +
+      '</strong> грн</span>' +
+      '<span class="product-price-detail">' +
+      detail +
+      '</span>'
     );
   }
 
@@ -32,7 +78,7 @@
       const id = el.getAttribute('data-product-id');
       const product = byId[id];
       if (!product) return;
-      el.textContent = formatPriceLine(product.sizes);
+      el.innerHTML = renderPriceHtml(product.sizes);
     });
   }
 
@@ -72,6 +118,7 @@
   window.PifPrices = {
     STORAGE_KEY: STORAGE_KEY,
     formatPriceLine: formatPriceLine,
+    renderPriceHtml: renderPriceHtml,
     applyPrices: applyPrices,
     loadProducts: loadProducts,
     loadDraft: loadDraft,
