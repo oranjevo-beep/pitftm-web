@@ -407,11 +407,12 @@ product
 .product footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  text-align: center;
-  max-width: 15rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0.85rem 0 0;
+  text-align: left;
+  max-width: 100%;
+  width: 100%;
   color: var(--clr-grey-2);
 }
 .product-capacity {
@@ -1574,25 +1575,18 @@ VISUAL POLISH v2
   border-color: var(--clr-primary-8);
 }
 .product-img-container {
+  /* framing owned by argon.css (absolute inset + contain) */
+  position: relative;
   width: 100% !important;
-  max-width: none;
-  margin: 0 auto;
   aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, var(--clr-grey-10), #fff);
-  border-radius: var(--radius);
   overflow: hidden;
-  padding: 1.35rem;
+  background: #fff;
+  border-radius: var(--radius);
   box-sizing: border-box;
 }
 .product-img {
-  height: auto !important;
-  max-height: none;
-  width: auto;
-  max-width: 85%;
   object-fit: contain;
+  object-position: center;
 }
 .product footer {
   max-width: 100%;
@@ -1600,10 +1594,11 @@ VISUAL POLISH v2
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 0.35rem;
   padding-top: 0.85rem;
+  text-align: left;
 }
 .product-name {
   min-height: 2.8em;

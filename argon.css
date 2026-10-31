@@ -78,25 +78,25 @@ body.home {
 .site-header-trust-copy {
   width: min(92vw, var(--pif-max));
   margin: 0 auto;
-  padding: 0.3rem 0;
+  padding: 0.22rem 0;
   color: #ffffff !important;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  line-height: 1.3;
+  line-height: 1.25;
   text-align: center;
 }
 
 .site-header-inner {
   width: min(92vw, var(--pif-max));
   margin: 0 auto;
-  height: 3.6rem;
-  min-height: 3.6rem;
+  height: 3.35rem;
+  min-height: 3.35rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 1rem 1.35rem;
+  gap: 0.85rem 1.15rem;
 }
 
 .site-header-brand {
@@ -108,11 +108,11 @@ body.home {
 
 .site-header-brand .nav-logo,
 img.nav-logo {
-  height: 2.15rem !important;
+  height: 2rem !important;
   width: auto !important;
-  max-height: 2.15rem !important;
-  max-width: none;
-  aspect-ratio: 274 / 84;
+  max-height: 2rem !important;
+  max-width: 9.5rem;
+  aspect-ratio: auto !important;
   object-fit: contain !important;
   object-position: left center;
   display: block;
@@ -703,48 +703,54 @@ a.btn.hero-btn-secondary:hover {
   width: 100%;
 }
 
-/* SmartGrip-style packshot frame: fixed box + contain + air — never crop bottles */
-/* SmartGrip-style 1:1 packshot frame: contain + padding (NEVER cover/crop) */
+/* SmartGrip packshot: absolute inset box + object-fit:contain.
+   Guarantees full bottle (nozzle) visible. NEVER object-cover. */
 .product-img-container {
+  position: relative !important;
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
-  aspect-ratio: 1 / 1; /* aspect-square */
-  border-radius: 1rem; /* rounded-2xl */
-  border: 1px solid var(--pif-line);
-  background: #ffffff; /* bg-white */
-  padding: 1rem !important; /* p-4 */
+  aspect-ratio: 1 / 1;
+  border-radius: 0.85rem;
+  border: 1px solid #eef0f3;
+  background: #ffffff;
+  padding: 0 !important; /* padding via img inset */
   box-sizing: border-box;
-  overflow: hidden; /* clips radius only; img sized to fit inside */
-  display: flex !important; /* flex */
-  align-items: center; /* items-center */
-  justify-content: center; /* justify-center */
+  overflow: hidden;
+  display: block !important;
 }
 
 .product-img,
 .product-img.img,
 img.product-img {
-  /* max-h-full max-w-full object-contain object-center */
-  width: auto !important;
-  height: auto !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
+  position: absolute !important;
+  top: 1.15rem !important;
+  left: 1.15rem !important;
+  width: calc(100% - 2.3rem) !important;
+  height: calc(100% - 2.3rem) !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
   object-fit: contain !important;
   object-position: center center !important;
   border-radius: 0 !important;
   display: block;
-  flex: 0 1 auto;
 }
 
-.product > footer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.product > footer,
+.product footer {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
   gap: 0.45rem;
   margin-top: 0.85rem;
-  padding: 0;
+  padding: 0 !important;
   background: transparent;
   border: 0;
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
 }
 
 .product-category-tag {
@@ -872,9 +878,11 @@ img.product-img {
 
 .desc-acc-body {
   padding: 0 0.7rem 0.65rem;
-  color: var(--pif-muted);
-  font-size: 0.84rem;
+  color: #2f3a48;
+  font-size: 0.88rem;
   line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .desc-acc-body p { margin: 0; }
@@ -1138,78 +1146,97 @@ a.btn.hero-btn-secondary {
 .product-img.img,
 img.product-img {
   object-fit: contain !important;
-  width: auto !important;
-  height: auto !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
+  object-position: center center !important;
 }
 .argon-hero .hero-feature,
 .argon-hero .hero-thumb {
   object-fit: contain !important;
   width: auto !important;
   height: auto !important;
-  max-width: 90% !important;
-  max-height: 90% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
 
 
 /* =========================================================
    InnuScience-inspired B2B shop (PIF #339af0 — not their green)
+   Calm white catalog title + sidebar filters + airy packshot grid
    ========================================================= */
 
-.shop-hero {
-  background: linear-gradient(120deg, #339af0 0%, #1c7ed6 100%);
-  border-bottom: 0;
-  padding: 2.35rem 0 2.15rem;
-  color: #fff;
+.shop-titleband {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--pif-line);
+  padding: 1.5rem 0 1.25rem;
 }
-.shop-hero-inner { text-align: left; }
-.shop-hero-kicker {
-  margin: 0 0 0.45rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+
+.shop-titleband-inner {
+  text-align: left;
+  border-left: 4px solid #339af0;
+  padding-left: 1rem;
+}
+
+.shop-titleband-kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.9);
+  color: #339af0;
 }
-.shop-hero-title {
-  margin: 0 0 0.55rem;
-  font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+
+.shop-titleband-title {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #fff !important;
+  color: var(--pif-ink) !important;
   text-transform: none !important;
+  line-height: 1.15;
 }
-.shop-hero-lead {
+
+.shop-titleband-lead {
   margin: 0;
-  max-width: 38rem;
-  color: rgba(255,255,255,0.92);
-  font-size: 1.02rem;
-  line-height: 1.55;
+  max-width: 40rem;
+  color: var(--pif-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
 }
+
+/* legacy shop-hero kept harmless if referenced */
+.shop-hero {
+  background: #fff;
+  border-bottom: 1px solid var(--pif-line);
+  padding: 1.65rem 0 1.35rem;
+  color: var(--pif-ink);
+}
+.shop-hero-title { color: var(--pif-ink) !important; }
+.shop-hero-lead { color: var(--pif-muted); }
+.shop-hero-kicker { color: #339af0; }
 
 .shop-layout {
   display: grid;
-  gap: 1.75rem;
-  padding: 1.75rem 0 2.5rem;
+  gap: 1.5rem;
+  padding: 1.5rem 0 2.75rem;
   align-items: start;
 }
 @media screen and (min-width: 992px) {
   .shop-layout {
-    grid-template-columns: 15rem minmax(0, 1fr);
-    gap: 2rem;
+    grid-template-columns: 14.5rem minmax(0, 1fr);
+    gap: 1.85rem;
   }
 }
 
 .shop-sidebar {
+  position: sticky;
+  top: 4.6rem;
   background: #fff;
   border: 1px solid var(--pif-line);
-  border-radius: var(--pif-radius);
-  padding: 1.1rem 1rem 1.2rem;
+  border-radius: 0.75rem;
+  padding: 1rem 0.85rem 1.1rem;
 }
 .shop-sidebar-heading {
-  margin: 0 0 0.65rem;
-  font-size: 0.72rem;
+  margin: 0 0 0.55rem;
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1218,11 +1245,11 @@ img.product-img {
 .shop-cat-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.1rem;
 }
 .shop-cat-link {
   display: block;
-  padding: 0.45rem 0.55rem;
+  padding: 0.48rem 0.55rem;
   border-radius: 0.4rem;
   color: var(--pif-ink);
   text-decoration: none;
@@ -1241,23 +1268,23 @@ img.product-img {
   color: #fff !important;
 }
 .shop-sidebar-note {
-  margin-top: 1.15rem;
-  padding-top: 1rem;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
   border-top: 1px solid var(--pif-line);
 }
 .shop-sidebar-note p {
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.35rem;
   color: var(--pif-muted);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   line-height: 1.45;
 }
 .shop-sidebar-note strong { color: var(--pif-ink); }
 .shop-sidebar-wa {
   display: inline-flex;
-  margin-top: 0.35rem;
+  margin-top: 0.3rem;
   color: #25d366 !important;
   font-weight: 700;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   text-decoration: none;
 }
 .shop-sidebar-wa:hover { color: #1ebe57 !important; }
@@ -1266,12 +1293,10 @@ img.product-img {
   .shop-sidebar { display: none; }
 }
 
-.shop-toolbar {
-  margin-bottom: 1rem;
-}
+.shop-toolbar { margin-bottom: 0.85rem; }
 .shop-results-title {
-  margin: 0 0 0.75rem;
-  font-size: 1.35rem;
+  margin: 0 0 0.65rem;
+  font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: -0.015em;
   color: var(--pif-ink);
@@ -1295,7 +1320,7 @@ img.product-img {
 
 .shop-products .products-container {
   width: 100%;
-  gap: 1.15rem;
+  gap: 1.1rem;
 }
 @media screen and (min-width: 640px) {
   .shop-products .products-container {
@@ -1305,65 +1330,92 @@ img.product-img {
 @media screen and (min-width: 1100px) {
   .shop-products .products-container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
+    gap: 1.2rem;
   }
 }
 
-/* InnuScience-like card: flat, airy, name + benefit */
+/* InnuScience-like card: flat packshot, blue name, gray benefit */
 .shop-products .product {
   background: #fff;
   border: 1px solid var(--pif-line);
   border-radius: 0.85rem;
-  padding: 0.85rem 0.85rem 1rem;
+  padding: 0.75rem 0.75rem 0.95rem;
   box-shadow: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
 }
 .shop-products .product:hover,
 .shop-products .product:focus-within {
   transform: none;
   border-color: #b6d8f7;
-  box-shadow: 0 8px 24px rgba(28, 36, 48, 0.06);
+  box-shadow: 0 8px 22px rgba(28, 36, 48, 0.06);
 }
 
 .shop-products .product-img-container {
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #eef0f3;
-  border-radius: 0.75rem;
-  padding: 1.35rem !important; /* SmartGrip contain air — full bottle */
+  border-radius: 0.7rem;
+  padding: 0 !important;
 }
+
 .shop-products .product-img,
 .shop-products img.product-img {
-  max-width: 92% !important;
-  max-height: 92% !important;
+  top: 1.25rem !important;
+  left: 1.25rem !important;
+  width: calc(100% - 2.5rem) !important;
+  height: calc(100% - 2.5rem) !important;
   object-fit: contain !important;
+  object-position: center center !important;
 }
 
 .shop-products .product-category-tag {
   background: transparent;
   color: #339af0;
   padding: 0;
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .shop-products .product-name {
   min-height: 0;
-  margin: 0.15rem 0 0.25rem;
-  color: #339af0;
+  margin: 0.1rem 0 0.15rem;
+  color: #339af0 !important;
   font-size: 1.02rem;
   font-weight: 700;
+  line-height: 1.3;
 }
 
 .product-benefit {
-  margin: 0 0 0.45rem;
-  color: var(--pif-muted);
-  font-size: 0.86rem;
+  margin: 0 0 0.35rem;
+  color: #3d4654;
+  font-size: 0.88rem;
   line-height: 1.4;
-  min-height: 1.4em;
+  min-height: 1.35em;
+  font-weight: 500;
 }
 
-.shop-products .product > footer {
-  gap: 0.35rem;
+.shop-products .product > footer,
+.shop-products .product footer {
+  gap: 0.3rem;
+  margin-top: 0.7rem;
+  max-width: 100% !important;
+  text-align: left !important;
+  align-items: flex-start !important;
+}
+
+.shop-products .product-volume-pills {
+  margin: 0.1rem 0;
+}
+.shop-products .volume-pill {
+  font-size: 0.7rem;
+  padding: 0.18rem 0.5rem;
+}
+
+.shop-products .product-price-main {
+  color: #339af0;
+  font-size: 1.1rem;
 }
 
 .shop-products .product-desc-toggle {
@@ -1372,6 +1424,7 @@ img.product-img {
   color: var(--pif-ink);
   border-radius: 0.45rem;
   font-weight: 600;
+  margin-top: 0.35rem;
 }
 .shop-products .product-desc-toggle[aria-expanded="true"] {
   background: #339af0 !important;
@@ -1379,7 +1432,11 @@ img.product-img {
   color: #fff !important;
 }
 
-/* Home: slightly more InnuScience calm on highlights */
+.shop-products .desc-acc-body {
+  color: #2f3a48;
+}
+
+/* Home CTA keep */
 .home-cta-band .btn {
   white-space: nowrap;
 }
