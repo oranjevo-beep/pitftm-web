@@ -31,76 +31,52 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css?v=20261031c" />
+    <link rel="stylesheet" href="./argon.css?v=20261031c" />
     <title>О Нас | ПІФ</title>
   </head>
 
   <body>
-    <!-- header -->
-    <header>
-      <!-- nav -->
-      <nav class="nav">
-        <div class="nav-center">
-          <!-- nav header -->
-          <div class="nav-header">
-            <a href="index.html">
-              <img class="nav-logo" src="./images/logo-slide.png" alt="ПІФ — логотип" />
-            </a>
-            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="nav-links">
-              <i class="fas fa-bars"></i>
-            </button>
-          </div>
-          <!-- end of nav header -->
-          <!-- nav links -->
-          <!-- nav links -->
+    <header class="site-header">
+      <div class="site-header-trust" role="note">
+        <p class="site-header-trust-copy">ТМ «ПІФ» · Виробник з 2005 року</p>
+      </div>
+      <div class="site-header-inner">
+        <a class="site-header-brand" href="index.html">
+          <img
+            class="nav-logo"
+            src="./images/logo-slide.png"
+            srcset="./images/logo-slide.png 1x, ./images/logo-slide@2x.png 2x"
+            width="137"
+            height="42"
+            alt="ПІФ — логотип"
+          />
+        </a>
+        <nav class="site-header-nav" aria-label="Головне меню">
           <ul class="nav-links" id="nav-links">
-            <!-- single link -->
-            <li>
-              <a href="index.html" class="nav-link scroll-link">головна</a>
-            </li>
-            <!-- end of single link -->
-            <!-- single link -->
-            <li>
-              <a href="about.html" class="nav-link scroll-link">о нас</a>
-            </li>
-            <!-- end of single link -->
-            <!-- single link -->
-            <li>
-              <a href="products.html" class="nav-link scroll-link">продукція</a>
-            </li>
-            <!-- end of single link -->
-            <!-- single link -->
-            <li>
-              <a href="contacts.html" class="nav-link scroll-link">контакти</a>
-            </li>
-            <!-- end of single link -->
+            <li><a href="index.html" class="nav-link">Головна</a></li>
+            <li><a href="about.html" class="nav-link">О нас</a></li>
+            <li><a href="products.html" class="nav-link">Продукція</a></li>
+            <li><a href="contacts.html" class="nav-link">Контакти</a></li>
           </ul>
-          <!-- end of nav links -->
-          <!-- nav icons -->
-          <ul class="nav-icons">
-            <!-- single icon -->
-            <li>
-              <a href="tel:+380679720560" target="_blank" class="nav-icon"
-                >+380679720560</a
-              >
-            </li>
-            <!-- end of single icon -->
-            <!-- single icon -->
-            <li>
-              <a
-                href="https://api.whatsapp.com/send?phone=380679720560"
-                target="_blank"
-                class="nav-icon whatsapp-icon"
-                ><i class="fab fa-whatsapp"></i
-              ></a>
-            </li>
-            <!-- end of single icon -->
-          </ul>
-          <!-- end of nav icons -->
+        </nav>
+        <div class="site-header-actions">
+          <a class="site-header-phone" href="tel:+380679720560">+380 67 972 05 60</a>
+          <a
+            class="site-header-wa"
+            href="https://api.whatsapp.com/send?phone=380679720560"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp" aria-hidden="true"></i
+          ></a>
         </div>
-      </nav>
-      <!-- end of nav -->
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="nav-links">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </header>
+
     <!-- about -->
     <section class="section section-center about-page">
       <div class="section-title">
@@ -140,6 +116,56 @@
         </p>
       </article>
     </section>
+    
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-brand">
+          <a href="index.html" class="site-footer-logo-link">
+            <img class="site-footer-logo" src="./images/logo-slide.png" srcset="./images/logo-slide.png 1x, ./images/logo-slide@2x.png 2x" width="137" height="42" alt="ПІФ — логотип" />
+          </a>
+          <p class="site-footer-tagline">Побутова хімія з 2005 року</p>
+        </div>
+        <nav class="site-footer-nav" aria-label="Навігація">
+          <p class="site-footer-heading">Меню</p>
+          <ul class="site-footer-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="products.html">Продукція</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer-contacts">
+          <p class="site-footer-heading">Контакти</p>
+          <p class="site-footer-company">ТОВ &quot;Кодимський Райпостач&quot;</p>
+          <p class="site-footer-address">
+            провулок Вознесенський № 3, місто Одеса, Україна, 65007
+          </p>
+          <ul class="site-footer-contact-list">
+            <li>
+              <span>Тел. факс</span>
+              <a href="tel:+380487017029">(048) 701-70-29</a>
+            </li>
+            <li>
+              <span>Моб. / WhatsApp</span>
+              <a href="tel:+380679720560">+380 67 972 05 60</a>
+              <a
+                class="site-footer-wa"
+                href="https://api.whatsapp.com/send?phone=380679720560"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <span>E-mail</span>
+              <a href="mailto:piftm.info@gmail.com">piftm.info@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
     <a
       class="whatsapp-fab"
       href="https://api.whatsapp.com/send?phone=380679720560"

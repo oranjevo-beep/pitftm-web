@@ -36,6 +36,7 @@
 
   function renderPriceHtml(sizes) {
     if (!sizes || !sizes.length) return '';
+    // Volume pills already show per-size prices — keep a single clear headline price here
     if (sizes.length === 1) {
       return (
         '<span class="product-price-main">Ціна: <strong>' +
@@ -52,18 +53,10 @@
       });
     if (!nums.length) return '';
     const min = Math.min.apply(null, nums).toFixed(2);
-    const detail = sizes
-      .map(function (s) {
-        return escapeHtml(s.label || '') + ' — ' + escapeHtml(s.price) + ' грн';
-      })
-      .join(' · ');
     return (
       '<span class="product-price-main">від <strong>' +
       escapeHtml(min) +
-      '</strong> грн</span>' +
-      '<span class="product-price-detail">' +
-      detail +
-      '</span>'
+      '</strong> грн</span>'
     );
   }
 
@@ -79,6 +72,35 @@
       const product = byId[id];
       if (!product) return;
       el.innerHTML = renderPriceHtml(product.sizes);
+      const benefit = document.querySelector('.product-benefit[data-product-id="' + id + '"]');
+      if (benefit) {
+        var line = (product.benefit || product.descShort || '').trim();
+        if (line) {
+          // Prefer dedicated benefit; else first sentence of descShort
+          if (!product.benefit) {
+            line = line.split(/[.!?]/)[0].trim();
+            if (line.length > 90) line = line.slice(0, 87).trim() + '…';
+          }
+          benefit.textContent = line;
+        }
+      }
+      const pills = document.querySelector('.product-volume-pills[data-product-id="' + id + '"]');
+      if (pills && product.sizes && product.sizes.length) {
+        pills.innerHTML = product.sizes
+          .map(function (s) {
+            var label = escapeHtml(s.label || '');
+            var price = escapeHtml(s.price || '');
+            return (
+              '<span class="volume-pill" title="' +
+              label +
+              (price ? ' — ' + price + ' грн' : '') +
+              '">' +
+              label +
+              '</span>'
+            );
+          })
+          .join('');
+      }
     });
   }
 
