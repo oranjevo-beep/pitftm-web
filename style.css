@@ -83,7 +83,7 @@ a {
   text-decoration: none;
 }
 
-img:not(.nav-logo):not(.site-footer-logo):not(.hero-feature):not(.hero-thumb) {
+img:not(.nav-logo):not(.site-footer-logo):not(.hero-feature):not(.hero-thumb):not(.product-img) {
   width: 100%;
   display: block;
 }
@@ -369,7 +369,7 @@ product
   margin: 0 auto;
 }
 .product-img {
-  object-fit: cover;
+  object-fit: contain;
   border-radius: var(--radius);
 }
 .product-container {
@@ -605,7 +605,7 @@ Services
   letter-spacing: 1px;
 }
 .product-img {
-  height: 15rem;
+  height: auto;
   object-fit: contain;
 }
 @media screen and (min-width: 672px) {
@@ -1575,7 +1575,7 @@ VISUAL POLISH v2
 }
 .product-img-container {
   width: 100% !important;
-  max-width: 14rem;
+  max-width: none;
   margin: 0 auto;
   aspect-ratio: 1 / 1;
   display: flex;
@@ -1584,10 +1584,12 @@ VISUAL POLISH v2
   background: linear-gradient(180deg, var(--clr-grey-10), #fff);
   border-radius: var(--radius);
   overflow: hidden;
+  padding: 1.35rem;
+  box-sizing: border-box;
 }
 .product-img {
   height: auto !important;
-  max-height: 12rem;
+  max-height: none;
   width: auto;
   max-width: 85%;
   object-fit: contain;
