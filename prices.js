@@ -93,11 +93,9 @@
             return (
               '<span class="volume-pill" title="' +
               label +
-              ' — ' +
-              price +
-              ' грн">' +
+              (price ? ' — ' + price + ' грн' : '') +
+              '">' +
               label +
-              (price ? ' · <strong>' + price + '</strong> грн' : '') +
               '</span>'
             );
           })

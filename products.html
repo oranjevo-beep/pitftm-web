@@ -30,12 +30,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./style.css?v=20261031b" />
-    <link rel="stylesheet" href="./argon.css?v=20261031b" />
+    <link rel="stylesheet" href="./style.css?v=20261031c" />
+    <link rel="stylesheet" href="./argon.css?v=20261031c" />
     <title>Продукція | ПІФ</title>
   </head>
 
-  <body>
+  <body class="shop-page">
     <header class="site-header">
       <div class="site-header-trust" role="note">
         <p class="site-header-trust-copy">ТМ «ПІФ» · Виробник з 2005 року</p>
@@ -76,14 +76,11 @@
       </div>
     </header>
 
-    <!-- catalog title — calm InnuScience-style, brand blue accent only -->
-    <section class="shop-titleband" aria-label="Каталог">
-      <div class="section-center shop-titleband-inner">
-        <p class="shop-titleband-kicker">Каталог ТМ «ПІФ»</p>
-        <h1 class="shop-titleband-title">Продукція</h1>
-        <p class="shop-titleband-lead">
-          Мийні й чистячі засоби українського виробництва. Оберіть категорію або перегляньте весь асортимент.
-        </p>
+    <!-- InnuScience-style shop banner: full-bleed brand wash + large Products title -->
+    <section class="shop-banner" aria-label="Каталог">
+      <div class="shop-banner-bg" aria-hidden="true"></div>
+      <div class="section-center shop-banner-inner">
+        <h1 class="shop-banner-title">Продукція</h1>
       </div>
     </section>
     <!-- owner toolbar: hidden until password unlock -->
@@ -100,16 +97,18 @@
     </div>
     <div class="shop-layout section-center">
       <aside class="shop-sidebar" aria-label="Фільтр каталогу">
-        <p class="shop-sidebar-heading">Категорії</p>
-        <nav class="shop-cat-nav" aria-label="Категорії продукції">
-          <a class="shop-cat-link is-active" href="products.html" data-cat="all">Усі продукти</a>
-          <a class="shop-cat-link" href="?cat=bath" data-cat="bath">Туалет та ванна</a>
-          <a class="shop-cat-link" href="?cat=dishes" data-cat="dishes">Посуд</a>
-          <a class="shop-cat-link" href="?cat=floor" data-cat="floor">Підлога</a>
-          <a class="shop-cat-link" href="?cat=glass" data-cat="glass">Скло та дзеркала</a>
-          <a class="shop-cat-link" href="?cat=pipes" data-cat="pipes">Труби та каналізація</a>
-          <a class="shop-cat-link" href="?cat=prannya" data-cat="prannya">Прання</a>
-        </nav>
+        <div class="shop-sidebar-block">
+          <p class="shop-sidebar-heading">Категорії</p>
+          <nav class="shop-cat-nav" aria-label="Категорії продукції">
+            <a class="shop-cat-link is-active" href="products.html" data-cat="all">Усі продукти</a>
+            <a class="shop-cat-link" href="?cat=bath" data-cat="bath">Туалет та ванна</a>
+            <a class="shop-cat-link" href="?cat=dishes" data-cat="dishes">Посуд</a>
+            <a class="shop-cat-link" href="?cat=floor" data-cat="floor">Підлога</a>
+            <a class="shop-cat-link" href="?cat=glass" data-cat="glass">Скло та дзеркала</a>
+            <a class="shop-cat-link" href="?cat=pipes" data-cat="pipes">Труби та каналізація</a>
+            <a class="shop-cat-link" href="?cat=prannya" data-cat="prannya">Прання</a>
+          </nav>
+        </div>
         <div class="shop-sidebar-note">
           <p><strong>Роздріб і B2B</strong></p>
           <p>Фасування від 500&nbsp;мл до 5&nbsp;л. Прайс для опту — у WhatsApp.</p>

@@ -1159,117 +1159,131 @@ img.product-img {
 
 
 /* =========================================================
-   InnuScience-inspired B2B shop (PIF #339af0 — not their green)
-   Calm white catalog title + sidebar filters + airy packshot grid
+   InnuScience-faithful B2B shop patterns (PIF #339af0 — not green)
+   Studied live https://www.innuscience.com/shop :
+   - full-bleed banner + large white "Products" title
+   - sticky text-link sidebar (All underlined; brand-color links)
+   - 4-col desktop / 2-col mobile borderless packshot grid
+   - card: soft #F8F9FA 1:1 well, object-fit:contain, brand title,
+     muted small benefit line, minimal chrome
    ========================================================= */
 
-.shop-titleband {
+/* Shop page: white canvas like InnuScience (not gray surface) */
+body.shop-page {
   background: #ffffff !important;
-  border-bottom: 1px solid var(--pif-line);
-  padding: 1.5rem 0 1.25rem;
 }
 
-.shop-titleband-inner {
-  text-align: left;
-  border-left: 4px solid #339af0;
-  padding-left: 1rem;
+/* ----- Banner (their green leaf hero → our blue wash + packshot) ----- */
+.shop-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 9.5rem;
+  display: flex;
+  align-items: center;
+  background: #1c7ed6;
 }
-
-.shop-titleband-kicker {
-  margin: 0 0 0.35rem;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #339af0;
+.shop-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(120deg, rgba(51, 154, 240, 0.92) 0%, rgba(28, 126, 214, 0.88) 55%, rgba(26, 77, 120, 0.9) 100%),
+    url("./images/hero-glass-lg.webp") center / cover no-repeat;
 }
-
-.shop-titleband-title {
-  margin: 0 0 0.4rem;
-  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--pif-ink) !important;
-  text-transform: none !important;
-  line-height: 1.15;
+.shop-banner-inner {
+  position: relative;
+  z-index: 1;
+  padding: 2.4rem 0 2.2rem;
 }
-
-.shop-titleband-lead {
+.shop-banner-title {
   margin: 0;
-  max-width: 40rem;
-  color: var(--pif-muted);
-  font-size: 0.98rem;
-  line-height: 1.5;
+  color: #ffffff !important;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-transform: none !important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* legacy shop-hero kept harmless if referenced */
-.shop-hero {
-  background: #fff;
-  border-bottom: 1px solid var(--pif-line);
-  padding: 1.65rem 0 1.35rem;
-  color: var(--pif-ink);
+@media screen and (max-width: 639px) {
+  .shop-banner { min-height: 7.5rem; }
+  .shop-banner-inner { padding: 1.75rem 0 1.6rem; }
+  .shop-banner-title { font-size: 2.15rem; }
 }
-.shop-hero-title { color: var(--pif-ink) !important; }
-.shop-hero-lead { color: var(--pif-muted); }
-.shop-hero-kicker { color: #339af0; }
 
+/* legacy aliases */
+.shop-titleband { display: none !important; }
+.shop-hero { display: none !important; }
+
+/* ----- Layout: sidebar + main (like o_wsale_products_main_row) ----- */
 .shop-layout {
   display: grid;
-  gap: 1.5rem;
-  padding: 1.5rem 0 2.75rem;
+  gap: 1.75rem;
+  padding: 1.75rem 0 3.25rem;
   align-items: start;
+  background: #fff;
 }
 @media screen and (min-width: 992px) {
   .shop-layout {
-    grid-template-columns: 14.5rem minmax(0, 1fr);
-    gap: 1.85rem;
+    grid-template-columns: 13.5rem minmax(0, 1fr);
+    gap: 2.25rem;
   }
 }
 
+/* ----- Sidebar: plain text links (not filled pills) ----- */
 .shop-sidebar {
   position: sticky;
-  top: 4.6rem;
-  background: #fff;
-  border: 1px solid var(--pif-line);
-  border-radius: 0.75rem;
-  padding: 1rem 0.85rem 1.1rem;
+  top: 4.4rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0.35rem 0 0;
 }
 .shop-sidebar-heading {
-  margin: 0 0 0.55rem;
-  font-size: 0.7rem;
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--pif-muted);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--pif-ink);
 }
 .shop-cat-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.35rem;
 }
 .shop-cat-link {
-  display: block;
-  padding: 0.48rem 0.55rem;
-  border-radius: 0.4rem;
-  color: var(--pif-ink);
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.1rem 0;
+  border-radius: 0;
+  color: #339af0;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.35;
+  background: transparent !important;
 }
 .shop-cat-link:hover,
 .shop-cat-link:focus-visible {
-  background: var(--pif-blue-soft);
-  color: #339af0;
+  color: var(--pif-blue-hover);
+  text-decoration: underline;
+  background: transparent !important;
   outline: none;
 }
 .shop-cat-link.is-active {
-  background: #339af0;
-  color: #fff !important;
+  color: #339af0 !important;
+  background: transparent !important;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  font-weight: 700;
 }
 .shop-sidebar-note {
-  margin-top: 1rem;
-  padding-top: 0.9rem;
+  margin-top: 1.35rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--pif-line);
 }
 .shop-sidebar-note p {
@@ -1293,18 +1307,34 @@ img.product-img {
   .shop-sidebar { display: none; }
 }
 
-.shop-toolbar { margin-bottom: 0.85rem; }
+/* ----- Results title + mobile pills ----- */
+.shop-toolbar { margin-bottom: 1rem; }
 .shop-results-title {
-  margin: 0 0 0.65rem;
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.015em;
-  color: var(--pif-ink);
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #5c6775; /* InnuScience muted "All products" */
   text-transform: none !important;
 }
 .shop-filter-mobile {
   width: 100%;
   margin: 0;
+  gap: 0.4rem;
+}
+.shop-filter-mobile .category-pill {
+  border-radius: 999px;
+  border: 1px solid var(--pif-line);
+  background: #fff;
+  color: var(--pif-ink);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+}
+.shop-filter-mobile .category-pill.is-active {
+  background: #339af0 !important;
+  border-color: #339af0 !important;
+  color: #fff !important;
 }
 @media screen and (min-width: 992px) {
   .shop-filter-mobile { display: none; }
@@ -1318,125 +1348,174 @@ img.product-img {
   background: transparent;
 }
 
+/* 2-col mobile, 4-col desktop — matches their data-ppr="4" / g-col-6 */
 .shop-products .products-container {
   width: 100%;
-  gap: 1.1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem 1rem;
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 992px) {
   .shop-products .products-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-@media screen and (min-width: 1100px) {
-  .shop-products .products-container {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.75rem 1.25rem;
   }
 }
 
-/* InnuScience-like card: flat packshot, blue name, gray benefit */
+/* ----- Cards: borderless / hairline, soft thumb, brand title + muted benefit ----- */
 .shop-products .product {
   background: #fff;
-  border: 1px solid var(--pif-line);
-  border-radius: 0.85rem;
-  padding: 0.75rem 0.75rem 0.95rem;
+  border: 1px solid #eef0f3;
+  border-radius: 0.35rem;
+  padding: 0.55rem 0.55rem 0.85rem;
   box-shadow: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
   overflow: hidden;
 }
 .shop-products .product:hover,
 .shop-products .product:focus-within {
   transform: none;
-  border-color: #b6d8f7;
-  box-shadow: 0 8px 22px rgba(28, 36, 48, 0.06);
+  border-color: #dfe3e8;
+  box-shadow: 0 10px 28px rgba(28, 36, 48, 0.07);
 }
 
+/* Soft well like --o-wsale-card-thumb-background #F8F9FA */
 .shop-products .product-img-container {
-  background: #ffffff;
-  border: 1px solid #eef0f3;
-  border-radius: 0.7rem;
+  background: #f8f9fa !important;
+  border: 0 !important;
+  border-radius: 0.25rem;
   padding: 0 !important;
 }
 
 .shop-products .product-img,
 .shop-products img.product-img {
-  top: 1.25rem !important;
-  left: 1.25rem !important;
-  width: calc(100% - 2.5rem) !important;
-  height: calc(100% - 2.5rem) !important;
+  top: 1.1rem !important;
+  left: 1.1rem !important;
+  width: calc(100% - 2.2rem) !important;
+  height: calc(100% - 2.2rem) !important;
   object-fit: contain !important;
   object-position: center center !important;
 }
 
+/* Hide category chips on cards — InnuScience cards don't show them */
 .shop-products .product-category-tag {
-  background: transparent;
-  color: #339af0;
-  padding: 0;
-  font-size: 0.66rem;
-  letter-spacing: 0.05em;
-  font-weight: 700;
-  text-transform: uppercase;
+  display: none !important;
 }
 
 .shop-products .product-name {
   min-height: 0;
-  margin: 0.1rem 0 0.15rem;
-  color: #339af0 !important;
-  font-size: 1.02rem;
+  margin: 0.15rem 0 0.2rem;
+  color: #339af0 !important; /* brand title like their green titles */
+  font-size: 0.98rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
-.product-benefit {
-  margin: 0 0 0.35rem;
-  color: #3d4654;
-  font-size: 0.88rem;
-  line-height: 1.4;
-  min-height: 1.35em;
+/* text-muted small benefit */
+.product-benefit,
+.shop-products .product-benefit {
+  margin: 0 0 0.45rem;
+  color: #868e96 !important;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  min-height: 0;
   font-weight: 500;
 }
 
 .shop-products .product > footer,
 .shop-products .product footer {
-  gap: 0.3rem;
-  margin-top: 0.7rem;
+  gap: 0.28rem;
+  margin-top: 0.55rem;
+  padding: 0.15rem 0.15rem 0 !important;
   max-width: 100% !important;
   text-align: left !important;
   align-items: flex-start !important;
 }
 
 .shop-products .product-volume-pills {
-  margin: 0.1rem 0;
+  margin: 0.05rem 0 0.15rem;
+  gap: 0.25rem;
 }
 .shop-products .volume-pill {
-  font-size: 0.7rem;
-  padding: 0.18rem 0.5rem;
+  font-size: 0.68rem;
+  padding: 0.12rem 0.42rem;
+  border-color: #e9ecef;
+  color: #5c6775;
+  font-weight: 500;
+  background: #fff;
 }
+.shop-products .volume-pill strong { display: none; }
 
+.shop-products .product-price {
+  margin: 0.1rem 0 0.15rem;
+}
 .shop-products .product-price-main {
   color: #339af0;
-  font-size: 1.1rem;
+  font-size: 0.98rem;
+  font-weight: 700;
 }
 
+/* Desc toggle → quiet text-button (less retail CTA chrome) */
 .shop-products .product-desc-toggle {
-  background: #fff;
-  border: 1px solid var(--pif-line);
-  color: var(--pif-ink);
-  border-radius: 0.45rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  color: #339af0;
+  border-radius: 0;
   font-weight: 600;
-  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  margin-top: 0.2rem;
+  padding: 0.2rem 0;
+  width: auto;
+  text-align: left;
+}
+.shop-products .product-desc-toggle:hover,
+.shop-products .product-desc-toggle:focus-visible {
+  text-decoration: underline;
+  outline: none;
 }
 .shop-products .product-desc-toggle[aria-expanded="true"] {
-  background: #339af0 !important;
-  border-color: #339af0 !important;
-  color: #fff !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  color: #1c7ed6 !important;
+  text-decoration: underline;
 }
 
+.shop-products .product-desc-panel {
+  margin-top: 0.5rem;
+  padding: 0.55rem;
+  border-radius: 0.35rem;
+  background: #fafbfc;
+  border: 1px solid #eef0f3;
+}
 .shop-products .desc-acc-body {
   color: #2f3a48;
+  font-size: 0.82rem;
 }
 
-/* Home CTA keep */
+/* When accordion open on 2-col mobile, span full width for readability */
+@media screen and (max-width: 991px) {
+  .shop-products .product.is-desc-open {
+    grid-column: 1 / -1;
+  }
+}
+
 .home-cta-band .btn {
   white-space: nowrap;
+}
+
+
+/* Hard lock: sidebar links stay text-style (InnuScience), never filled pills */
+.shop-sidebar .shop-cat-link,
+.shop-sidebar .shop-cat-link.is-active {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: #339af0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.shop-sidebar .shop-cat-link.is-active {
+  text-decoration: underline !important;
+  text-underline-offset: 0.18em;
 }
