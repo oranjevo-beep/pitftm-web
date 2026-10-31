@@ -72,6 +72,14 @@
       const product = byId[id];
       if (!product) return;
       el.innerHTML = renderPriceHtml(product.sizes);
+      const benefit = document.querySelector('.product-benefit[data-product-id="' + id + '"]');
+      if (benefit && product.descShort) {
+        var short = String(product.descShort).trim();
+        // one-line benefit like InnuScience subtitle
+        var cut = short.split(/[.!?]/)[0].trim();
+        if (cut.length > 90) cut = cut.slice(0, 87).trim() + '…';
+        benefit.textContent = cut;
+      }
       const pills = document.querySelector('.product-volume-pills[data-product-id="' + id + '"]');
       if (pills && product.sizes && product.sizes.length) {
         pills.innerHTML = product.sizes

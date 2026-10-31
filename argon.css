@@ -1151,3 +1151,235 @@ img.product-img {
   max-width: 90% !important;
   max-height: 90% !important;
 }
+
+
+/* =========================================================
+   InnuScience-inspired B2B shop (PIF #339af0 — not their green)
+   ========================================================= */
+
+.shop-hero {
+  background: linear-gradient(120deg, #339af0 0%, #1c7ed6 100%);
+  border-bottom: 0;
+  padding: 2.35rem 0 2.15rem;
+  color: #fff;
+}
+.shop-hero-inner { text-align: left; }
+.shop-hero-kicker {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+}
+.shop-hero-title {
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff !important;
+  text-transform: none !important;
+}
+.shop-hero-lead {
+  margin: 0;
+  max-width: 38rem;
+  color: rgba(255,255,255,0.92);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.shop-layout {
+  display: grid;
+  gap: 1.75rem;
+  padding: 1.75rem 0 2.5rem;
+  align-items: start;
+}
+@media screen and (min-width: 992px) {
+  .shop-layout {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
+.shop-sidebar {
+  background: #fff;
+  border: 1px solid var(--pif-line);
+  border-radius: var(--pif-radius);
+  padding: 1.1rem 1rem 1.2rem;
+}
+.shop-sidebar-heading {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pif-muted);
+}
+.shop-cat-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.shop-cat-link {
+  display: block;
+  padding: 0.45rem 0.55rem;
+  border-radius: 0.4rem;
+  color: var(--pif-ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.shop-cat-link:hover,
+.shop-cat-link:focus-visible {
+  background: var(--pif-blue-soft);
+  color: #339af0;
+  outline: none;
+}
+.shop-cat-link.is-active {
+  background: #339af0;
+  color: #fff !important;
+}
+.shop-sidebar-note {
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pif-line);
+}
+.shop-sidebar-note p {
+  margin: 0 0 0.4rem;
+  color: var(--pif-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.shop-sidebar-note strong { color: var(--pif-ink); }
+.shop-sidebar-wa {
+  display: inline-flex;
+  margin-top: 0.35rem;
+  color: #25d366 !important;
+  font-weight: 700;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+.shop-sidebar-wa:hover { color: #1ebe57 !important; }
+
+@media screen and (max-width: 991px) {
+  .shop-sidebar { display: none; }
+}
+
+.shop-toolbar {
+  margin-bottom: 1rem;
+}
+.shop-results-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--pif-ink);
+  text-transform: none !important;
+}
+.shop-filter-mobile {
+  width: 100%;
+  margin: 0;
+}
+@media screen and (min-width: 992px) {
+  .shop-filter-mobile { display: none; }
+}
+
+.shop-products.products {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent;
+}
+
+.shop-products .products-container {
+  width: 100%;
+  gap: 1.15rem;
+}
+@media screen and (min-width: 640px) {
+  .shop-products .products-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (min-width: 1100px) {
+  .shop-products .products-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+/* InnuScience-like card: flat, airy, name + benefit */
+.shop-products .product {
+  background: #fff;
+  border: 1px solid var(--pif-line);
+  border-radius: 0.85rem;
+  padding: 0.85rem 0.85rem 1rem;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.shop-products .product:hover,
+.shop-products .product:focus-within {
+  transform: none;
+  border-color: #b6d8f7;
+  box-shadow: 0 8px 24px rgba(28, 36, 48, 0.06);
+}
+
+.shop-products .product-img-container {
+  background: #fff;
+  border: 1px solid #eef0f3;
+  border-radius: 0.75rem;
+  padding: 1.35rem !important; /* SmartGrip contain air — full bottle */
+}
+.shop-products .product-img,
+.shop-products img.product-img {
+  max-width: 92% !important;
+  max-height: 92% !important;
+  object-fit: contain !important;
+}
+
+.shop-products .product-category-tag {
+  background: transparent;
+  color: #339af0;
+  padding: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+}
+
+.shop-products .product-name {
+  min-height: 0;
+  margin: 0.15rem 0 0.25rem;
+  color: #339af0;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.product-benefit {
+  margin: 0 0 0.45rem;
+  color: var(--pif-muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  min-height: 1.4em;
+}
+
+.shop-products .product > footer {
+  gap: 0.35rem;
+}
+
+.shop-products .product-desc-toggle {
+  background: #fff;
+  border: 1px solid var(--pif-line);
+  color: var(--pif-ink);
+  border-radius: 0.45rem;
+  font-weight: 600;
+}
+.shop-products .product-desc-toggle[aria-expanded="true"] {
+  background: #339af0 !important;
+  border-color: #339af0 !important;
+  color: #fff !important;
+}
+
+/* Home: slightly more InnuScience calm on highlights */
+.home-cta-band .btn {
+  white-space: nowrap;
+}

@@ -77,15 +77,14 @@
     </header>
 
     <!-- hero -->
-    <section class="section page-hero">
-      <div class="section-center">
-        <div class="section-title">
-          <h2>наша <span>продукція</span></h2>
-          <p class="page-hero-lead">
-            Побутова хімія для дому та прибирання: мийні й чистячі засоби
-            українського виробництва ТМ «ПІФ».
-          </p>
-        </div>
+    <section class="page-hero shop-hero" aria-label="Каталог">
+      <div class="section-center shop-hero-inner">
+        <p class="shop-hero-kicker">Каталог ТМ «ПІФ»</p>
+        <h1 class="shop-hero-title">Продукція</h1>
+        <p class="shop-hero-lead">
+          Мийні й чистячі засоби українського виробництва для дому, офісів і бізнесу.
+          Оберіть категорію або перегляньте весь асортимент.
+        </p>
       </div>
     </section>
     <!-- end of hero -->
@@ -101,19 +100,41 @@
         Ціни беруться з <code>products.json</code>. Редактор лише допомагає оновити файл для GitHub.
       </p>
     </div>
-    <div class="products-filter-bar" role="tablist" aria-label="Фільтр за категорією">
-      <a class="category-pill is-active" href="products.html" data-cat="all">Усі</a>
-      <a class="category-pill" href="?cat=prannya" data-cat="prannya">Прання</a>
-      <a class="category-pill" href="?cat=glass" data-cat="glass">Скло та дзеркала</a>
-      <a class="category-pill" href="?cat=floor" data-cat="floor">Підлога</a>
-      <a class="category-pill" href="?cat=pipes" data-cat="pipes">Труби та каналізація</a>
-      <a class="category-pill" href="?cat=dishes" data-cat="dishes">Посуд</a>
-      <a class="category-pill" href="?cat=bath" data-cat="bath">Туалет та ванна</a>
-    </div>
-    <!-- products -->
-    <main class="products">
-      <!-- products container -->
-      <div class="products-container">
+    <div class="shop-layout section-center">
+      <aside class="shop-sidebar" aria-label="Фільтр каталогу">
+        <p class="shop-sidebar-heading">Категорії</p>
+        <nav class="shop-cat-nav" aria-label="Категорії продукції">
+          <a class="shop-cat-link is-active" href="products.html" data-cat="all">Усі продукти</a>
+          <a class="shop-cat-link" href="?cat=bath" data-cat="bath">Туалет та ванна</a>
+          <a class="shop-cat-link" href="?cat=dishes" data-cat="dishes">Посуд</a>
+          <a class="shop-cat-link" href="?cat=floor" data-cat="floor">Підлога</a>
+          <a class="shop-cat-link" href="?cat=glass" data-cat="glass">Скло та дзеркала</a>
+          <a class="shop-cat-link" href="?cat=pipes" data-cat="pipes">Труби та каналізація</a>
+          <a class="shop-cat-link" href="?cat=prannya" data-cat="prannya">Прання</a>
+        </nav>
+        <div class="shop-sidebar-note">
+          <p><strong>Роздріб і B2B</strong></p>
+          <p>Фасування від 500&nbsp;мл до 5&nbsp;л. Прайс для опту — у WhatsApp.</p>
+          <a class="shop-sidebar-wa" href="https://api.whatsapp.com/send?phone=380679720560" target="_blank" rel="noopener noreferrer">Написати у WhatsApp</a>
+        </div>
+      </aside>
+
+      <div class="shop-main">
+        <div class="shop-toolbar">
+          <h2 class="shop-results-title">Усі продукти</h2>
+          <div class="products-filter-bar shop-filter-mobile" role="tablist" aria-label="Фільтр за категорією">
+            <a class="category-pill is-active" href="products.html" data-cat="all">Усі</a>
+            <a class="category-pill" href="?cat=bath" data-cat="bath">Ванна</a>
+            <a class="category-pill" href="?cat=dishes" data-cat="dishes">Посуд</a>
+            <a class="category-pill" href="?cat=floor" data-cat="floor">Підлога</a>
+            <a class="category-pill" href="?cat=glass" data-cat="glass">Скло</a>
+            <a class="category-pill" href="?cat=pipes" data-cat="pipes">Труби</a>
+            <a class="category-pill" href="?cat=prannya" data-cat="prannya">Прання</a>
+          </div>
+        </div>
+
+        <main class="products shop-products">
+          <div class="products-container">
         <div class="product" data-product-id="p01" data-category="bath">
           <div class="product-container">
             <div class="product-img-container">
@@ -123,6 +144,7 @@
           <footer>
             <span class="product-category-tag">Туалет та ванна</span>
             <h5 class="product-name">Очищувач ванної та душу</h5>
+            <p class="product-benefit" data-product-id="p01"></p>
             <div class="product-volume-pills" data-product-id="p01"><span class="volume-pill">500мл (з розпилювачем)</span><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p01"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p01" id="desc-btn-p01">Опис і застосування</button>
@@ -156,6 +178,7 @@
           <footer>
             <span class="product-category-tag">Труби та каналізація</span>
             <h5 class="product-name">Очищувач труб і сифонів</h5>
+            <p class="product-benefit" data-product-id="p02"></p>
             <div class="product-volume-pills" data-product-id="p02"><span class="volume-pill">1 л</span><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p02"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p02" id="desc-btn-p02">Опис і застосування</button>
@@ -189,6 +212,7 @@
           <footer>
             <span class="product-category-tag">Посуд</span>
             <h5 class="product-name">Антижир / антинагар 500 мл</h5>
+            <p class="product-benefit" data-product-id="p03"></p>
             <div class="product-volume-pills" data-product-id="p03"><span class="volume-pill">500мл</span></div>
             <p class="product-price" data-product-id="p03"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p03" id="desc-btn-p03">Опис і застосування</button>
@@ -222,6 +246,7 @@
           <footer>
             <span class="product-category-tag">Посуд</span>
             <h5 class="product-name">Антижир / антинагар 5 л</h5>
+            <p class="product-benefit" data-product-id="p04"></p>
             <div class="product-volume-pills" data-product-id="p04"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p04"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p04" id="desc-btn-p04">Опис і застосування</button>
@@ -255,6 +280,7 @@
           <footer>
             <span class="product-category-tag">Підлога</span>
             <h5 class="product-name">Мийний засіб для підлоги 1 л</h5>
+            <p class="product-benefit" data-product-id="p05"></p>
             <div class="product-volume-pills" data-product-id="p05"><span class="volume-pill">1л</span></div>
             <p class="product-price" data-product-id="p05"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p05" id="desc-btn-p05">Опис і застосування</button>
@@ -288,6 +314,7 @@
           <footer>
             <span class="product-category-tag">Підлога</span>
             <h5 class="product-name">Мийний засіб для підлоги 5 л</h5>
+            <p class="product-benefit" data-product-id="p06"></p>
             <div class="product-volume-pills" data-product-id="p06"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p06"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p06" id="desc-btn-p06">Опис і застосування</button>
@@ -321,6 +348,7 @@
           <footer>
             <span class="product-category-tag">Туалет та ванна</span>
             <h5 class="product-name">Гель для унітазів і кераміки</h5>
+            <p class="product-benefit" data-product-id="p07"></p>
             <div class="product-volume-pills" data-product-id="p07"><span class="volume-pill">750 мл</span></div>
             <p class="product-price" data-product-id="p07"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p07" id="desc-btn-p07">Опис і застосування</button>
@@ -354,6 +382,7 @@
           <footer>
             <span class="product-category-tag">Скло та дзеркала</span>
             <h5 class="product-name">Засіб для миття скла</h5>
+            <p class="product-benefit" data-product-id="p08"></p>
             <div class="product-volume-pills" data-product-id="p08"><span class="volume-pill">500мл (з розпилювачем)</span><span class="volume-pill">500мл (без розпилювача)</span><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p08"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p08" id="desc-btn-p08">Опис і застосування</button>
@@ -387,6 +416,7 @@
           <footer>
             <span class="product-category-tag">Посуд</span>
             <h5 class="product-name">Мийний для посуду · яблуко 500 мл</h5>
+            <p class="product-benefit" data-product-id="p09"></p>
             <div class="product-volume-pills" data-product-id="p09"><span class="volume-pill">500мл</span></div>
             <p class="product-price" data-product-id="p09"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p09" id="desc-btn-p09">Опис і застосування</button>
@@ -420,6 +450,7 @@
           <footer>
             <span class="product-category-tag">Посуд</span>
             <h5 class="product-name">Мийний для посуду · лимон 500 мл</h5>
+            <p class="product-benefit" data-product-id="p10"></p>
             <div class="product-volume-pills" data-product-id="p10"><span class="volume-pill">500мл</span></div>
             <p class="product-price" data-product-id="p10"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p10" id="desc-btn-p10">Опис і застосування</button>
@@ -453,6 +484,7 @@
           <footer>
             <span class="product-category-tag">Посуд</span>
             <h5 class="product-name">Мийний для посуду · яблуко 5 л</h5>
+            <p class="product-benefit" data-product-id="p11"></p>
             <div class="product-volume-pills" data-product-id="p11"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p11"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p11" id="desc-btn-p11">Опис і застосування</button>
@@ -486,6 +518,7 @@
           <footer>
             <span class="product-category-tag">Посуд</span>
             <h5 class="product-name">Мийний для посуду · лимон 5 л</h5>
+            <p class="product-benefit" data-product-id="p12"></p>
             <div class="product-volume-pills" data-product-id="p12"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p12"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p12" id="desc-btn-p12">Опис і застосування</button>
@@ -519,6 +552,7 @@
           <footer>
             <span class="product-category-tag">Туалет та ванна</span>
             <h5 class="product-name">Рідке мило · морська свіжість</h5>
+            <p class="product-benefit" data-product-id="p13"></p>
             <div class="product-volume-pills" data-product-id="p13"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p13"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p13" id="desc-btn-p13">Опис і застосування</button>
@@ -552,6 +586,7 @@
           <footer>
             <span class="product-category-tag">Туалет та ванна</span>
             <h5 class="product-name">Рідке мило · жожоба</h5>
+            <p class="product-benefit" data-product-id="p14"></p>
             <div class="product-volume-pills" data-product-id="p14"><span class="volume-pill">5л</span></div>
             <p class="product-price" data-product-id="p14"></p>
             <button type="button" class="product-desc-toggle" aria-expanded="false" aria-controls="desc-p14" id="desc-btn-p14">Опис і застосування</button>
@@ -580,6 +615,8 @@
 
       </div>
     </main>
+        </div><!-- /.shop-main -->
+    </div><!-- /.shop-layout -->
 
     <footer class="site-footer">
       <div class="site-footer-inner">

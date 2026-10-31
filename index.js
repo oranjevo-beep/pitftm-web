@@ -85,11 +85,18 @@ function applyCategoryFilter(cat) {
   });
   if (empty) empty.hidden = visible > 0;
 
-  document.querySelectorAll('.category-pill[data-cat]').forEach(function (pill) {
+  document.querySelectorAll('.category-pill[data-cat], .shop-cat-link[data-cat]').forEach(function (pill) {
     const slug = pill.getAttribute('data-cat');
     const active = (!cat || cat === 'all') ? slug === 'all' : slug === cat;
     pill.classList.toggle('is-active', active);
   });
+  var title = document.querySelector('.shop-results-title');
+  if (title) {
+    var activeLink = document.querySelector('.shop-cat-link.is-active, .category-pill.is-active');
+    title.textContent = (!cat || cat === 'all')
+      ? 'Усі продукти'
+      : ((activeLink && activeLink.textContent.trim()) || 'Продукція');
+  }
 }
 
 (function initCategoryFromQuery() {
@@ -98,7 +105,7 @@ function applyCategoryFilter(cat) {
   if (cat) applyCategoryFilter(cat);
   else applyCategoryFilter('all');
 
-  document.querySelectorAll('.category-pill[data-cat]').forEach(function (pill) {
+  document.querySelectorAll('.category-pill[data-cat], .shop-cat-link[data-cat]').forEach(function (pill) {
     pill.addEventListener('click', function (e) {
       // allow full navigation on other pages; on products intercept
       if (!document.querySelector('.product[data-category]')) return;
